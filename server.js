@@ -1,10 +1,11 @@
 /* === External Modules === */
-
+const express = require("express");
+const { appendFile } = require("fs");
 
 /* === Internal Modules === */
 
 // -- DB Connection --
-
+require("./config/db.connection")
 
 /* === System Variables === */
 
@@ -36,4 +37,6 @@
 // -- Utility Routes --
 
 /* === Server Listener === */
-
+app.listen(3000, function() {
+    console.log("Listening on port 3000 🎉");
+});
