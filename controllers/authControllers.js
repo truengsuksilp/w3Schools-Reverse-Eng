@@ -8,7 +8,8 @@ const route = express.Router();
 
 // GET: Show Signup
 route.get('/signup', (req, res) => {
-    res.send({msg: `You are in signup !!!`, body: req.body});
+    // res.send({msg: `You are in signup !!!`, body: req.body});
+    res.render('auth/signup');
 })
 
 // POST: Execute Signup by creating user in DB
@@ -18,7 +19,8 @@ route.post('/signup', (req, res) => {
 
 // Show: Login
 route.get('/login', (req, res) => {
-    res.send({msg: `You are in login !!!`, body: req.body});
+    // res.send({msg: `You are in login !!!`, body: req.body});
+    res.render('auth/login');
 })
 
 // POST: Authenticate User
