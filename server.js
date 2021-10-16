@@ -21,20 +21,18 @@ app.use(express.static('public'));
 /* === Routes === */
 
 // == Home
-app.get('/', (req, res) => res.send('Calling from Home'));
+app.get('/', (req, res) => res.render('index'));
 
 // == Auth
 app.use('/', controllers.auth);
 
 // == Exercise & Question
-// NOTE - Example route of JS exercise '/exercises/1/1' 
-// NOTE - W3 URL: www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1
 app.use('/exercises', controllers.exercise);
 
 // == User Answers
 
 // == 404
-app.get('/*', (req, res) => res.send('404: You idiot'));
+app.get('/*', (req, res) => res.render('404'));
 
 /* === Server Listeners === */
 app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
@@ -65,7 +63,11 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
 // methodOverride: CRUD - So we can use UPDATE as PUT
 // urlEncoded: CRUD - So we can use CREATE and UPDATE with req.body
 
-/* === NOTE: SECTIONS TO ADD BY DAY === */
+// == Test URL 
+// Test 'http://localhost:5000/exercises/js/1/1' 
+// W3 URL: www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1
+
+/* === ANCHOR: SECTIONS TO ADD BY DAY === */
 
 // == add these folders & files
 
