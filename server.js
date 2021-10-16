@@ -26,8 +26,12 @@ app.get('/', (req, res) => res.send('Calling from Home'));
 // == Auth
 app.use('/', controllers.auth);
 
-// == Users
-// == Exercises
+// == Exercise & Question
+// NOTE - Example route of JS exercise '/exercises/1/1' 
+// NOTE - W3 URL: www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1
+app.use('/exercises', controllers.exercise);
+
+// == User Answers
 
 // == 404
 app.get('/*', (req, res) => res.send('404: You idiot'));
