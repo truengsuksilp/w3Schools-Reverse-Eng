@@ -3,7 +3,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 
 /* === Internal Modules === */
-// Controllers
+const controllers = require('./controllers');
 
 /* === System Variables === */
 const app = express();
@@ -20,12 +20,17 @@ app.use(express.static('public'));
 
 /* === Routes === */
 
-// == Base
+// == Home
 app.get('/', (req, res) => res.send('Calling from Home'));
-app.get('/*', (req, res) => res.send('404: You idiot'));
+
+// == Auth
+app.use('/', controllers.auth);
 
 // == Users
 // == Exercises
+
+// == 404
+app.get('/*', (req, res) => res.send('404: You idiot'));
 
 /* === Server Listeners === */
 app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
