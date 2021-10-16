@@ -1,14 +1,35 @@
 /* === External Modules === */
+const express = require('express');
+const methodOverride = require('method-override');
 
 /* === Internal Modules === */
+// Controllers
 
 /* === System Variables === */
+const app = express();
+const PORT = 5000;
 
 /* === System Config === */
+app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
+app.use(express.urlencoded( {extended: false} ))
+app.use(express.static('public'));
 
 /* === Middleware === */
+// NavBar: app.use(require('/utils/navlinks'));
 
-/* === Server Listeners */
+/* === Routes === */
+
+// == Base
+app.get('/', (req, res) => res.send('Calling from Home'));
+app.get('/*', (req, res) => res.send('404: You idiot'));
+
+// == Users
+// == Exercises
+
+/* === Server Listeners === */
+app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
+
 
 
 
@@ -30,6 +51,10 @@
 // mongoose
 // method-override
 // nodemon
+
+// == base implementation
+// methodOverride: CRUD - So we can use UPDATE as PUT
+// urlEncoded: CRUD - So we can use CREATE and UPDATE with req.body
 
 /* === NOTE: SECTIONS TO ADD BY DAY === */
 
