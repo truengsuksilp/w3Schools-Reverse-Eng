@@ -1,18 +1,26 @@
 /* === External Modules === */
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
 
 /* === System Variables === */
+const MONGODB_URI = 'mongodb://localhost:27017/w3schools';
+
 
 // == set mongoose connection with connection string
 const connectionString = "mongodb://localhost:29017/test";
 
 /* === Connect & Log === */
+mongoose.connect(MONGODB_URI);
 
-// connection.on('connected')
-mongoose.connection.on("connected", function () {
-    console.log("Mongoose connected to ${connectionString}")
-})
+mongoose.connection.on('connected', () => {
+    console.log(`Connected: ${MONGODB_URI} 🦇🦇🦇`);
+});
 
-// connection.on('error')
-// connectio.on('disconnected')
+mongoose.connection.on('error', (error) => {
+    console.log(`Connection err: ${MONGODB_URI} 😭`);
+    console.log(error);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.log(`Disconnected: ${MONGODB_URI}`);
+    console.log('byeee 👋');
+});
