@@ -26,6 +26,9 @@ require('./config/db.connection.js');
 // == Home
 app.get('/', (req, res) => res.render('index'));
 
+// == Bulma
+app.get('/bulma', (req, res) => res.render('bulma'));
+
 // == Auth
 app.use('/', controllers.auth);
 

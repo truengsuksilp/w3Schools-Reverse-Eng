@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/_head.ejs', { page: `ReVamp(ire)`}) %>
+<%- include('../partials/_head_auth.ejs', { page: `ReVamp(ire)`}) %>
 
 <body>
-    <section class="card">
-        <div class="card-content">
+  <section class="card">
+    <article class="card-content">
+      <h1 class='card-title'>Log in</h1>
 
-            <div class="card-upper">
-                <h3 class='title'>Log in</h3>
+      <!-- FORM -->
+      <div class="card-body">
+        <form action="/login" method="POST">
+
+          <!-- EMAIL -->
+          <div class="field">
+            <div class="label-left-right">
+                <h5 class="label label-left"> Email</h5>
+                <p class="label label-right">
+                    Need an account?  
+                    <a href='/signup'>Sign up</a>
+                </p> 
             </div>
-
-            <div class="card-mid">
-                <form action="/login" method="POST">
-                    
-                    <div class="field">
-                        <label class="label">
-                            Email
-                        </label>
-                        <div class="control">
-                            <input 
-                                class="input"
-                                type="text"
-                                placeholder="example@gmail.com"
-                                name="email"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label class="label">
-                            Password
-                        </label>
-                        <div class="control">
-                            <input 
-                                class="input"
-                                type="text"
-                                placeholder="******"
-                                name="password"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-primary">Log in</button>
-                        </div>
-                    </div>
-                </form>
-
+            <div class="control">
+              <input 
+                  class="input"
+                  type="text"
+                  placeholder="example@gmail.com"
+                  name="email"
+              />
             </div>
-            
-        </div>
-    </section>
+          </div>
+          
+          <!-- PASSWORD -->
+          <div class="field">
+              <label class="label">
+                Password
+              </label>
+              <div class="control">
+                <input 
+                  class="input"
+                  type="text"
+                  placeholder="******"
+                  name="password"
+                />
+              </div>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="field">
+              <div class="control">
+                  <button class="card-buttons button is-primary">Log in</button>
+              </div>
+          </div>
+        </form>
+      </div>
+
+    </article>
+  </section>
       
-
-    <%- include('../partials/_footer.ejs') %>
-
+  <%- include('../partials/_footer.ejs') %>
 
 </body>
 </html>
