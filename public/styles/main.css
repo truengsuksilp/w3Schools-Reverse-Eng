@@ -5,19 +5,21 @@ body {
 }
 
 section.card {
-
+    border: 3px solid red;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 article.card-content {
-
+    border: 3px dotted green;
 }
 
 article.card-left {
-
+    border: 3px solid blue;
 }
 
 article.card-right {
-    
+    border: 3px solid orange;
 }
 
 
