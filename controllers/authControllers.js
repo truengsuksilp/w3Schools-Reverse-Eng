@@ -3,6 +3,7 @@ const express = require('express');
 
 /* === System Variables: route === */
 const route = express.Router();
+const User = require('../models/User');
 
 /* === Routes | base url: / === */
 
@@ -14,7 +15,14 @@ route.get('/signup', (req, res) => {
 
 // POST: Execute Signup by creating user in DB
 route.post('/signup', (req, res) => {
-    res.send({msg: `User Signup Data POSTED`, body: req.body})
+    // res.send({msg: `User Signup Data POSTED`, body: req.body})
+    data = req.body;
+
+    User.create(data, (error, userCreated) => {
+        if (error) console.log(error);      
+        console.log(userCreated);
+        return res.redirect('/login');
+    })
 })
 
 // Show: Login
@@ -26,7 +34,17 @@ route.get('/login', (req, res) => {
 // POST: Authenticate User
 // 
 route.post('/login', (req, res) => {
-    res.send({msg: `User Login Data POSTED`, body: req.body});
+    // res.send({msg: `User Login Data POSTED`, body: req.body});
+    // Test: { blah@blah.com, blah }
+
+    data = req.body;
+    
+    User.findOne(req.body, (error, foundUser) => {
+        if (error) console.log(error);
+        console.log('=== Log in sucess ===')
+        console.log(foundUser);
+        return res.redirect('/');
+    })
 })
 
 

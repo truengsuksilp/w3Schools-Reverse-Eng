@@ -15,6 +15,9 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: false} ))
 app.use(express.static('public'));
 
+// DB
+require('./config/db.connection.js');
+
 /* === Middleware === */
 // NavBar: app.use(require('/utils/navlinks'));
 

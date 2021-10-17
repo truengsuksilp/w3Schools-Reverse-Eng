@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 /* === System Variables === */
-const MONGODB_URI = 'mongodb://localhost:27017';
+const MONGODB_URI = 'mongodb://localhost:27017/w3schools';
 
 
 /* === Connect & Log === */
