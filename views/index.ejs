@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+  <%- include('./partials/_head.ejs', { page: `ReVamp(ire)`}) %>
+
 <body>
-    <h1> Home page!!</h1>
-    <h1> You are seeing an EJS !!! </h1>
+
+  <%- include('./partials/_nav.ejs', { page: `ReVamp(ire)`}) %>
+
+  <section class='card'>
+
+    <!-- LEFT CARD -->
+    <article class='card-content card-left'>
+      <h1 class='card-title'> JavaScript </h1>
+      <h3 class='card-desc'> The language for programming web pages </h3>
+      <button class="button is-primary card-buttons">Learn JavaScript</button>
+      <button class="button is-dark card-buttons">JavaScript Reference</button>
+    </article>
+
+    <!-- RIGHT CARD -->
+    <article class='card-content card-right'>
+      <h2 class='card-header'> JavaScript Example: </h2>
+      <div class='card-ide'>
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>              
+      </div>
+      <button class="button is-primary card-buttons">Try it Yourself</button>      
+
+    </article>
+  </section>
+    
 </body>
 </html>
