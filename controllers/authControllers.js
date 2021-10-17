@@ -94,30 +94,22 @@ module.exports = route;
 
 
 
-/* === TODO === */
+/* === TODO: Improvements === */
 
 // == POST 
-// Add async try{await}, error{}
-// try signup
-    // CREATE: User.create(req.body, (req, res) => { return res.redirect('/login')})
-// error signup
-    // console.log(error)
+// try signup with existing user
     // res.render('/auth/signupError)
     // CREATE NEW VIEW MODULE: /views/auth/signup_error.ejs
 
 // try login
-    // Check EMAIL in DB: foundUser = User.findOne({ email: req.body.email })
-    // Check PASSWORD in DB: foundPassword = User.findOne({ password: req.body.password })
-    // Redirect: req.redirect('/');
-// error login
     // console.log(error)
     // res.resder('/auth/loginError')
     // CREATE NEW VIEW MODULE: /view/auth/login_error.ejs
-    
-    // ANCHOR - Ask Dalton on how to show login message without reloading the page
+  
+    // ANCHOR - Ask how to show login message without reloading the page
     // jQuery Example 1: $('#err').show() )
     // jQuery Example 2: $('#err').onclick( (event) => $('#login').append(`<h4>Invalid Email or Password </h4>`)
 
-// == POST - Login tracking with cookie
-// SERVER.JS: require('session');
-// POST: req.session.currentUser = {id: foundUser._id, username: foundUser.username};
+// Login tracking with cookie
+    // SERVER.JS: require('session');
+    // POST: req.session.currentUser = {id: foundUser._id, username: foundUser.username};
