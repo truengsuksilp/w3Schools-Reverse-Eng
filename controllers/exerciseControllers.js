@@ -3,8 +3,10 @@ const express = require('express');
 
 /* === System Variables: route === */
 const router = express.Router();
+const Exercise = require('../models/Exercise');
+const Question = require('../models/Question');
 
-/* === Routes | base url: /exercise === */
+/* === Routes | base url: /exercises === */
 
 // Show
 router.get('/:language/:exercise_id/:question_id', (req, res) => {
@@ -12,14 +14,21 @@ router.get('/:language/:exercise_id/:question_id', (req, res) => {
     exercise_id = req.params.exercise_id;
     question_id = req.params.question_id;
 
-    res.send({
-        msg: `Exercise page`, 
-        language: language,
-        exercise: exercise_id, 
-        question: question_id,
-    });
+    const question = Question.findOne({})
+        .populate('exercise_id')
+        .exec( (err, foundQuestion) => {
+            if (err) console.log(err);
+            const exercise_id = foundQuestion._id;
 
-    // res.render('/exercises)
+            context = { question: foundQuestion };
+            return res.render('exercises/exercise', context);
+        });
+
+});
+
+router.post('/:language/:exercise_id/:question_id', (req, res) => {
+
+    res.send({msg: 'POSTED ANSWERS', body: req.body});
 
 });
 

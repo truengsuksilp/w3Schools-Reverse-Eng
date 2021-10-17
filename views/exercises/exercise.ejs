@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+  <%- include('../partials/_head.ejs', { 
+    page: `ReVamp(ire)`, 
+    cssFile: '/styles/exercise.css'
+  }) %>
+
+<body>
+  <section class='card'>
+    <article class='card-content'>
+      <div class="card-top">
+        <h2 class='card-title'>Exercise</h2>
+        <p class='card-desc'><%= question.prompt %></p>
+      </div>
+
+      <!-- FORM -->
+      <div class="card-body">
+
+        <% const language = question.exercise_id.language %>
+        <% const exercise_id = question.exercise_id._id %>
+        <% const url = `/exercises/${language}/${exercise_id}/${question._id}` %>
+
+        <form 
+          action = <%= url %>
+          method='POST'>
+
+          <!-- CODE INPUT -->
+          <div class="field card-mid">
+            <div class="control">
+              <p>var</p>
+              <input 
+                type="text" 
+                class="input"
+                name="answer_1"
+              >
+              <p>=</p>
+              <input 
+                type="text" 
+                class="input"
+                name="answer_2"
+              >
+            </div>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="field">
+            <div class="control card-lower">
+                <button class="card-buttons button is-primary">Submit</button>
+                <button class="card-buttons button is-secondary">Show Answer</button>
+            </div>
+        </div>
+        </form>   
+      </div>
+
+    </article>
+  </section>
+    
+</body>
+</html>
