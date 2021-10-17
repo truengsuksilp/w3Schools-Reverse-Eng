@@ -23,8 +23,8 @@ route.post('/signup', async (req, res, next) => {
         // Check if User Exists
         const userExist = await User.exists({ email: data.email });
         if (userExist) {
-            console.log('=== ERROR: USER ALREADY EXIST ===')
-            return res.send('Username already exist')
+            console.log('=== ERROR: USER ALREADY EXISTS ===')
+            return res.send('Username already exists')
         }
 
         // Create User
