@@ -51,6 +51,7 @@ div.field {
 
 .label-right {
   display: inline;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -70,6 +71,16 @@ div.field {
   font-weight: 700;
   line-height: 1.17;
 }
+
+p.terms-of-service {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+span.bold {
+  font-weight: 700;
+}
+
 /* Footer */
 
 .footer {
