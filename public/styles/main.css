@@ -112,6 +112,15 @@ div.card-ide {
     color: white;
 }
 
+a.card-buttons {
+    margin-top: 15px;
+}
+
+a#is-yellow {
+    background-color: #FFF4A3;
+    color: black;
+}
+
 :hover .button .is-primary {
     background-color:#059862;
 }
