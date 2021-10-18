@@ -3,10 +3,18 @@ require('../config/db.connection');
 const Exercise = require('../models/Exercise');
 const Question = require('../models/Question');
 
+// FIXME: Get ID out of function scope
+// Exercise.findOne({})
+//     .exec( (err, foundExercise) => {
+//         if (err) console.log(err);
+//         console.log(foundExercise._id);
+// });
+
 /* === Seed Data: [{}, ..., {}] === */
 const questions = [
     {
-        exercise_id: '616c5b9943613f7d93c87408',
+        // FIXME THIS IS STILL HARD CODE
+        exercise_id: '616dba0a973491c2b32725e7',
         prompt: 'Create a variable called carName, assign the value Volvo to it.',
         correct_answer_1: 'carName',
         correct_answer_2: 'Volvo',
@@ -14,7 +22,7 @@ const questions = [
 
     },
     {
-        exercise_id: '616c5b9943613f7d93c87408',
+        exercise_id: '616dba0a973491c2b32725e7',
         prompt: 'Create a variable called x, assign the value 50 to it.',
         correct_answer_1: 'x',
         correct_answer_2: '50',

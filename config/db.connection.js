@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 /* === System Variables === */
-const MONGODB_URI = 'mongodb+srv://truengsuksilp:QMjzD9lnAdoYrPpe@cluster0.djerc.mongodb.net/w3Schools?retryWrites=true&w=majoritymongodb://localhost:27017/w3schools';
+const MONGODB_URI = 'mongodb+srv://truengsuksilp:QMjzD9lnAdoYrPpe@cluster0.djerc.mongodb.net/w3Schools?retryWrites=true&w=majority';
 
 /* === Connect & Log === */
 mongoose.connect(MONGODB_URI);

@@ -9,30 +9,42 @@ const UserAnswer = require('../models/UserAnswer');
 
 /* === Routes | base url: /exercises === */
 
-// Show
-router.get('/:language/:exercise_id/:question_id', (req, res) => {
-    language = req.params.language;
-    exercise_id = req.params.exercise_id;
-    question_id = req.params.question_id;
+// Show: Unspecified
+router.get('/:language', async (req, res) => {
+    try {
+        const foundQuestion = await Question.findOne({})
+            .populate('exercise_id')
 
-    // res.send({msg: "exercise", body: req.body})
-    // FIXME MongooseError: Query was already executed: https://stackoverflow.com/questions/68945315/mongooseerror-query-was-already-executed
-    //     Update: Question.findById(req.params.question_id)
+        const url = `/exercises/${req.params.language}/${foundQuestion._id}/${foundQuestion.order}`
 
-    const question = Question.findOne({})
-        .populate('exercise_id')
-        .exec( (err, foundQuestion) => {
-            if (err) console.log(err);
-            const exercise_id = foundQuestion._id;
+        return res.redirect(url)
 
-            context = { question: foundQuestion };
-            return res.render('exercises/exercise', context);
-        });
+    } catch (error) {
+        console.log(error)
+    }
+
+});
+
+// Show: Specified
+router.get('/:language/:question_id/:order', async (req, res) => {
+
+    // res.send({msg:'Specified', body: req.params});
+
+    try {
+        const foundQuestion = await Question.find({order: req.params.order})
+            .populate('exercise_id');
+
+        context = { question: foundQuestion[0] };
+        return res.render('exercises/exercise', context);
+
+    } catch (error) {
+        console.log(error);
+    }
 
 });
 
 // Show : Get Answers
-router.post('/:language/:exercise_id/:question_id', (req, res, next) => {
+router.post('/:language/:question_id/:order', (req, res, next) => {
 
     // res.send({msg: 'POSTED ANSWERS', body: req.body, params: req.params});
 
@@ -40,6 +52,8 @@ router.post('/:language/:exercise_id/:question_id', (req, res, next) => {
     const user_answer_2 = req.body.user_answer_2;
 
     console.log('working on it');
+    console.log(req.params.question_id);
+    console.log(req.body);
 
     Question.findById(req.params.question_id, (error, foundQuestion) => {
 
@@ -58,7 +72,7 @@ router.post('/:language/:exercise_id/:question_id', (req, res, next) => {
                 console.log(`Logged user progress`);
             } else {
                 console.log('Incorrect ans, not logged');
-                console.log([user_answer_1, correct_answer_1]);
+                console.log([user_answer_1, correct_answer_1, user_answer_2, correct_answer_2]);
             }
         }
     });
@@ -110,15 +124,16 @@ module.exports = router;
 //     console.log('redirect after 1 seconds')
 // }, 1000);
 
-// ANCHOR - SHOW: ASYNC ATTEMPT
-    // Why doesn't it AWAIT?
-    // TypeError: Cannot read properties of null (reading '_id')
 
-// try {
-//     const foundQuestion = await Question.findById(req.params.question_id).populate('exercise_id');
-//     const exercise_id = await foundQuestion._id;
+// ANCHOR - SHOW: SYNC (old)
+// const question = Question.find({order: req.params.order})
+// .populate('exercise_id')
+// .exec( (err, foundQuestion) => {
+//     if (err) console.log(err);
+
+//     console.log(foundQuestion);
+//     const exercise_id = foundQuestion._id;
+
 //     context = { question: foundQuestion };
 //     return res.render('exercises/exercise', context);
-// } catch (error) {
-//     console.log(error);
-// }
+// });

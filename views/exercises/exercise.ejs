@@ -26,6 +26,11 @@
       <!-- FORM -->
       <div class="card-body">
 
+<<<<<<< HEAD
+=======
+        <% const url = `/exercises/${question.exercise_id.language}/${question._id}/${question.order}` %>
+
+>>>>>>> main
         <form 
           action = '/js/0/0'
           method='POST'>
@@ -56,6 +61,7 @@
             <div class="control card-lower">
                 <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
                 <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
+                <button class="card-buttons button is-dark" id='hideAnswerButton'>Hide Answer</button>
             </div>
         </div>
         </form>   
@@ -65,6 +71,11 @@
   </section>
 
   <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+<<<<<<< HEAD
+=======
+  <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
+  <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+>>>>>>> main
 
     
 </body>

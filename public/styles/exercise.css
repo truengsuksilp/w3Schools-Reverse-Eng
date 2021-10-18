@@ -64,3 +64,7 @@
   margin: 5px 0px;
   font-weight: 700;
 }
+
+#hideAnswerButton {
+  display: none;
+}
