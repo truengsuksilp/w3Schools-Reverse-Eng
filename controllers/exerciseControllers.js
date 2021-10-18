@@ -1,6 +1,9 @@
 /* === External Modules: express === */
 const express = require('express');
 
+/* === External Modules: express === */
+const express = require('express');
+
 /* === System Variables: route === */
 const router = express.Router();
 const Exercise = require('../models/Exercise');
@@ -108,3 +111,16 @@ module.exports = router;
 // setTimeout(() => {
 //     console.log('redirect after 1 seconds')
 // }, 1000);
+
+// ANCHOR - SHOW: ASYNC ATTEMPT
+    // Why doesn't it AWAIT?
+    // TypeError: Cannot read properties of null (reading '_id')
+
+// try {
+//     const foundQuestion = await Question.findById(req.params.question_id).populate('exercise_id');
+//     const exercise_id = await foundQuestion._id;
+//     context = { question: foundQuestion };
+//     return res.render('exercises/exercise', context);
+// } catch (error) {
+//     console.log(error);
+// }
