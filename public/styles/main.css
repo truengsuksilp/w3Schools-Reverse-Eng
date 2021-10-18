@@ -14,10 +14,11 @@ a.navbar-link {
 
 body {
     background-color: #282A35;
-
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
 }
+
+/* === Section Styling === */
 
 section.card {
     max-width: 1400px;
@@ -45,13 +46,11 @@ section.js-card {
     color: black;
 }
 
+/* === Left Card Styling === */
+
 article.card-left {
 /*     border: 3px solid blue; */
     text-align: center;
-}
-
-article.card-right {
-    padding: 16px;
 }
 
 h1 {
@@ -72,11 +71,14 @@ div.card-left-buttons {
     width: 200px;
 }
 
+/* === Right Card Styling === */
+
 article.card-right {
     margin: auto;
 /*     border: 3px solid orange; */
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    padding: 16px;
     background-color: #E7E9EB;
     color: black;
 }
@@ -97,6 +99,7 @@ div.card-ide {
 }
 
 /* === Button Styling === */
+
 .button {
     width: 200px;
     border: none;
@@ -107,7 +110,6 @@ div.card-ide {
     font-size: 18px;
     font-weight: 700;
 }
-
 
 a.card-buttons {
     margin-top: 15px;
