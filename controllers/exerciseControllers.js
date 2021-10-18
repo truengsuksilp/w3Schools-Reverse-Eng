@@ -51,9 +51,7 @@ router.post('/:language/:question_id/:order', (req, res, next) => {
     const user_answer_1 = req.body.user_answer_1;
     const user_answer_2 = req.body.user_answer_2;
 
-    console.log('working on it');
-    console.log(req.params.question_id);
-    console.log(req.body);
+    console.log(['working on it', req.params.question_id]);
 
     Question.findById(req.params.question_id, (error, foundQuestion) => {
 
@@ -136,4 +134,44 @@ module.exports = router;
 
 //     context = { question: foundQuestion };
 //     return res.render('exercises/exercise', context);
+// });
+
+// ANCHOR - SHOW : Get Answers - ASYNC NOT WORKING
+// MongooseError: Query was already executed: ({ _id: new ObjectId("616dba93f331116ca8d7c7")})
+
+// router.post('/:language/:question_id/:order', async (req, res, next) => {
+
+//     // res.send({msg: 'POSTED ANSWERS', body: req.body, params: req.params});
+
+//     const user_answer_1 = req.body.user_answer_1;
+//     const user_answer_2 = req.body.user_answer_2;
+
+//     // SANITY CHECK ONLY
+//     console.log(['working on it', req.params.question_id]);
+
+//     try {
+//         await Question.findById(req.params.question_id, (error, foundQuestion) => {
+//             const correct_answer_1 = foundQuestion.correct_answer_1;
+//             const correct_answer_2 = foundQuestion.correct_answer_2;
+//             const userAnswerLog = { 
+//                 user_id: 'admin', 
+//                 question_id: req.params.question_id, 
+//             };
+
+//             checkAns1 = user_answer_1 === correct_answer_1
+//             checkAns2 = user_answer_2 === correct_answer_2
+
+//             if ( checkAns1 && checkAns2) { 
+//                 UserAnswer.create(userAnswerLog);
+//                 console.log(`Logged user progress`);
+//             } else {
+//                 console.log('Incorrect ans, not logged');
+//                 console.log([user_answer_1, correct_answer_1, user_answer_2, correct_answer_2]);
+//             }
+//         });
+//     } catch (error) {
+//         console.log(error);
+//         next()
+//     }
+    
 // });
