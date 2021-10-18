@@ -13,11 +13,11 @@ const QuestionSchema = new mongoose.Schema(
             type: String,
             require: true,
         },
-        correct_ans_1: {
+        correct_answer_1: {
             type: String,
             require: true,
         },
-        correct_ans_2: {
+        correct_answer_2: {
             type: String,
             require: true,
         },
