@@ -10,7 +10,7 @@ a.navbar-link {
 
 body {
     background-color: #282A35;
-    height: 100vh;
+
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
 }
@@ -23,8 +23,22 @@ section.card {
     grid-template-columns: 50% 50%;
     gap: 20px;
     padding: 3%;
+    
+}
+
+section.html-card {
     background-color: #282A35;
     color: white;
+}
+
+section.css-card {
+    background-color: #D9EEE1;
+    color: black;
+}
+
+section.js-card {
+    background-color: #FFF4A3;
+    color: black;
 }
 
 article.card-content {
