@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  height: 93vh;
 
   font-family: 'Source Sans Pro', sans-serif;
 
@@ -19,9 +20,12 @@
 }
 
 .card-content {
-  min-height: 400px;
+  height: 400px;
   min-width: 75vh;
   margin: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 16px;
+  padding: 48px;
 }
 
 /* LEFT CARD */
