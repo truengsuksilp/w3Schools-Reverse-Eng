@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
   <%- include('../partials/_head.ejs', { 
     page: `ReVamp(ire)`, 
@@ -19,10 +26,13 @@
       <!-- FORM -->
       <div class="card-body">
 
+<<<<<<< HEAD
+=======
         <% const url = `/exercises/${question.exercise_id.language}/${question._id}/${question.order}` %>
 
+>>>>>>> main
         <form 
-          action = <%= url %>
+          action = '/js/0/0'
           method='POST'>
 
           <!-- CODE INPUT -->
@@ -61,8 +71,11 @@
   </section>
 
   <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+<<<<<<< HEAD
+=======
   <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
   <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+>>>>>>> main
 
     
 </body>

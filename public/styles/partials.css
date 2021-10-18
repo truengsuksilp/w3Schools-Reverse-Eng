@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+
+/* Navbar */
+a.navbar-link {
+    width: 127px;
+    padding: 24px 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 25px;
+    box-sizing: border-box;
+    padding: 0px;
+    line-height: 19px;
+    text-align: center;
+    color: rgba(40, 42, 53, .65);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
