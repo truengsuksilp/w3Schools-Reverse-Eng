@@ -17,13 +17,13 @@ body {
 
 section.card {
     max-width: 1400px;
-    margin: 32px auto;
-    border: 3px solid red;
+    margin: -12px auto;
+    gap: 0px;
+/*     border: 3px solid red; */
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 20px;
+    border-radius: 0px;
     padding: 3%;
-    
 }
 
 section.html-card {
@@ -41,14 +41,13 @@ section.js-card {
     color: black;
 }
 
-article.card-content {
-    border: 6px dotted green;
-    padding: 3%;
+article.card-left {
+/*     border: 3px solid blue; */
+    text-align: center;
 }
 
-article.card-left {
-    border: 3px solid blue;
-    text-align: center;
+article.card-right {
+    padding: 16px;
 }
 
 h1 {
@@ -70,8 +69,8 @@ div.card-left-buttons {
 }
 
 article.card-right {
-    margin: 32px auto;
-    border: 3px solid orange;
+    margin: auto;
+/*     border: 3px solid orange; */
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     background-color: #E7E9EB;
