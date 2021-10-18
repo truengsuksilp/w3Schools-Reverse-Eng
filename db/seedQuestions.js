@@ -15,16 +15,16 @@ const questions = [
     {
         exercise_id: '616c5b9943613f7d93c87408',
         prompt: 'Create a variable called carName, assign the value Volvo to it.',
-        correct_ans_1: 'carName',
-        correct_ans_2: 'Volvo',
+        correct_answer_1: 'carName',
+        correct_answer_2: 'Volvo',
         order: 0,
 
     },
     {
         exercise_id: '616c5b9943613f7d93c87408',
         prompt: 'Create a variable called x, assign the value 50 to it.',
-        correct_ans_1: 'x',
-        correct_ans_2: '50',
+        correct_answer_1: 'x',
+        correct_answer_2: '50',
         order: 1,
     }
 ]

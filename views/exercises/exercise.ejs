@@ -5,6 +5,8 @@
     page: `ReVamp(ire)`, 
     cssFile: '/styles/exercise.css'
   }) %>
+  <%- include('../partials/_head_js.ejs', { 
+    jsFile: '/scripts/main.js'}) %>
 
 <body>
   <section class='card'>
@@ -32,22 +34,25 @@
               <input 
                 type="text" 
                 class="input"
-                name="answer_1"
+                name="user_answer_1"
+                id="input1"
               >
               <p>=</p>
               <input 
                 type="text" 
                 class="input"
-                name="answer_2"
+                name="user_answer_2"
+                id='input2'
               >
             </div>
-          </div>
+            <p class='feedback'></p>
+          </div>   
 
           <!-- BUTTONS -->
           <div class="field">
             <div class="control card-lower">
-                <button class="card-buttons button is-primary">Submit</button>
-                <button class="card-buttons button is-secondary">Show Answer</button>
+                <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
+                <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
             </div>
         </div>
         </form>   
@@ -55,6 +60,11 @@
 
     </article>
   </section>
+
+  <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+  <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
+  <p id='correctAnswer1'> <%= question.correct_answer_2 %> </p>
+
     
 </body>
 </html>
