@@ -96,9 +96,10 @@ div.card-ide {
     font-size: 15px;
 }
 
-
+/* === Button Styling === */
 .button {
     width: 200px;
+    border: none;
     border-radius: 25px;
     margin: 7px;
     padding: 8px 16px;
@@ -107,22 +108,9 @@ div.card-ide {
     font-weight: 700;
 }
 
-.button .is-primary {
-    background-color: #04AA6D;
-    color: white;
-}
 
 a.card-buttons {
     margin-top: 15px;
-}
-
-a#is-yellow {
-    background-color: #FFF4A3;
-    color: black;
-}
-
-:hover .button .is-primary {
-    background-color:#059862;
 }
 
 .button .is-dark {
@@ -130,6 +118,19 @@ a#is-yellow {
     color: #000;
 }
 
+a#is-yellow {
+    background-color: #FFF4A3;
+    color: black;
+}
+
+#is-w3-green {
+    background-color: #04AA6D;
+    color: white;
+}
+
+:hover #is-w3-green {
+    background-color:#059862;
+} /* TODO */
 
 /* === Login Page === */
 
