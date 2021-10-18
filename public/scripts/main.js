@@ -24,6 +24,29 @@ const checkAnswers = function (ans1, ans2) {
     }
 }
 
+const showAnswers = function () {
+    document.querySelector('#input1').value = correctAnswer1;
+    document.querySelector('#input2').value = correctAnswer2;
+
+    $('#showAnswerButton').hide();
+    $('#hideAnswerButton').css('display', 'block');
+
+}
+
+const hideAnswers = function () {
+    document.querySelector('#input1').value = "";
+    document.querySelector('#input2').value = "";
+
+    $('#showAnswerButton').show();
+    $('#hideAnswerButton').css('display', 'none');
+
+}
+
 /* === Event Listeners === */
 
-$('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) )
+// $(window).on("load", hide());
+
+$('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
+$('#showAnswerButton').click( (event) => showAnswers());
+$('#hideAnswerButton').click( (event) => hideAnswers());
+
