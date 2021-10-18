@@ -19,9 +19,7 @@
       <!-- FORM -->
       <div class="card-body">
 
-        <% const language = question.exercise_id.language %>
-        <% const exercise_id = question.exercise_id._id %>
-        <% const url = `/exercises/${language}/${exercise_id}/${question._id}` %>
+        <% const url = `/exercises/${question.exercise_id.language}/${question._id}/${question.order}` %>
 
         <form 
           action = <%= url %>
