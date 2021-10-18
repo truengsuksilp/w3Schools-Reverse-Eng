@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 a.navbar-link {
     width: 127px;
     padding: 24px 16px;
@@ -84,7 +88,7 @@ h2.card-header {
 }
 
 div.card-ide {
-    margin: 16px, 0;
+    margin: 20px, 0;
     border-left: 4px solid #04AA6D;
     padding: 8px 12px;
     background-color: white;
@@ -118,7 +122,11 @@ div.card-ide {
 }
 
 
+/* === Login Page === */
 
+
+
+/* -- Footer -- */
 
 
 /*# sourceMappingURL=main.css.map */

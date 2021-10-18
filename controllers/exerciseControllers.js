@@ -15,8 +15,9 @@ router.get('/:language/:exercise_id/:question_id', (req, res) => {
     exercise_id = req.params.exercise_id;
     question_id = req.params.question_id;
 
+    // res.send({msg: "exercise", body: req.body})
     // FIXME MongooseError: Query was already executed: https://stackoverflow.com/questions/68945315/mongooseerror-query-was-already-executed
-        // Update: Question.findById(req.params.question_id)
+    //     Update: Question.findById(req.params.question_id)
 
     const question = Question.findOne({})
         .populate('exercise_id')

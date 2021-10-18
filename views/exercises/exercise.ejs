@@ -26,12 +26,8 @@
       <!-- FORM -->
       <div class="card-body">
 
-        <% const language = question.exercise_id.language %>
-        <% const exercise_id = question.exercise_id._id %>
-        <% const url = `/exercises/${language}/${exercise_id}/${question._id}` %>
-
         <form 
-          action = <%= url %>
+          action = '/js/0/0'
           method='POST'>
 
           <!-- CODE INPUT -->
@@ -69,8 +65,6 @@
   </section>
 
   <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
-  <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
-  <p id='correctAnswer1'> <%= question.correct_answer_2 %> </p>
 
     
 </body>

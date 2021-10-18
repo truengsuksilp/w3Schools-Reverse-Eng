@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 /* GLOBAL */
-
 * {
   box-sizing: border-box;
-  /* border: 1px solid rebeccapurple; */
+/*   border: 1px solid rebeccapurple;  */
+  font-family: font-family: 'Source Sans Pro', sans-serif;;
 }
 
 /* ENTIRE CARD */
@@ -20,6 +21,7 @@
 .card-content {
   min-height: 400px;
   min-width: 75vh;
+  margin: 30px;
 }
 
 /* LEFT CARD */
@@ -54,6 +56,18 @@
 }
 
 /* Footer */
+
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 35px;
+  box-sizing: border-box;
+  padding: 20px;
+  line-height: 19px;
   text-align: center;
+  color: rgba(40, 42, 53, .65);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
 }
