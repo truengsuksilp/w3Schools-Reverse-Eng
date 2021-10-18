@@ -4,8 +4,14 @@ const mongoose = require('mongoose');
 /* === Schema === */
 const UserAnswerSchema = new mongoose.Schema(
     {
-        question_id: {},
-        user_id: {},
+        question_id: {
+            type: String,
+            required: true,
+        },
+        user_id: {
+            type: String,
+            required: true,
+        },
     }
 );
 

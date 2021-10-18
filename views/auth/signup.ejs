@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/_head_auth.ejs', { page: `ReVamp(ire)`}) %>
+  <%- include('../partials/_head.ejs', { 
+    page: `ReVamp(ire)`, 
+    cssFile: '/styles/auth.css'
+  }) %>
+
 
 <body>
   <section class="card">
@@ -21,13 +25,19 @@
                     <a href='/login'>Log in</a>
                 </p> 
             </div>
-            <div class="control">
+            <div class="control has-icons-left has-icons-right">
               <input 
-                  class="input"
+                  class="input  is-success"
                   type="text"
                   placeholder="example@gmail.com"
                   name="email"
               />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <!-- <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span> -->
             </div>
           </div>
           
@@ -36,13 +46,16 @@
               <label class="label">
                 Password
               </label>
-              <div class="control">
+              <div class="control has-icons-left">
                 <input 
                   class="input"
                   type="password"
                   placeholder="******"
                   name="password"
                 />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-key"></i>
+                </span>
               </div>
           </div>
 
