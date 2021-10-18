@@ -31,12 +31,12 @@ router.get('/:language/:question_id/:order', async (req, res) => {
     // res.send({msg:'Specified', body: req.params});
 
     try {
-        const foundQuestion = await Question.find({order: req.params.order}).populate('exercise_id');
-
-        console.log(foundQuestion[0].correct_answer_1); 
+        const foundQuestion = await Question.find({order: req.params.order})
+            .populate('exercise_id');
 
         context = { question: foundQuestion[0] };
         return res.render('exercises/exercise', context);
+
     } catch (error) {
         console.log(error);
     }
@@ -72,7 +72,7 @@ router.post('/:language/:question_id/:order', (req, res, next) => {
                 console.log(`Logged user progress`);
             } else {
                 console.log('Incorrect ans, not logged');
-                console.log([user_answer_1, correct_answer_1]);
+                console.log([user_answer_1, correct_answer_1, user_answer_2, correct_answer_2]);
             }
         }
     });

@@ -3,7 +3,7 @@ const $submit = $('#submitButton');
 const $showAns = $('#showAnswerButton');
 
 const correctAnswer1 = document.querySelector('#correctAnswer1').innerText;
-const correctAnswer2 = document.querySelector('#correctAnswer1').innerText;
+const correctAnswer2 = document.querySelector('#correctAnswer2').innerText;
 
 /* === Logic === */
 
@@ -15,7 +15,7 @@ const checkAnswers = function (ans1, ans2) {
 
     // localeCompare:
     // Because input1 is in a different mem location
-    if (input1.localeCompare(ans1) === 0 && input1.localeCompare(ans1) === 0) {
+    if (input1.localeCompare(ans1) === 0 && input2.localeCompare(ans2) === 0) {
         feedback.innerText = 'Correct!'
     } else {
         feedback.innerText = 'Incorrect!'
