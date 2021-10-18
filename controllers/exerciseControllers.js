@@ -1,9 +1,6 @@
 /* === External Modules: express === */
 const express = require('express');
 
-/* === External Modules: express === */
-const express = require('express');
-
 /* === System Variables: route === */
 const router = express.Router();
 const Exercise = require('../models/Exercise');
@@ -21,7 +18,7 @@ router.get('/:language/:exercise_id/:question_id', (req, res) => {
     // FIXME MongooseError: Query was already executed: https://stackoverflow.com/questions/68945315/mongooseerror-query-was-already-executed
         // Update: Question.findById(req.params.question_id)
 
-    const question = Question.findById({})
+    const question = Question.findOne({})
         .populate('exercise_id')
         .exec( (err, foundQuestion) => {
             if (err) console.log(err);
