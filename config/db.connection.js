@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const MONGODB_URI = 'mongodb://localhost:27017/w3schools';
 
 
+// == set mongoose connection with connection string
+const connectionString = "mongodb://localhost:29017/test";
+
 /* === Connect & Log === */
 mongoose.connect(MONGODB_URI);
 
