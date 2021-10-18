@@ -7,10 +7,10 @@
 
   <%- include('./partials/_nav.ejs', { page: `ReVamp(ire)`}) %>
 
-  <section class='card'>
+  <section class='card columns is-mobile'>
 
     <!-- LEFT CARD -->
-    <article class='card-content card-left'>
+    <article class='card-content card-left column'>
       <h1 class='card-title'> JavaScript </h1>
       <h3 class='card-desc'> The language for programming web pages </h3>
       <div class='card-left-buttons'>
@@ -20,44 +20,26 @@
     </article>
 
     <!-- RIGHT CARD -->
-    <article class='card-content card-right'>
+    <article class='card-content card-right column'>
       <h2 class='card-header'> JavaScript Example: </h2>
       <div class='card-ide'>
 
         &lt;button onclick="myFunction&lpar;
         &rpar;"&gt;Click Me!&lt;/button&gt;
-          &NewLine;
-          &NewLine;
-        &lt;script&gt;
-        &NewLine;
+          <br>
+          <br>
         function myFunction&lpar;
         &rpar; &lcub;
-          &NewLine;
+          <br>
           let x = document.getElementById&lpar;
           "demo"&rpar;;
-          &NewLine;
+          <br>
           x.style.fontSize = "25px";
-          &NewLine;
+          <br>
           x.style.color = "red";
-          &NewLine;
+          <br>
           &rcub;
-        &NewLine;
-        &lt;/script&gt;/button&gt;
-        &NewLine;
-        &lt;script&gt;
-        &NewLine;
-        function myFunction&lpar;
-        &rpar; &lcub;
-          &NewLine;
-          let x = document.getElementById&lpar;
-          "demo"&rpar;;
-          &NewLine;
-          x.style.fontSize = "25px";
-          &NewLine;
-          x.style.color = "red";
-          &NewLine;
-          &rcub;
-        &NewLine;
+        <br>
         &lt;/script&gt;
 
      <!--    <p>Line 1</p>
