@@ -1,78 +1,111 @@
-/* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro:wght@400;700&display=swap');
 
-* {
-  box-sizing: border-box;
-  /* border: 1px solid rebeccapurple; */
+a.navbar-link {
+    width: 127px;
+    padding: 24px 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-/* ENTIRE CARD */
-
-.card {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  
-  background: #FFF4A3;
-  padding: 10px;
-
-  font-family: 'Source Sans Pro', sans-serif;
+body {
+    background-color: #282A35;
+    height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
 }
 
-.card-left, .card-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; 
-
-  min-height: 300px;
-  min-width: 400px;
+section.card {
+    max-width: 1400px;
+    margin: 32px auto;
+    border: 3px solid red;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 3%;
+    background-color: #282A35;
+    color: white;
 }
 
-.card-buttons {
-  font-weight: 700;
+article.card-content {
+    border: 6px dotted green;
+    padding: 3%;
 }
 
-/* LEFT CARD */
-
-.card-left {
-  padding-top: 10px;
-  text-align: center;
+article.card-left {
+    border: 3px solid blue;
+    text-align: center;
 }
 
-.card-title {
-  font-size: 60px;
-  font-weight: 600;
+h1 {
+    margin-top: -18px;
+    font-size: 100px;
+    font-weight: 700;
 }
 
-.card-desc {
-  font-size: 20px;
-  font-weight: 400;
+h3 {
+    margin: 1em 0;
+    font-size: 19px;
+    font-weight: 700;
 }
 
-.card-buttons {
-  margin: 5px 0px
+div.card-left-buttons {
+    display: grid;
+    margin: auto;
+    width: 200px;
 }
 
-/* RIGHT CARD */
-
-.card-right {
-  background-color: #E7E9EB;
-  padding-top: 10px;
-  padding-bottom: 20px;
+article.card-right {
+    margin: 32px auto;
+    border: 3px solid orange;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    background-color: #E7E9EB;
+    color: black;
 }
 
-.card-header {
-  font-size: 20px;
-  font-weight: 600;
+h2.card-header {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 400;
 }
 
-.card-ide {
-  font-family: "courier new", monospace;
-
-  border-left: 5px solid rgb(90, 180, 90);
-  background-color: white;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-left: 10px;
-
-  color: black;
+div.card-ide {
+    margin: 16px, 0;
+    border-left: 4px solid #04AA6D;
+    padding: 8px 12px;
+    background-color: white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 15px;
 }
+
+
+.button {
+    width: 200px;
+    border-radius: 25px;
+    margin: 7px;
+    padding: 8px 16px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.button .is-primary {
+    background-color: #04AA6D;
+    color: white;
+}
+
+:hover .button .is-primary {
+    background-color:#059862;
+}
+
+.button .is-dark {
+    background-color: white;
+    color: #000;
+}
+
+
+
+
+
+/*# sourceMappingURL=main.css.map */

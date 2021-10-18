@@ -7,25 +7,46 @@
 
   <%- include('./partials/_nav.ejs', { page: `ReVamp(ire)`}) %>
 
-  <section class='card'>
+  <section class='card columns is-mobile'>
 
     <!-- LEFT CARD -->
-    <article class='card-content card-left'>
+    <article class='card-content card-left column'>
       <h1 class='card-title'> JavaScript </h1>
       <h3 class='card-desc'> The language for programming web pages </h3>
-      <button class="button is-primary card-buttons">Learn JavaScript</button>
-      <button class="button is-dark card-buttons">JavaScript Reference</button>
+      <div class='card-left-buttons'>
+        <button class="button is-primary card-buttons">Learn JavaScript</button>
+        <button class="button is-dark card-buttons">JavaScript Reference</button>
+      </div>
     </article>
 
     <!-- RIGHT CARD -->
-    <article class='card-content card-right'>
+    <article class='card-content card-right column'>
       <h2 class='card-header'> JavaScript Example: </h2>
       <div class='card-ide'>
-        <p>Line 1</p>
+
+        &lt;button onclick="myFunction&lpar;
+        &rpar;"&gt;Click Me!&lt;/button&gt;
+          <br>
+          <br>
+        function myFunction&lpar;
+        &rpar; &lcub;
+          <br>
+          let x = document.getElementById&lpar;
+          "demo"&rpar;;
+          <br>
+          x.style.fontSize = "25px";
+          <br>
+          x.style.color = "red";
+          <br>
+          &rcub;
+        <br>
+        &lt;/script&gt;
+
+     <!--    <p>Line 1</p>
         <p>Line 2</p>
         <p>Line 3</p>
         <p>Line 4</p>
-        <p>Line 5</p>              
+        <p>Line 5</p> -->              
       </div>
       <button class="button is-primary card-buttons">Try it Yourself</button>      
 
