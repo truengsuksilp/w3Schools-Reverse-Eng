@@ -31,15 +31,23 @@ router.get('/:language/:question_id/:order', async (req, res) => {
     // res.send({msg:'Specified', body: req.params});
 
     try {
-        const foundQuestion = await Question.find({order: req.params.order})
+        const foundQuestion = await Question.findOne({order: req.params.order})
             .populate('exercise_id');
 
+        const foundAllQuestions = await Question.find({exercise_id: foundQuestion.exercise_id._id});
+        // console.log(foundAllQuestions);
+        
+        const foundAllExercises = await Exercise.find({})
+        // console.log(foundAllExercises);
+
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
-        console.log(currentURL)
+        console.log(currentURL);
         
         context = {
-            question: foundQuestion[0], 
-            url: currentURL 
+            question: foundQuestion,
+            allQuestions: foundAllQuestions,
+            allExercises: foundAllExercises,
+            url: currentURL,
         };
         
         return res.render('exercises/exercise', context);

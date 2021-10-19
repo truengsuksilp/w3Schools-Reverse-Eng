@@ -27,6 +27,13 @@ const questions = [
         correct_answer_1: 'x',
         correct_answer_2: '50',
         order: 1,
+    },
+    {
+        exercise_id: '616dba0a973491c2b32725e7',
+        prompt: 'Display the sum of 5 + 10, using two variables: x and y.  Assume: const y = 10; console.log(x + y);',
+        correct_answer_1: 'x',
+        correct_answer_2: '5',
+        order: 2,
     }
 ]
 
@@ -34,7 +41,7 @@ const questions = [
 
 const seedData = async (collection, data) => {
     try {
-        await collection.deleteMany({});
+        // await collection.deleteMany({});
         await collection.insertMany(data);
         console.log(`=== Seeded Questions Data ===`);
         console.log(data);

@@ -4,10 +4,11 @@ const methodOverride = require('method-override');
 
 /* === Internal Modules === */
 const controllers = require('./controllers');
+require("dotenv").config();
 
 /* === System Variables === */
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 /* === System Config === */
 app.set('view engine', 'ejs');

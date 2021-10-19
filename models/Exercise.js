@@ -12,6 +12,11 @@ const ExerciseSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        exercise_id: {
+            type: mongoose.Types.ObjectId,
+            require: true,
+            ref: 'Question',
+        },
     },
     {
         timestamp: true,
