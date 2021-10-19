@@ -9,58 +9,88 @@
     jsFile: '/scripts/main.js'}) %>
 
 <body>
-  <section class='card'>
-    <article class='card-content'>
-      <div class="card-top">
-        <h2 class='card-title'>Exercise</h2>
-        <p class='card-desc'><%= question.prompt %></p>
-      </div>
 
-      <!-- FORM -->
-      <div class="card-body">
+  <main>
+    <!-- Aside Bar: To be replaced by Accordion later -->
+    
+    <aside class="menu">
 
-        <form 
-          action = <%= url %>
-          method='POST'>
+      <!-- Loop through all Topics -->
+      <% for (i in allExercises) { %>
+        <p class="menu-label">
+          <%= allExercises[i].topic %>
+        </p>
 
-          <!-- CODE INPUT -->
-          <div class="field card-mid">
-            <div class="control">
-              <p>var</p>
-              <input 
-                type="text" 
-                class="input"
-                name="user_answer_1"
-                id="input1"
-              >
-              <p>=</p>
-              <input 
-                type="text" 
-                class="input"
-                name="user_answer_2"
-                id='input2'
-              >
-            </div>
-            <p class='feedback'></p>
-          </div>   
+        <!-- All questions: Cannot update the link to root -->
+        <ul class="menu-list">
+          <% for (i in allQuestions) { %>
+            <li>
+              <a href=`/`>
+                Exercise <%= allQuestions[i].order%>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      <% } %>
+    </aside>
 
-          <!-- BUTTONS -->
-          <div class="field">
-            <div class="control card-lower">
-                <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
-                <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
-                <button class="card-buttons button is-dark invisible" id='hideAnswerButton'>Hide Answer</button>
-            </div>
+    <!-- Exercise Card -->
+
+    <section class='card'>
+      <article class='card-content'>
+        <div class="card-top">
+          <h2 class='card-title'>Exercise</h2>
+          <p class='card-desc'><%= question.prompt %></p>
         </div>
-        </form>   
-      </div>
 
-    </article>
-  </section>
+        <!-- FORM -->
+        <div class="card-body">
 
-  <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
-  <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
-  <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+          <form 
+            action = <%= url %>
+            method='POST'>
+
+            <!-- CODE INPUT -->
+            <div class="field card-mid">
+              <div class="control">
+                <p>var</p>
+                <input 
+                  type="text" 
+                  class="input"
+                  name="user_answer_1"
+                  id="input1"
+                >
+                <p>=</p>
+                <input 
+                  type="text" 
+                  class="input"
+                  name="user_answer_2"
+                  id='input2'
+                >
+              </div>
+              <p class='feedback'></p>
+            </div>   
+
+            <!-- BUTTONS -->
+            <div class="field">
+              <div class="control card-lower">
+                  <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
+                  <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
+                  <button class="card-buttons button is-dark invisible" id='hideAnswerButton'>Hide Answer</button>
+              </div>
+          </div>
+          </form>   
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+    <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
+    <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+  </footer>
 
     
 </body>

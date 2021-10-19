@@ -1,20 +1,38 @@
 /* GLOBAL */
 * {
   box-sizing: border-box;
-  /* border: 1px solid rebeccapurple; */
 }
 
 /* Section and article - containers */
+main {
+  display: flex;
+}
+
+aside {
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 20vh;
+  padding: 10px;
+}
+aside .menu-label {
+  border: 1px solid lightgray;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+}
+aside .menu-list {
+  padding-left: 5px;
+}
+
 section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   font-family: "Source Sans Pro", sans-serif;
-  margin-top: 40px;
 }
 section .card-content {
   min-height: 400px;
-  min-width: 60vh;
+  min-width: 100vh;
 }
 
 /* card-content: areas */
@@ -54,6 +72,15 @@ section .card-content {
 }
 .card-lower #hideAnswerButton {
   display: none;
+}
+
+footer {
+  margin: 20px;
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  max-width: 20vh;
+  text-align: center;
 }
 
 /*# sourceMappingURL=exercise.css.map */
