@@ -61,10 +61,9 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
+  width: inherit;
   max-width: 1400;
   font-family: "Source Sans Pro", sans-serif;
-  max-width: 60vh;
 }
 section .card-content {
   display: flex;
@@ -83,16 +82,14 @@ section .button {
   font-weight: 700;
   color: white;
 }
-section :hover .button {
-  color: white;
-}
 section #submitButton {
   background-color: #04AA6D;
 }
 section #showAnswerButton, section #hideAnswerButton {
   background-color: rgba(59, 59, 59, 0.5);
 }
-section :hover #showAnswerButton, section #hideAnswerButton {
+section #showAnswerButton:hover, section #hideAnswerButton:hover {
+  color: white;
   background-color: #3b3b3b;
 }
 
@@ -111,14 +108,19 @@ section :hover #showAnswerButton, section #hideAnswerButton {
 }
 
 .card-body {
-  position: relative;
   background-color: lightgray;
+  padding: 0 30 90 30;
+  min-height: 250px;
+  border-radius: 5px;
+}
+.card-body .field .card-mid {
+  position: relative;
+  width: 100px;
   padding: 0 30 90 30;
   min-height: 250px;
   font-family: "Consolas", "Courier New", Courier, monospace;
   font-size: 120%;
   line-height: 1.7em;
-  border-radius: 5px;
 }
 .card-body .control {
   display: flex;
@@ -139,6 +141,10 @@ section :hover #showAnswerButton, section #hideAnswerButton {
 .card-lower .card-buttons {
   margin: 5px 0px;
   font-weight: 700;
+}
+.card-lower #showAnswerButton {
+  background-color: black;
+  color: white;
 }
 .card-lower #hideAnswerButton {
   display: none;

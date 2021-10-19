@@ -69,10 +69,9 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
+  width: inherit;
   max-width: 1400;
   font-family: 'Source Sans Pro', sans-serif;
-  max-width: 60vh;
 
   .card {
     //padding-left: 20px;
@@ -96,18 +95,19 @@ section {
     font-weight: 700;
     color: white;
   }
-  :hover .button {
-    color: white;
-  }
+  
   
   #submitButton {
     background-color: $primary-color;
   }
   #showAnswerButton, #hideAnswerButton {
     background-color: $secondary-button-color;
-  }
-  :hover #showAnswerButton, #hideAnswerButton {
-    background-color: $tertiary-button-color;
+
+    &:hover {
+      color: white;
+      background-color: $tertiary-button-color;
+    }
+
   }
 
 }
@@ -131,14 +131,21 @@ section {
 
 
 .card-body {
-  position: relative;
   background-color: lightgray;
   padding: 0 30 90 30;
   min-height: 250px;
-  font-family: 'Consolas', 'Courier New', Courier, monospace;
-  font-size: 120%;
-  line-height: 1.7em;
   border-radius: 5px;
+
+
+   .field .card-mid {
+    position: relative;
+    width: 100px;
+    padding: 0 30 90 30;
+    min-height: 250px;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 120%;
+    line-height: 1.7em;
+  } 
 
   .control {
     display: flex;
@@ -161,6 +168,11 @@ section {
   .card-buttons {
     margin: 5px 0px;
     font-weight: 700;
+  }
+
+  #showAnswerButton {
+    background-color: black;
+    color: white;
   }
   #hideAnswerButton {
     display: none;
