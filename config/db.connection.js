@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 /* === System Variables === */
-const MONGODB_URI = 'mongodb+srv://truengsuksilp:QMjzD9lnAdoYrPpe@cluster0.djerc.mongodb.net/w3Schools?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 /* === Connect & Log === */
 mongoose.connect(MONGODB_URI);

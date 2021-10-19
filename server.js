@@ -7,7 +7,7 @@ const controllers = require('./controllers');
 
 /* === System Variables === */
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 /* === System Config === */
 app.set('view engine', 'ejs');
