@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/main.css'}) %>
+<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/src/main.css'}) %>
 
 <body>
 
   <%- include('./partials/_nav.ejs', { page: `ReVamp(ire)`}) %>
 
-  <section class='card columns is-mobile'>
+  <section class='card html-card columns is-mobile'>
+
+    <!-- LEFT CARD -->
+    <article class='card-content card-left column'>
+      <h1 class='card-title'> HTML </h1>
+      <h3 class='card-desc'> The language for building web pages </h3>
+      <div class='card-left-buttons'>
+        <a href="/exercises/html/" class='button card-buttons'id="is-w3-green">Learn HTML</a>
+        <a href="https://www.w3schools.com/tags/default.asp" class='button card-buttons'id="is-yellow">HTML Reference</a>
+      
+      </div>
+    </article>
+
+    <!-- RIGHT CARD -->
+    <article class='card-content card-right column'>
+      <h2 class='card-header'> HTML Example: </h2>
+      <div class='card-ide'>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod debitis quos culpa sit beatae vero accusamus autem? Accusantium, voluptas aspernatur ex ea illum neque ducimus velit optio ut dicta facere!
+      </div>
+      <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
+
+    </article>
+  </section>
+
+  <section class='card css-card columns is-mobile'>
+
+    <!-- LEFT CARD -->
+    <article class='card-content card-left column'>
+      <h1 class='card-title'> CSS </h1>
+      <h3 class='card-desc'> The language for styling web pages </h3>
+      <div class='card-left-buttons'>
+        <a href="https://www.w3schools.com/css/default.asp" class="button card-buttons"id="is-w3-green">Learn CSS</a>
+        <a href="https://www.w3schools.com/cssref/default.asp" class="button is-dark card-buttons">CSS Reference</a>
+      </div>
+    </article>
+
+    <!-- RIGHT CARD -->
+    <article class='card-content card-right column'>
+      <h2 class='card-header'> CSS Example: </h2>
+      <div class='card-ide'>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod debitis quos culpa sit beatae vero accusamus autem? Accusantium, voluptas aspernatur ex ea illum neque ducimus velit optio ut dicta facere!
+      </div>
+      <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
+
+    </article>
+  </section>
+
+
+  <section class='card js-card columns is-mobile'>
 
     <!-- LEFT CARD -->
     <article class='card-content card-left column'>
       <h1 class='card-title'> JavaScript </h1>
       <h3 class='card-desc'> The language for programming web pages </h3>
       <div class='card-left-buttons'>
-        <a href="/exercises/js/" class='button is-primary card-buttons'>Learn JavaScript</a>
-        <a href="https://www.w3schools.com/jsref/" class='button is-primary card-buttons'>JavaScript References</a>
+        <a href="/exercises/js/" class='button card-buttons'id='is-w3-green'>Learn JavaScript</a>
+        <a href="https://www.w3schools.com/jsref/" class='button is-dark card-buttons'>JavaScript Reference</a>
       </div>
     </article>
 
@@ -40,18 +90,12 @@
           <br>
           &rcub;
         <br>
-        &lt;/script&gt;
-
-     <!--    <p>Line 1</p>
-        <p>Line 2</p>
-        <p>Line 3</p>
-        <p>Line 4</p>
-        <p>Line 5</p> -->              
+        &lt;/script&gt;            
       </div>
-      <button class="button is-primary card-buttons">Try it Yourself</button>      
+      <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_default" class="button card-buttons"id='is-w3-green'>Try it Yourself</a>      
 
     </article>
   </section>
-    
+
 </body>
 </html>

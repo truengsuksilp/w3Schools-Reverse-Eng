@@ -1,0 +1,145 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+/* Section and article - containers */
+main {
+  display: flex;
+}
+main .fa-bars {
+  font-size: 21px;
+  margin-bottom: 60px;
+}
+
+aside {
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 40vh;
+  padding: 0px;
+}
+aside .aside-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+  font-size: 22px;
+}
+aside .aside-header a {
+  color: #000;
+}
+aside .aside-tracker {
+  padding: 10px 5px 5px 10px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #E7E9EB;
+}
+aside .menu-label {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+}
+aside #menuLabel {
+  margin-top: 0px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+aside .menu-list {
+  padding-left: 5px;
+  font-size: 16px;
+  color: #E7E9EB;
+}
+aside .menu-list :hover li {
+  background-color: #888888;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: "Source Sans Pro", sans-serif;
+  max-width: 60vh;
+}
+section .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  min-width: 70vh;
+}
+section .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+section :hover .button {
+  color: white;
+}
+section #submitButton {
+  background-color: #04AA6D;
+}
+section #showAnswerButton, section #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+section :hover #showAnswerButton, section #hideAnswerButton {
+  background-color: #3b3b3b;
+}
+
+/* card-content: areas */
+.card-top .card-title {
+  font-size: 40px;
+  font-weight: 600;
+}
+.card-top .card-desc {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.card-body {
+  background-color: lightgray;
+  padding: 10px;
+  min-height: 200px;
+}
+.card-body .control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.card-body .input {
+  width: 10vh;
+  margin: 10px;
+}
+
+.card-lower {
+  display: flex;
+  justify-content: space-between;
+}
+.card-lower .card-buttons {
+  margin: 5px 0px;
+  font-weight: 700;
+}
+.card-lower #hideAnswerButton {
+  display: none;
+}
+
+footer {
+  margin: 20px 0px 0px 5px;
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  max-width: calc(30vh - 5px);
+  text-align: center;
+}
+footer #checkAnswer {
+  width: 150px;
+}
+
+/*# sourceMappingURL=exercise.css.map */
