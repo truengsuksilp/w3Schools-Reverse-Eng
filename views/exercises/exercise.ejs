@@ -1,75 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     
   <%- include('../partials/_head.ejs', { 
     page: `ReVamp(ire)`, 
-    cssFile: '/styles/exercise.css'
+    cssFile: '/styles/src/exercise.css'
   }) %>
   <%- include('../partials/_head_js.ejs', { 
     jsFile: '/scripts/main.js'}) %>
 
 <body>
-  <section class='card'>
-    <article class='card-content'>
-      <div class="card-top">
-        <h2 class='card-title'>Exercise</h2>
-        <p class='card-desc'><%= question.prompt %></p>
-      </div>
 
-      <!-- FORM -->
-      <div class="card-body">
+  <main>
+    <!-- Aside Bar: To be replaced by Accordion later -->
+    
+    <aside class="menu">
 
-        <% const url = `/exercises/${question.exercise_id.language}/${question._id}/${question.order}` %>
+      <!-- Header: Icons, Completion Tracker -->
+      <section class="aside-header">
+        <a href="/">
+          <i class="fas fa-home"></i>
+        </a>
+        <a href="/">
+          <i class="fas fa-redo-alt"></i>
+        </a>
+        <a>
+          <i class="fas fa-times"></i>
+        </a>
+      </section>
+      <section class="aside-tracker">
+        <h5>Completed 0 of 10 Exercises</h5>
+      </section>
 
-        <form 
-          action = '/js/0/0'
-          method='POST'>
+      <!-- Loop through all Topics -->
+      <% for (i in allExercises) { %>
+        <p class="menu-label" id="menuLabel">
+          <%= allExercises[i].topic %>
+        </p>
 
-          <!-- CODE INPUT -->
-          <div class="field card-mid">
-            <div class="control">
-              <p>var</p>
-              <input 
-                type="text" 
-                class="input"
-                name="user_answer_1"
-                id="input1"
-              >
-              <p>=</p>
-              <input 
-                type="text" 
-                class="input"
-                name="user_answer_2"
-                id='input2'
-              >
-            </div>
-            <p class='feedback'></p>
-          </div>   
+        <!-- All questions: Cannot update the link to root -->
+        <ul class="menu-list">
+          <% for (i in allQuestions) { %>
+            <li>
+              <a href=`/`>
+                Exercise <%= allQuestions[i].order%>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      <% } %>
+    </aside>
 
-          <!-- BUTTONS -->
-          <div class="field">
-            <div class="control card-lower">
-                <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
-                <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
-                <button class="card-buttons button is-dark" id='hideAnswerButton'>Hide Answer</button>
-            </div>
+    <!-- Exercise Card -->
+
+    <section class='card'>
+
+      <article class='card-content'>
+        
+        <!-- Show Burger when sidebar is hidden -->
+        <i class="fas fa-bars"></i>
+
+        <div class="card-top">
+          <h2 class='card-title'>Exercise</h2>
+          <p class='card-desc'><%= question.prompt %></p>
         </div>
-        </form>   
-      </div>
 
-    </article>
-  </section>
+        <!-- FORM -->
+        <div class="card-body">
 
-  <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
-  <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
-  <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+          <form 
+            action = <%= url %>
+            method='POST'>
+
+            <!-- CODE INPUT -->
+            <div class="field card-mid">
+              <div class="control">
+                <p>var</p>
+                <input 
+                  type="text" 
+                  class="input"
+                  name="user_answer_1"
+                  id="input1"
+                >
+                <p>=</p>
+                <input 
+                  type="text" 
+                  class="input"
+                  name="user_answer_2"
+                  id='input2'
+                >
+              </div>
+              <p class='feedback'></p>
+            </div>   
+
+            <!-- Submit BUTTONS -->
+            <div class="field">
+              <div class="control card-lower">
+                  <button class="card-buttons button" id='submitButton'>Submit</button>
+              </div>
+          </div>
+          </form>   
+
+          <!-- Show Answer buttons -->
+          <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
+          <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+    <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
+    <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+  </footer>
 
     
 </body>
