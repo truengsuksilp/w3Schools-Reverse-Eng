@@ -12,6 +12,21 @@ a.navbar-link {
     font-weight: 700;
 }
 
+/* a.navbar-item {
+    padding: 2px 0 2px 6px;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+} */
+
+.navbar-dropdown {
+    position: absolute;
+    background-color: rgb(40,42,53);
+    color: white; /* FIXME */
+}
+
 body {
     background-color: #282A35;
     font-family: 'Source Sans Pro', sans-serif;
