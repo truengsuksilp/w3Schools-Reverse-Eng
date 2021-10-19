@@ -1,5 +1,162 @@
 @use "../variables" as *;
+$primary-color: #04AA6D;
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+a.navbar-link {
+    width: 127px;
+    padding: 24px 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* a.navbar-item {
+    padding: 2px 0 2px 6px;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+} */
+
+.navbar-dropdown {
+    position: absolute;
+    background-color: rgb(40,42,53);
+    color: white; /* FIXME */
+}
+
+body {
+    background-color: #282A35;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
+}
+
+/* === Section Styling === */
+
+section.card {
+    max-width: 1400px;
+    margin: -12px auto;
+    gap: 0px;
+/*     border: 3px solid red; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 0px;
+    padding: 3%;
+}
+
+section.html-card {
+    background-color: #282A35;
+    color: white;
+}
+
+section.css-card {
+    background-color: #D9EEE1;
+    color: black;
+}
+
+section.js-card {
+    background-color: #FFF4A3;
+    color: black;
+}
+
+/* === Left Card Styling === */
+
+article.card-left {
+/*     border: 3px solid blue; */
+    text-align: center;
+}
+
+h1 {
+    margin-top: -18px;
+    font-size: 100px;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 1em 0;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+div.card-left-buttons {
+    display: grid;
+    margin: auto;
+    width: 200px;
+}
+
+/* === Right Card Styling === */
+
+article.card-right {
+    margin: auto;
+/*     border: 3px solid orange; */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    padding: 16px;
+    background-color: #E7E9EB;
+    color: black;
+}
+
+h2.card-header {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+div.card-ide {
+    margin: 20px, 0;
+    border-left: 4px solid $primary-color;
+    padding: 8px 12px;
+    background-color: white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 15px;
+}
+
+/* === Button Styling === */
+
+.button {
+    width: 200px;
+    border: none;
+    border-radius: 25px;
+    margin: 7px;
+    padding: 8px 16px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+a.card-buttons {
+    margin-top: 15px;
+}
+
+.button .is-dark {
+    background-color: white;
+    color: #000;
+}
+
+a#is-yellow {
+    background-color: #FFF4A3;
+    color: black;
+}
+
+#is-w3-green {
+    background-color: $primary-color;
+    color: white;
+}
+
+:hover #is-w3-green {
+    background-color:#059862;
+} /* TODO */
+
+/* === Login Page === */
 
 
 
+/* -- Footer -- */
 
+
+/*# sourceMappingURL=main.css.map */

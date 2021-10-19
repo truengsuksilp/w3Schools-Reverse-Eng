@@ -12,12 +12,28 @@ a.navbar-link {
     font-weight: 700;
 }
 
+/* a.navbar-item {
+    padding: 2px 0 2px 6px;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+} */
+
+.navbar-dropdown {
+    position: absolute;
+    background-color: rgb(40,42,53);
+    color: white; /* FIXME */
+}
+
 body {
     background-color: #282A35;
-
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
 }
+
+/* === Section Styling === */
 
 section.card {
     max-width: 1400px;
@@ -45,13 +61,11 @@ section.js-card {
     color: black;
 }
 
+/* === Left Card Styling === */
+
 article.card-left {
 /*     border: 3px solid blue; */
     text-align: center;
-}
-
-article.card-right {
-    padding: 16px;
 }
 
 h1 {
@@ -72,11 +86,14 @@ div.card-left-buttons {
     width: 200px;
 }
 
+/* === Right Card Styling === */
+
 article.card-right {
     margin: auto;
 /*     border: 3px solid orange; */
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    padding: 16px;
     background-color: #E7E9EB;
     color: black;
 }
@@ -96,9 +113,11 @@ div.card-ide {
     font-size: 15px;
 }
 
+/* === Button Styling === */
 
 .button {
     width: 200px;
+    border: none;
     border-radius: 25px;
     margin: 7px;
     padding: 8px 16px;
@@ -107,13 +126,8 @@ div.card-ide {
     font-weight: 700;
 }
 
-.button .is-primary {
-    background-color: #04AA6D;
-    color: white;
-}
-
-:hover .button .is-primary {
-    background-color:#059862;
+a.card-buttons {
+    margin-top: 15px;
 }
 
 .button .is-dark {
@@ -121,6 +135,19 @@ div.card-ide {
     color: #000;
 }
 
+a#is-yellow {
+    background-color: #FFF4A3;
+    color: black;
+}
+
+#is-w3-green {
+    background-color: #04AA6D;
+    color: white;
+}
+
+:hover #is-w3-green {
+    background-color:#059862;
+} /* TODO */
 
 /* === Login Page === */
 
