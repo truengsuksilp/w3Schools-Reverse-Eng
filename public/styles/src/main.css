@@ -72,6 +72,32 @@ section #learnHTMLButton {
   background-color: #04AA6D;
 }
 
+/* === Both Card Styling === */
+article.card-content .button {
+  width: 200px;
+  border: none;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+}
+article.card-content a.card-buttons {
+  margin-top: 15px;
+}
+article.card-content #is-yellow {
+  background-color: #FFF4A3;
+  color: black;
+}
+article.card-content #is-w3-green {
+  background-color: #04AA6D;
+  color: white;
+}
+article.card-content :hover #is-w3-green {
+  background-color: #059862;
+}
+
 /* === Left Card Styling === */
 article.card-left {
   text-align: center;
@@ -115,43 +141,7 @@ article.card-right .card-ide {
   font-size: 15px;
 }
 
-/* === Button Styling === */
-.button {
-  width: 200px;
-  border: none;
-  border-radius: 25px;
-  margin: 7px;
-  padding: 8px 16px;
-  vertical-align: middle;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-a.card-buttons {
-  margin-top: 15px;
-}
-
-.button .is-dark {
-  background-color: white;
-  color: #000;
-}
-
-a#is-yellow {
-  background-color: #FFF4A3;
-  color: black;
-}
-
-#is-w3-green {
-  background-color: #04AA6D;
-  color: white;
-}
-
-:hover #is-w3-green {
-  background-color: #059862;
-}
-
 /* TODO */
-/* === Login Page === */
 /* -- Footer -- */
 /*# sourceMappingURL=main.css.map */
 

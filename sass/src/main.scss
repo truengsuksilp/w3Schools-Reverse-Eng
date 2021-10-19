@@ -89,6 +89,35 @@ section {
     }
 }
 
+/* === Both Card Styling === */
+
+article.card-content {
+    .button {
+        width: 200px;
+        border: none;
+        border-radius: 25px;
+        margin: 7px;
+        padding: 8px 16px;
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    a.card-buttons {
+        margin-top: 15px;
+    }
+    #is-yellow {
+        background-color: #FFF4A3;
+        color: black;
+    }
+    #is-w3-green {
+        background-color: $primary-color;
+        color: white;
+    }
+    :hover #is-w3-green {
+        background-color:#059862;
+    }
+}
+
 /* === Left Card Styling === */
 
 article.card-left {
@@ -139,47 +168,9 @@ article.card-right {
 
 }
 
-/* === Button Styling === */
 
-.button {
-    width: 200px;
-    border: none;
-    border-radius: 25px;
-    margin: 7px;
-    padding: 8px 16px;
-    vertical-align: middle;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-a.card-buttons {
-    margin-top: 15px;
-}
-
-.button .is-dark {
-    background-color: white;
-    color: #000;
-}
-
-a#is-yellow {
-    background-color: #FFF4A3;
-    color: black;
-}
-
-#is-w3-green {
-    background-color: $primary-color;
-    color: white;
-}
-
-:hover #is-w3-green {
-    background-color:#059862;
-} /* TODO */
-
-/* === Login Page === */
-
-
+/* TODO */
 
 /* -- Footer -- */
-
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,101 @@
+@use "../variables" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+/* ENTIRE CARD */
+
+section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 93vh;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  .card-content {
+    height: 482px;
+    width: 478px;
+    margin: auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    padding: 48px;
+  }
+}
+
+
+
+/* CARD Top */
+
+article {
+    .card-title {
+        color: black;
+        font-size: 29px;
+        font-weight: 700;
+    }
+}
+
+/* Email & Pass */
+
+div.field {
+  margin-top: 30px;
+
+  .label-left-right {
+    display: flex;
+    justify-content: space-between;
+  }
+  .label-left {
+    display: inline;
+  }
+  .label-right {
+    display: inline;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .label-right a {
+    color: rgb(0, 180, 0);
+    font-weight: 600;
+  }
+}
+
+
+/* Button and text below buttons */
+div.field {
+    .card-buttons {
+    margin: 5px 0px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    border-radius: 25px;
+    padding: 0 40px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    }
+    .terms-of-service {
+    margin-top: 18px;
+    font-size: 13px;
+    }
+    span.bold {
+    font-weight: 700;
+    }
+}
+/* Footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 35px;
+  box-sizing: border-box;
+  padding: 20px;
+  line-height: 19px;
+  text-align: center;
+  color: rgba(40, 42, 53, .65);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+}
