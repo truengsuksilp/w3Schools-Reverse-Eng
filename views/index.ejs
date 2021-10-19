@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/main.css'}) %>
+<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/src/main.css'}) %>
 
 <body>
 
@@ -14,8 +14,8 @@
       <h1 class='card-title'> HTML </h1>
       <h3 class='card-desc'> The language for building web pages </h3>
       <div class='card-left-buttons'>
-        <a href="/exercises/html/" class='button is-primary card-buttons'>Learn HTML</a>
-        <a href="https://www.w3schools.com/tags/default.asp" class='button is-primary card-buttons'>HTML References</a>
+        <a href="/exercises/html/" class='button card-buttons is-primary' id='learnHTMLButton'>Learn HTML</a>
+        <a href="https://www.w3schools.com/tags/default.asp" class='button  card-buttons has-background-white has-text-black', id= 'refHTMLButton'>HTML References</a>
       
       </div>
     </article>
