@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     
   <%- include('../partials/_head.ejs', { 
     page: `ReVamp(ire)`, 
-    cssFile: '/styles/exercise.css'
+    cssFile: '/styles/src/exercise.css'
   }) %>
   <%- include('../partials/_head_js.ejs', { 
     jsFile: '/scripts/main.js'}) %>
@@ -26,10 +19,8 @@
       <!-- FORM -->
       <div class="card-body">
 
-        <% const url = `/exercises/${question.exercise_id.language}/${question._id}/${question.order}` %>
-
         <form 
-          action = '/js/0/0'
+          action = <%= url %>
           method='POST'>
 
           <!-- CODE INPUT -->
@@ -58,7 +49,7 @@
             <div class="control card-lower">
                 <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
                 <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
-                <button class="card-buttons button is-dark" id='hideAnswerButton'>Hide Answer</button>
+                <button class="card-buttons button is-dark invisible" id='hideAnswerButton'>Hide Answer</button>
             </div>
         </div>
         </form>   
