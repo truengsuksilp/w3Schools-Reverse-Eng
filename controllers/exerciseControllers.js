@@ -38,7 +38,7 @@ router.get('/:language/:question_id/:order', async (req, res) => {
         // console.log(foundAllQuestions);
         
         const foundAllExercises = await Exercise.find({})
-        console.log(foundAllExercises);
+        // console.log(foundAllExercises);
 
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
         console.log(currentURL);

@@ -1,11 +1,12 @@
 /* === Define variables === */
-const $submit = $('#submitButton');
-const $showAns = $('#showAnswerButton');
-
 const correctAnswer1 = document.querySelector('#correctAnswer1').innerText;
 const correctAnswer2 = document.querySelector('#correctAnswer2').innerText;
 
 /* === Logic === */
+
+const hide = function (){
+    $('#hideAnswerButton').hide();
+}
 
 const checkAnswers = function (ans1, ans2) {
 
@@ -29,7 +30,8 @@ const showAnswers = function () {
     document.querySelector('#input2').value = correctAnswer2;
 
     $('#showAnswerButton').hide();
-    $('#hideAnswerButton').css('display', 'block');
+    $('#hideAnswerButton').show();
+    // $('#hideAnswerButton').css('display', 'block');
 
 }
 
@@ -38,13 +40,13 @@ const hideAnswers = function () {
     document.querySelector('#input2').value = "";
 
     $('#showAnswerButton').show();
-    $('#hideAnswerButton').css('display', 'none');
+    $('#hideAnswerButton').hide();
 
 }
 
 /* === Event Listeners === */
 
-// $(window).on("load", hide());
+$(window).on("load", hide());
 
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#showAnswerButton').click( (event) => showAnswers());
