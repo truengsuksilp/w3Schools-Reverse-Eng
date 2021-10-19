@@ -12,7 +12,8 @@ const UserAnswer = require('../models/UserAnswer');
 // Show: Unspecified
 router.get('/:language', async (req, res) => {
     try {
-        const foundQuestion = await Question.findOne({})
+        const foundExercise = await Exercise.findOne({order: 1})
+        const foundQuestion = await Question.findOne({exercise_id: foundExercise._id, order: 1})
             .populate('exercise_id')
 
         const url = `/exercises/${req.params.language}/${foundQuestion._id}/${foundQuestion.order}`

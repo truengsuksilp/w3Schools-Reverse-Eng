@@ -11,6 +11,10 @@ const ExerciseSchema = new mongoose.Schema(
         topic: {
             type: String,
             required: true,
+        },
+        order: {
+            type: Number,
+            required: true,
         }
     },
     {

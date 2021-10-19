@@ -76,20 +76,27 @@
             <!-- CODE INPUT -->
             <div class="field card-mid">
               <div class="control">
-                <p>var</p>
+                <p>
+                  <%= question.text_before_inputs %>
+                </p>
                 <input 
                   type="text" 
                   class="input"
                   name="user_answer_1"
                   id="input1"
                 >
-                <p>=</p>
+                <p>
+                  <%= question.text_between_inputs %>
+                </p>
                 <input 
                   type="text" 
                   class="input"
                   name="user_answer_2"
                   id='input2'
                 >
+                <p>
+                  <%= question.text_after_inputs %>
+                </p>
               </div>
               <p class='feedback'></p>
             </div>   
