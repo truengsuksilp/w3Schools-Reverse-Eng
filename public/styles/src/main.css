@@ -3,12 +3,18 @@
   box-sizing: border-box;
 }
 
-nav a.navbar-link {
+nav .navbar-link {
   width: 127px;
   padding: 24px 16px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-weight: 700;
+}
+nav .navbar-dropdown {
+  position: absolute;
+  background-color: #282a35;
+  color: white;
+  /* FIXME */
 }
 
 body {
@@ -66,16 +72,32 @@ section #learnHTMLButton {
   background-color: #04AA6D;
 }
 
+/* === Left Card Styling === */
+article.card-left {
+  text-align: center;
+}
 article.card-left div.card-left-buttons {
   display: grid;
   margin: auto;
   width: 200px;
 }
+article.card-left h1 {
+  margin-top: -18px;
+  font-size: 100px;
+  font-weight: 700;
+}
+article.card-left h3 {
+  margin: 1em 0;
+  font-size: 19px;
+  font-weight: 700;
+}
 
+/* === Right Card Styling === */
 article.card-right {
   margin: auto;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 16px;
   background-color: #E7E9EB;
   color: black;
 }
@@ -92,5 +114,45 @@ article.card-right .card-ide {
   font-family: "Inconsolata", monospace;
   font-size: 15px;
 }
+
+/* === Button Styling === */
+.button {
+  width: 200px;
+  border: none;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a.card-buttons {
+  margin-top: 15px;
+}
+
+.button .is-dark {
+  background-color: white;
+  color: #000;
+}
+
+a#is-yellow {
+  background-color: #FFF4A3;
+  color: black;
+}
+
+#is-w3-green {
+  background-color: #04AA6D;
+  color: white;
+}
+
+:hover #is-w3-green {
+  background-color: #059862;
+}
+
+/* TODO */
+/* === Login Page === */
+/* -- Footer -- */
+/*# sourceMappingURL=main.css.map */
 
 /*# sourceMappingURL=main.css.map */
