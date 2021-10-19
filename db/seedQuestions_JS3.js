@@ -21,8 +21,8 @@ const questions = [
         text_after_inputs: `"};`,
         correct_answer_1: 'country',
         correct_answer_2: 'Norway',
-        order: 1,
-
+        topic_order: 1,
+        order: 7,
     },
     {
         exercise_id: '616f3ab99d1e99ac72374147',
@@ -32,7 +32,8 @@ const questions = [
         text_after_inputs: '};',
         correct_answer_1: 'GoT.a',
         correct_answer_2: 'GoT.b',
-        order: 2,
+        topic_order: 2,
+        order: 8,
     },
     {
         exercise_id: '616f3ab99d1e99ac72374147',
@@ -42,7 +43,8 @@ const questions = [
         text_after_inputs: '};',
         correct_answer_1: 'GoT[a]',
         correct_answer_2: 'GoT[b]',
-        order: 3,
+        topic_order: 3,
+        order: 9,
     }
 ]
 

@@ -21,8 +21,8 @@ const questions = [
         text_after_inputs: ``,
         correct_answer_1: 'carName',
         correct_answer_2: 'Volvo',
+        topic_order: 1,
         order: 1,
-
     },
     {
         exercise_id: '616f3ab99d1e99ac72374145',
@@ -32,6 +32,7 @@ const questions = [
         text_after_inputs: ``,
         correct_answer_1: 'x',
         correct_answer_2: '50',
+        topic_order: 2,
         order: 2,
     },
     {
@@ -39,9 +40,10 @@ const questions = [
         prompt: 'Display the sum of 5 + 10, using two variables: x and y.  Assume: const y = 10;',
         text_before_inputs: 'var ',
         text_between_inputs: ` = `,
-        text_after_inputs: `; console.log("Hello World");`,
+        text_after_inputs: `; console.log(x + y);`,
         correct_answer_1: 'x',
         correct_answer_2: '5',
+        topic_order: 3,
         order: 3,
     }
 ]

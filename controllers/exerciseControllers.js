@@ -36,7 +36,7 @@ router.get('/:language/:question_id/:order', async (req, res) => {
             .populate('exercise_id');
 
         const foundAllExercises = await Exercise.find({})
-        console.log(foundAllExercises);
+        // console.log(foundAllExercises);
 
         // Nested array.  Each element is an array of 3 question objects.
         const allQuestions = [];
@@ -45,7 +45,7 @@ router.get('/:language/:question_id/:order', async (req, res) => {
             const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
             allQuestions.push(questions);
         }
-        console.log(allQuestions);
+        // console.log(allQuestions);
 
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
         console.log(currentURL);
@@ -66,7 +66,7 @@ router.get('/:language/:question_id/:order', async (req, res) => {
 
 });
 
-// SHOW : Get Answers - ASYNC NOT WORKING
+// SHOW : Get Answers
 
 router.post('/:language/:question_id/:order', async (req, res, next) => {
 
@@ -77,6 +77,7 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
 
     try {
         const foundQuestion = await Question.findById(req.params.question_id);
+        const noOfQuestions = await Question.count({});
 
         const userAnswerLog = { 
             user_id: 'admin', 
@@ -85,12 +86,15 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
 
         checkAns1 = user_answer_1 === foundQuestion.correct_answer_1;
         checkAns2 = user_answer_2 === foundQuestion.correct_answer_2;
+        isLastQuestion = parseInt(req.params.order) === noOfQuestions;
 
-        if ( checkAns1 && checkAns2) { 
+        if ( checkAns1 && checkAns2 && !isLastQuestion) { 
             UserAnswer.create(userAnswerLog);
             console.log(`Logged user progress`);
 
             const nextQuestion = parseInt(req.params.order) + 1
+            
+            // TO DO - Add a congrats page!!!
             
             const foundQuestion = await Question.findOne({order: nextQuestion});    
             const nextURL = `/exercises/${req.params.language}/${foundQuestion._id}/${nextQuestion}`;
@@ -102,9 +106,16 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
             
             return res.redirect(nextURL);
 
+        } else if (isLastQuestion) {
+
+            res.send({
+                msg: " You've done the last question!! ", 
+                params: req.params 
+            })
+            
         } else {
             console.log('Incorrect ans, not logged');
-            console.log([user_answer_1, correct_answer_1, user_answer_2, correct_answer_2]);
+            console.log([user_answer_1, user_answer_2]);
         }
 
     } catch (error) {

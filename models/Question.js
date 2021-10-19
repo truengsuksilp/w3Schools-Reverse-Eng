@@ -33,9 +33,13 @@ const QuestionSchema = new mongoose.Schema(
             type: String,
             require: true,
         },
-        order: {
+        topic_order: {
             type: Number,
             require: true,
+        },
+        order: {
+            type: Number,
+            require: true,            
         }
     },
     {
