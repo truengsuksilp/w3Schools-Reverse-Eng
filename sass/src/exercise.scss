@@ -4,16 +4,21 @@
 
 * {
   box-sizing: border-box;
-  // border: 1px solid rebeccapurple;
+  border: 1px solid rebeccapurple;
 }
   
 /* Section and article - containers */
 
 main {
   display: flex;
+  width: 100%;
+  max-width: 1400px;
+  //align-content: left;
+  
   .fa-bars {
+    height: 90px;
     font-size: 21px;
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
   }
 }
 
@@ -64,8 +69,14 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400;
   font-family: 'Source Sans Pro', sans-serif;
   max-width: 60vh;
+
+  .card {
+    //padding-left: 20px;
+  }
 
   .card-content {
     display: flex;
@@ -74,6 +85,7 @@ section {
     min-height: 400px;
     min-width: 70vh;
   }
+
   .button {
     width: 200px;
     border-radius: 25px;
@@ -103,21 +115,30 @@ section {
 /* card-content: areas */
 
 .card-top {
-    .card-title {
-        font-size: 40px;
-        font-weight: 600;
-    }     
-    .card-desc {
-        font-size: 20px;
-        font-weight: 400;
-    }
+  h2.card-title {
+    margin: 10 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+  }    
+  p.card-desc {
+    display: block;
+    margin: 1.2 em 0;
+    font-family: 'Verdana', sans-serif;
+    font-size: 15px;
+  }
 }
 
 
 .card-body {
+  position: relative;
   background-color: lightgray;
-  padding: 10px;
-  min-height: 200px;
+  padding: 0 30 90 30;
+  min-height: 250px;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-size: 120%;
+  line-height: 1.7em;
+  border-radius: 5px;
 
   .control {
     display: flex;
