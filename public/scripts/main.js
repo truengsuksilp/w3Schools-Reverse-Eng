@@ -6,6 +6,7 @@ const correctAnswer2 = document.querySelector('#correctAnswer2').innerText;
 
 const hide = function (){
     $('#hideAnswerButton').hide();
+    $('.fa-bars').hide();
 }
 
 const checkAnswers = function (ans1, ans2) {
@@ -44,6 +45,17 @@ const hideAnswers = function () {
 
 }
 
+const showSideBar = function () {
+    $('.menu').show();
+    $('.fa-bars').hide();
+    console.log('showSideBar function');
+}
+
+const hideSideBar = function () {
+    $('.menu').hide();
+    $('.fa-bars').show();
+}
+
 /* === Event Listeners === */
 
 $(window).on("load", hide());
@@ -51,4 +63,5 @@ $(window).on("load", hide());
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#showAnswerButton').click( (event) => showAnswers());
 $('#hideAnswerButton').click( (event) => hideAnswers());
-
+$('.fa-times').click( (event) => hideSideBar());
+$('.fa-bars').click( (event) => showSideBar());

@@ -15,9 +15,25 @@
     
     <aside class="menu">
 
+      <!-- Header: Icons, Completion Tracker -->
+      <section class="aside-header">
+        <a href="/">
+          <i class="fas fa-home"></i>
+        </a>
+        <a href="/">
+          <i class="fas fa-redo-alt"></i>
+        </a>
+        <a>
+          <i class="fas fa-times"></i>
+        </a>
+      </section>
+      <section class="aside-tracker">
+        <h5>Completed 0 of 10 Exercises</h5>
+      </section>
+
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <p class="menu-label">
+        <p class="menu-label" id="menuLabel">
           <%= allExercises[i].topic %>
         </p>
 
@@ -37,7 +53,12 @@
     <!-- Exercise Card -->
 
     <section class='card'>
+
       <article class='card-content'>
+        
+        <!-- Show Burger when sidebar is hidden -->
+        <i class="fas fa-bars"></i>
+
         <div class="card-top">
           <h2 class='card-title'>Exercise</h2>
           <p class='card-desc'><%= question.prompt %></p>
@@ -74,14 +95,14 @@
             <!-- Submit BUTTONS -->
             <div class="field">
               <div class="control card-lower">
-                  <button class="card-buttons button is-primary" id='submitButton'>Submit</button>
+                  <button class="card-buttons button" id='submitButton'>Submit</button>
               </div>
           </div>
           </form>   
 
           <!-- Show Answer buttons -->
-          <button class="card-buttons button is-dark" id='showAnswerButton'>Show Answer</button>
-          <button class="card-buttons button is-dark invisible" id='hideAnswerButton'>Hide Answer</button>
+          <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
+          <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
         </div>
 
       </article>

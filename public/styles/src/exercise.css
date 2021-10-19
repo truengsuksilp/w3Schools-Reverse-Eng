@@ -7,21 +7,51 @@
 main {
   display: flex;
 }
+main .fa-bars {
+  font-size: 21px;
+  margin-bottom: 60px;
+}
 
 aside {
   border: 1px solid lightgray;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  width: 20vh;
-  padding: 10px;
+  width: 40vh;
+  padding: 0px;
+}
+aside .aside-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+  font-size: 22px;
+}
+aside .aside-header a {
+  color: #000;
+}
+aside .aside-tracker {
+  padding: 10px 5px 5px 10px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #E7E9EB;
 }
 aside .menu-label {
-  border: 1px solid lightgray;
   background-color: gray;
   color: white;
   padding: 5px;
+  font-size: 18px;
+}
+aside #menuLabel {
+  margin-top: 0px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 aside .menu-list {
   padding-left: 5px;
+  font-size: 16px;
+  color: #E7E9EB;
+}
+aside .menu-list :hover li {
+  background-color: #888888;
 }
 
 section {
@@ -29,10 +59,36 @@ section {
   justify-content: space-around;
   flex-wrap: wrap;
   font-family: "Source Sans Pro", sans-serif;
+  max-width: 60vh;
 }
 section .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 400px;
-  min-width: 100vh;
+  min-width: 70vh;
+}
+section .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+section :hover .button {
+  color: white;
+}
+section #submitButton {
+  background-color: #04AA6D;
+}
+section #showAnswerButton, section #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+section :hover #showAnswerButton, section #hideAnswerButton {
+  background-color: #3b3b3b;
 }
 
 /* card-content: areas */
@@ -75,12 +131,15 @@ section .card-content {
 }
 
 footer {
-  margin: 20px;
+  margin: 20px 0px 0px 5px;
   padding: 5px;
   color: gray;
   border: 1px solid lightgray;
-  max-width: 20vh;
+  max-width: calc(30vh - 5px);
   text-align: center;
+}
+footer #checkAnswer {
+  width: 150px;
 }
 
 /*# sourceMappingURL=exercise.css.map */
