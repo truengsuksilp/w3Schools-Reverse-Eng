@@ -39,10 +39,12 @@
 
         <!-- All questions: Cannot update the link to root -->
         <ul class="menu-list">
-          <% for (i in allQuestions) { %>
+          <% for (j in allQuestions) { %>
             <li>
-              <a href=`/`>
-                Exercise <%= allQuestions[i].order%>
+              <a 
+                href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
+              >
+                Exercise <%= allQuestions[i][j].order%>
               </a>
             </li>
           <% } %>

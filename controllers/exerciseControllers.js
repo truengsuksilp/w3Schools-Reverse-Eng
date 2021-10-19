@@ -31,21 +31,28 @@ router.get('/:language/:question_id/:order', async (req, res) => {
     // res.send({msg:'Specified', body: req.params});
 
     try {
-        const foundQuestion = await Question.findOne({order: req.params.order})
+        const foundQuestion = await Question.findOne({_id: req.params.question_id, order: req.params.order})
             .populate('exercise_id');
 
-        const foundAllQuestions = await Question.find({exercise_id: foundQuestion.exercise_id._id});
-        // console.log(foundAllQuestions);
-        
         const foundAllExercises = await Exercise.find({})
-        // console.log(foundAllExercises);
+        console.log(foundAllExercises);
+
+        // Nested array.  Each element is an array of 3 question objects.
+        const allQuestions = [];
+
+        for ( i in foundAllExercises ) {
+            const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
+            allQuestions.push(questions);
+        }
+        console.log(allQuestions);
 
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
         console.log(currentURL);
         
         context = {
             question: foundQuestion,
-            allQuestions: foundAllQuestions,
+            // allQuestions: foundAllQuestions,
+            allQuestions: allQuestions,
             allExercises: foundAllExercises,
             url: currentURL,
         };
