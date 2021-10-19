@@ -1,5 +1,4 @@
 @use "../variables" as *;
-$primary-color: #04AA6D;
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro:wght@400;700&display=swap');
 
@@ -21,6 +20,7 @@ nav {
         background-color: rgb(40,42,53);
         color: white; /* FIXME */
     }
+
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
 
-    
     .card {
         max-width: 1400px;
         margin: -12px auto;
@@ -39,20 +38,16 @@ body {
         padding: 3%;
         color: black;
     }
-
     .html-card {
         background-color: $html-card-color;
         color: white;
     }
-
     .css-card {
         background-color: $css-card-color;
     }
-
     .js-card {
         background-color: $js-card-color;
     }  
-
     .button {
         width: 200px;
         border-radius: 25px;
@@ -62,7 +57,13 @@ body {
         font-size: 18px;
         font-weight: 700;
     }
-    
+    #is-w3-green {
+        background-color: $primary-color;
+        color: white;
+    }
+    :hover #is-w3-green {
+        background-color:#059862;
+    }
 }
 
 section {
@@ -108,13 +109,6 @@ article.card-content {
     #is-yellow {
         background-color: #FFF4A3;
         color: black;
-    }
-    #is-w3-green {
-        background-color: $primary-color;
-        color: white;
-    }
-    :hover #is-w3-green {
-        background-color:#059862;
     }
 }
 
@@ -165,7 +159,6 @@ article.card-right {
         font-family: 'Inconsolata', monospace;
         font-size: 15px;
     }
-
 }
 
 

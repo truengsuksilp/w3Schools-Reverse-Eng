@@ -51,6 +51,13 @@ body .button {
   font-size: 18px;
   font-weight: 700;
 }
+body #is-w3-green {
+  background-color: #04AA6D;
+  color: white;
+}
+body :hover #is-w3-green {
+  background-color: #059862;
+}
 
 section .card-left {
   text-align: center;
@@ -89,13 +96,6 @@ article.card-content a.card-buttons {
 article.card-content #is-yellow {
   background-color: #FFF4A3;
   color: black;
-}
-article.card-content #is-w3-green {
-  background-color: #04AA6D;
-  color: white;
-}
-article.card-content :hover #is-w3-green {
-  background-color: #059862;
 }
 
 /* === Left Card Styling === */
