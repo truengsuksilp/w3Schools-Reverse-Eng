@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 
 /* === System Variables === */
+require("dotenv").config();
 const MONGODB_URI = process.env.MONGODB_URI;
 
 /* === Connect & Log === */

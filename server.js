@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 
 /* === Internal Modules === */
 const controllers = require('./controllers');
+require("dotenv").config();
 
 /* === System Variables === */
 const app = express();
