@@ -1,22 +1,22 @@
 /* === Define variables === */
-const correctAnswer1 = $('#correctAnswer1').html();
-const correctAnswer2 = $('#correctAnswer2').html();
+const correctAnswer1 = document.querySelector('#correctAnswer1').innerText;
+const correctAnswer2 = document.querySelector('#correctAnswer2').innerText;
 
 /* === Logic === */
 
 const hide = function (){
     $('#hideAnswerButton').hide();
     $('.fa-bars').hide();
-    $('footer').hide();
 }
 
 const checkAnswers = function (ans1, ans2) {
 
-    const input1 = $('#input1').val();
-    const input2 = $('#input2').val();
-    const feedback = $('.feedback');
+    const input1 = document.querySelector('#input1').value;
+    const input2 = document.querySelector('#input2').value;
+    const feedback = document.querySelector('.feedback');
 
-    // NOTE: Use localeCompare: Because input1 is in a different memory location
+    // localeCompare:
+    // Because input1 is in a different mem location
     if (input1.localeCompare(ans1) === 0 && input2.localeCompare(ans2) === 0) {
         feedback.innerText = 'Correct!'
     } else {
@@ -25,16 +25,18 @@ const checkAnswers = function (ans1, ans2) {
 }
 
 const showAnswers = function () {
-    $('#input1').val(correctAnswer1);
-    $('#input2').val(correctAnswer2);
+    document.querySelector('#input1').value = correctAnswer1;
+    document.querySelector('#input2').value = correctAnswer2;
 
     $('#showAnswerButton').hide();
     $('#hideAnswerButton').show();
+    // $('#hideAnswerButton').css('display', 'block');
+
 }
 
 const hideAnswers = function () {
-    $('#input1').val('');
-    $('#input2').val('');
+    document.querySelector('#input1').value = "";
+    document.querySelector('#input2').value = "";
 
     $('#showAnswerButton').show();
     $('#hideAnswerButton').hide();
@@ -44,6 +46,7 @@ const hideAnswers = function () {
 const showSideBar = function () {
     $('.menu').show();
     $('.fa-bars').hide();
+    console.log('showSideBar function');
 }
 
 const hideSideBar = function () {
@@ -52,21 +55,18 @@ const hideSideBar = function () {
 }
 
 const hideQuestions = function (topic_number) {
+
     if( $(`li.topic_${topic_number}`).css('display') === 'block' ) {
         $(`li.topic_${topic_number}`).css('display','none');
     } else {
         $(`li.topic_${topic_number}`).css('display','block');
     }
+    
 }
 
 /* === Event Listeners === */
 
 $(window).on("load", hide());
-
-// Accordion: Add eventListen to each topic tag independently
-for( let i = 0; i < $(`.menu-label`).length; i++ ){
-    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
-}
 
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#submitButton').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
@@ -75,3 +75,7 @@ $('#hideAnswerButton').click( (event) => hideAnswers());
 $('.fa-times').click( (event) => hideSideBar());
 $('.fa-bars').click( (event) => showSideBar());
 
+// Accordion: Listen to each topic tag independently
+for( let i = 0; i < $(`.menu-label`).length; i++ ){
+    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
+}
