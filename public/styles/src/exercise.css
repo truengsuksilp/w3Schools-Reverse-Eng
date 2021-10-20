@@ -65,12 +65,15 @@ section {
   max-width: 1400;
   font-family: "Source Sans Pro", sans-serif;
 }
+section .card {
+  padding-left: 20px;
+}
 section .card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
-  min-width: 70vh;
+  min-width: 100vh;
 }
 section .button {
   width: 200px;
