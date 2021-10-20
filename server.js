@@ -36,16 +36,6 @@ app.use(
 // NavBar: 
 app.use(require('./utils/navlinks'));
 
-// NavBar MVP Middleware
-// app.use(function (req, res, next) {
-//     if (req.session.currentUser) {
-//       res.locals.user = req.session.currentUser;
-//       next();
-//     } else {
-//       next();
-//     }
-// });
-
 // Use Security packages: helmet, mongoSanitize, morgan, rate limit, hpp
 
 /* === Routes === */
@@ -98,15 +88,12 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
 // methodOverride: CRUD - So we can use UPDATE as PUT
 // urlEncoded: CRUD - So we can use CREATE and UPDATE with req.body
 
-// == Test URL 
-// Test 'http://localhost:5000/exercises/js/1/1' 
-// W3 URL: www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1
-
-
-// == add these folders & files
-
-// Day 4 for Auth
-// npm i SESSION: session-module, connect-mongo
-// server.js: session module
-// utils: auth, navlinks
-
+// NavBar MVP Middleware
+// app.use(function (req, res, next) {
+//     if (req.session.currentUser) {
+//       res.locals.user = req.session.currentUser;
+//       next();
+//     } else {
+//       next();
+//     }
+// });

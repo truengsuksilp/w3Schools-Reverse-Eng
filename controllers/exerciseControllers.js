@@ -1,6 +1,9 @@
 /* === External Modules: express === */
 const express = require('express');
 
+/* === Internal Modules: SESSIONS === */
+// req.session.currentUser
+
 /* === System Variables: route === */
 const router = express.Router();
 const Exercise = require('../models/Exercise');
@@ -33,11 +36,24 @@ router.get('/:language/:question_id/:order', async (req, res) => {
     // res.send({msg:'Specified', body: req.params});
 
     try {
+
+        // ANCHOR Check if user is logged in
+
+        const userProgress = async () => {
+            if (req.session.currentUser) {
+                const userProgress = await UserAnswer.count({email: req.session.currentUser.email});
+                return userProgress
+            } else {
+                const userProgress = null;
+                return Promise.resolve(null)
+            }    
+        }
+        
+
         const foundQuestion = await Question.findOne({_id: req.params.question_id, order: req.params.order})
             .populate('exercise_id');
 
-        const foundAllExercises = await Exercise.find({language: req.params.language})
-        console.log(foundAllExercises);
+        const foundAllExercises = await Exercise.find({language: req.params.language});
 
         // Nested array.  Each element is an array of 3 question objects.
         const allQuestions = [];
@@ -46,20 +62,29 @@ router.get('/:language/:question_id/:order', async (req, res) => {
             const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
             allQuestions.push(questions);
         }
-        // console.log(allQuestions);
 
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
         console.log(currentURL);
         
-        context = {
+        const context = {
             question: foundQuestion,
             allQuestions: allQuestions,
             allExercises: foundAllExercises,
             url: currentURL,
         };
+
+        if (req.session.currentUser) {
+            context.progress = await UserAnswer.count({user_id: req.session.currentUser.email});   
+        } else {
+            context.progress = null;
+        }  
+
+
+
+        console.log(context, req.session);
         
+        // Logic: Decide whether to route it to IDE
         isExerciseCSS = req.params.language.localeCompare('css') === 0;
-        console.log(isExerciseCSS);
 
         if (isExerciseCSS) {
             return res.render('exercises/exerciseCss', context);
@@ -86,11 +111,13 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
         const foundQuestion = await Question.findById(req.params.question_id);
         const noOfQuestions = await Question.count({});
 
+        // ANCHOR LOG USER ANSWER
         const userAnswerLog = { 
-            user_id: 'admin', 
+            user_id: req.session.currentUser.email, 
             question_id: req.params.question_id, 
         };
 
+        // ANCHOR Checks answer and edge case
         checkAns1 = user_answer_1 === foundQuestion.correct_answer_1;
         checkAns2 = user_answer_2 === foundQuestion.correct_answer_2;
         isLastQuestion = parseInt(req.params.order) === noOfQuestions;
