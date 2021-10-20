@@ -4,10 +4,10 @@
 
 * {
   box-sizing: border-box;
-  border: 1px solid rebeccapurple;
+  // border: 1px solid rebeccapurple;
 }
   
-/* Section and article - containers */
+/* Containrs for the aside and section.card */
 
 main {
   display: flex;
@@ -65,17 +65,14 @@ aside {
   }
 }
 
+/* section: defines placement of the card */ 
+/* card-content: defines flex for the entire card */
 section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   width: inherit;
   max-width: 1400;
-  font-family: 'Source Sans Pro', sans-serif;
-
-  .card {
-    //padding-left: 20px;
-  }
 
   .card-content {
     display: flex;
@@ -83,33 +80,9 @@ section {
     justify-content: center;
     min-height: 400px;
     min-width: 70vh;
+    padding: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
   }
-
-  .button {
-    width: 200px;
-    border-radius: 25px;
-    margin: 7px;
-    padding: 8px 16px;
-    vertical-align: middle;
-    font-size: 18px;
-    font-weight: 700;
-    color: white;
-  }
-  
-  
-  #submitButton {
-    background-color: $primary-color;
-  }
-  #showAnswerButton, #hideAnswerButton {
-    background-color: $secondary-button-color;
-
-    &:hover {
-      color: white;
-      background-color: $tertiary-button-color;
-    }
-
-  }
-
 }
 
 /* card-content: areas */
@@ -129,18 +102,16 @@ section {
   }
 }
 
-
 .card-body {
   background-color: lightgray;
-  padding: 0 30 90 30;
+  padding: 30px 30px 90px 30px;
   min-height: 250px;
   border-radius: 5px;
 
-
-   .field .card-mid {
+  .field .card-mid {
     position: relative;
     width: 100px;
-    padding: 0 30 90 30;
+    padding: inherit;
     min-height: 250px;
     font-family: 'Consolas', 'Courier New', Courier, monospace;
     font-size: 120%;
@@ -158,27 +129,34 @@ section {
     width: 10vh;
     margin: 10px;
   }
-}
-
-
-.card-lower {
-  display: flex;
-  justify-content: space-between;
-
-  .card-buttons {
-    margin: 5px 0px;
+  .button {
+    width: 200px;
+    border-radius: 25px;
+    margin: 7px;
+    padding: 8px 16px;
+    vertical-align: middle;
+    font-size: 18px;
     font-weight: 700;
-  }
-
-  #showAnswerButton {
-    background-color: black;
     color: white;
+  }
+  
+  #submitButton {
+    background-color: $primary-color;
   }
   #hideAnswerButton {
     display: none;
   }
+  #showAnswerButton, #hideAnswerButton {
+    background-color: $secondary-button-color;
+
+    &:hover {
+      color: white;
+      background-color: $tertiary-button-color;
+    }
+  }
 }
 
+// HACK: Check Answer button to show it works
 
 footer {
   margin: 20px 0px 0px 5px;
@@ -190,5 +168,9 @@ footer {
 
   #checkAnswer {
     width: 150px;
+  }
+  .card-buttons {
+    margin: 5px 0px;
+    font-weight: 700;
   }
 }
