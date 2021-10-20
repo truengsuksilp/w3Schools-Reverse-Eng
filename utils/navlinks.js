@@ -32,7 +32,6 @@ const navLinks = (req, res, next) => {
     } else {
         res.locals.routes = authRoutes;
     }
-
     next();
 }
 
