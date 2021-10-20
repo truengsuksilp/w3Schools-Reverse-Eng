@@ -58,15 +58,22 @@
         </ul>
       <% } %>
     </aside>
+    <!-- Header -->
+
+    <!-- Show Burger when sidebar is hidden FIXME -->
+    <nav class="navbar exercise-navbar">
+      <i class="fas fa-bars exercise-navbar"></i>
+      <a href="/">
+        <i class="fas fa-home exercise-navbar"></i>
+      </a>
+    </nav>
+    
 
     <!-- Exercise Card -->
 
     <section class='card'>
 
       <article class='card-content'>
-        
-        <!-- Show Burger when sidebar is hidden -->
-        <i class="fas fa-bars"></i>
 
         <div class="card-top">
           <h2 class='card-title'>Exercise</h2>
@@ -108,20 +115,18 @@
               <p class='feedback'></p>
             </div>   
 
-            <!-- Submit BUTTONS -->
-            <div class="field">
-              <div class="control card-lower">
-                  <button class="card-buttons button" id='submitButton'>Submit</button>
-              </div>
-            </div>
+            <!-- BUTTONS -->
+            
           </form>   
-
-          <!-- Show Answer buttons -->
-          <div class="show-hide-answer">
-            <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
-            <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+          <div class="card-buttons columns is-vcentered has-text-centered">
+            <div class="control card-lower column is-vcentered has-text-centered">
+                <button class="card-buttons button is-vcentered has-text-centered" id='submitButton'>Submit</button>
+            </div>
+              <div class="show-hide-answer column is-vcentered has-text-centered">
+                <button class="card-buttons button is-vcentered has-text-centered" id='showAnswerButton'>Show Answer</button>
+                <button class="card-buttons button invisible is-vcentered has-text-centered" id='hideAnswerButton'>Hide Answer</button>
+              </div>
           </div>
-        </div>
 
       </article>
     </section>

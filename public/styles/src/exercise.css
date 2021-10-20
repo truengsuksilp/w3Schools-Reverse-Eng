@@ -1,6 +1,7 @@
 /* GLOBAL */
 * {
   box-sizing: border-box;
+  border: 1px solid rebeccapurple;
 }
 
 /* Containrs for the aside and section.card */
@@ -36,6 +37,7 @@ aside .aside-tracker {
   background-color: #E7E9EB;
 }
 aside .menu-label {
+  cursor: pointer;
   background-color: gray;
   color: white;
   padding: 5px;
@@ -56,6 +58,16 @@ aside .menu-list :hover li {
   background-color: #888888;
 }
 
+/* Exercise navigation FIXME*/
+i.exercise-navbar {
+  top: 0;
+  margin: 15px;
+  padding: 15px;
+  color: #000;
+  font-size: 22;
+  font-weight: 900;
+}
+
 /* section: defines placement of the card */
 /* card-content: defines flex for the entire card */
 section {
@@ -74,28 +86,25 @@ section .card-content {
   padding: 20px;
   font-family: "Source Sans Pro", sans-serif;
 }
-
-/* card-content: areas */
-.card-top h2.card-title {
+section .card-content .card-top h2.card-title {
   margin: 10 0;
   font-family: "Segoe UI", "Arial", sans-serif;
   font-size: 42px;
   font-weight: 400;
 }
-.card-top p.card-desc {
+section .card-content .card-top p.card-desc {
   display: block;
   margin: 1.2 em 0;
   font-family: "Verdana", sans-serif;
   font-size: 15px;
 }
-
-.card-body {
+section .card-content .card-body {
   background-color: lightgray;
   padding: 30px 30px 90px 30px;
   min-height: 250px;
   border-radius: 5px;
 }
-.card-body .field .card-mid {
+section .card-content .card-body .field .card-mid {
   position: relative;
   width: 100px;
   padding: inherit;
@@ -104,37 +113,40 @@ section .card-content {
   font-size: 120%;
   line-height: 1.7em;
 }
-.card-body .control {
+section .card-content .card-body .field .card-mid .input {
+  width: 10vh;
+  margin: 10px;
+}
+section .card-content .card-body .columns {
+  margin-top: 70px;
+  align-content: center;
+}
+section .card-content .card-body .columns .control {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   font-size: 20px;
   font-weight: 600;
 }
-.card-body .input {
-  width: 10vh;
-  margin: 10px;
-}
-.card-body .button {
+section .card-content .card-body .columns .button {
   width: 200px;
   border-radius: 25px;
   margin: 7px;
   padding: 8px 16px;
-  vertical-align: middle;
   font-size: 18px;
   font-weight: 700;
   color: white;
 }
-.card-body #submitButton {
+section #submitButton {
   background-color: #04AA6D;
 }
-.card-body #hideAnswerButton {
+section #hideAnswerButton {
   display: none;
 }
-.card-body #showAnswerButton, .card-body #hideAnswerButton {
+section #showAnswerButton, section #hideAnswerButton {
   background-color: rgba(59, 59, 59, 0.5);
 }
-.card-body #showAnswerButton:hover, .card-body #hideAnswerButton:hover {
+section #showAnswerButton:hover, section #hideAnswerButton:hover {
   color: white;
   background-color: #3b3b3b;
 }
