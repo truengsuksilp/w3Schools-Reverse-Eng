@@ -13,18 +13,50 @@ body {
   grid-template-columns: 1fr 5fr;
 /*   grid-template-rows: 9vh 1vh; */
 
-
   main {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto;
   }
 
+}
+
+/* Card content & input */
+article.card-content {
+  margin-top: 25vh;
+
+  div.card-top {
+
+    h2.card-title {
+      margin: 10 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      font-size: 42px;
+      font-weight: 400;
+    }
+  }
   
 }
 
+#control-input {
+  display: inline-flex;
+  margin: 30px 0px;
+
+  input.input {
+    max-width: 100px;
+  }
+}
 
 
+/* buttons */
+#card-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+
+.card-buttons {
+  align-items: center; //FIXME
+}
 
 /* NAVBAR */
 /* .navbar-start .exercise-navbar{
@@ -96,7 +128,7 @@ aside {
 
 /* FOOTER */
 footer {
-  align-self: flex-end;
+
 }
 
 
@@ -141,10 +173,7 @@ footer {
 
     .card-top {
       h2.card-title {
-        margin: 10 0;
-        font-family: 'Segoe UI', 'Arial', sans-serif;
-        font-size: 42px;
-        font-weight: 400;
+        DELETED
       }    
       p.card-desc {
         display: block;

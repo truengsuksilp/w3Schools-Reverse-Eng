@@ -86,7 +86,7 @@
 
             <!-- CODE INPUT -->
             <div class="field card-mid">
-              <div class="control">
+              <div class="control"id="control-input">
                 <p>
                   <%= question.text_before_inputs %>
                 </p>
@@ -115,14 +115,14 @@
             <!-- BUTTONS -->
             
           </form>   
-          <div class="card-buttons <!-- columns --> is-vcentered has-text-centered">
-            <div class="control card-lower column is-vcentered has-text-centered">
-                <button class="card-buttons button is-vcentered has-text-centered" id='submitButton'>Submit</button>
+          <div class="control"id="card-buttons">
+            <div class="submit card-buttons">
+                <button class="card-buttons button" id='submitButton'>Submit</button>
             </div>
-              <div class="show-hide-answer column is-vcentered has-text-centered">
-                <button class="card-buttons button is-vcentered has-text-centered" id='showAnswerButton'>Show Answer</button>
-                <button class="card-buttons button invisible is-vcentered has-text-centered" id='hideAnswerButton'>Hide Answer</button>
-              </div>
+            <div class="show-hide-answer card-buttons">
+              <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
+              <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+            </div>
           </div>
 
       </article>
