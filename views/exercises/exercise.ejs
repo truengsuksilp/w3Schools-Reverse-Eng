@@ -33,14 +33,19 @@
 
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <p class="menu-label" id="menuLabel">
+        <p 
+          class="menu-label topic_<%= i %>" 
+          id="menuLabel"
+        >
           <%= allExercises[i].topic %>
         </p>
 
         <!-- All questions: Cannot update the link to root -->
-        <ul class="menu-list">
+        <ul class="menu-list ">
           <% for (j in allQuestions) { %>
-            <li>
+            <li 
+              class="topic_<%= i %>""
+            >
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
               >
@@ -123,7 +128,6 @@
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
   </footer>
-
     
 </body>
 </html>
