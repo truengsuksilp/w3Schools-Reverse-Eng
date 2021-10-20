@@ -1,6 +1,8 @@
 /* === External Modules === */
 const express = require('express');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 /* === Internal Modules === */
 const controllers = require('./controllers');
@@ -15,12 +17,23 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: false} ))
 app.use(express.static('public'));
-
-// DB
 require('./config/db.connection.js');
+
+// Session Config
+app.use(
+    session({
+        store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
+        secret: process.env.SECRET,
+        resave: false,  // LazyUpdate, so don't separate session between refresh of users
+        saveUninitialized: false,  // create cookie for only successful logins
+        cookie: {maxAge: 1000 * 60 * 60 * 24* 7 *2, }, // Cookie exp. after 2 weeks
+        
+}));
+
 
 /* === Middleware === */
 // NavBar: app.use(require('/utils/navlinks'));
+// Use Security packages: helmet, mongoSanitize, morgan, rate limit, hpp
 
 /* === Routes === */
 
@@ -75,3 +88,12 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
 // == Test URL 
 // Test 'http://localhost:5000/exercises/js/1/1' 
 // W3 URL: www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1
+
+
+// == add these folders & files
+
+// Day 4 for Auth
+// npm i SESSION: session-module, connect-mongo
+// server.js: session module
+// utils: auth, navlinks
+
