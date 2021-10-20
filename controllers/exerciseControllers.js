@@ -9,6 +9,42 @@ const UserAnswer = require('../models/UserAnswer');
 
 /* === Routes | base url: /exercises === */
 
+// Show: CSS
+router.get('/css', async (req, res) => {
+    try {
+        // res.send({msg: "CSS link", body: res.body})
+        const foundExercise = await Exercise.findOne({language: 'css', order: 1})
+        const foundQuestion = await Question.findOne({exercise_id: foundExercise._id, order: 1})
+            .populate('exercise_id')
+        
+        // Hard code for CSS
+        const foundAllExercises = await Exercise.find({language: 'css'})
+
+        // Nested array.  Each element is an array of 3 question objects.
+        const allQuestions = [];
+    
+        for ( i in foundAllExercises ) {
+                const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
+                allQuestions.push(questions);
+        }
+        // console.log(allQuestions);
+
+        context = {
+            question: foundQuestion,
+            allQuestions: allQuestions,
+            allExercises: foundAllExercises,
+            // url: currentURL,
+        };
+
+        return res.render('exercises/ide', context);
+
+    } catch (error) {
+        console.log(error)
+    }
+
+});
+
+
 // Show: Unspecified
 router.get('/:language', async (req, res) => {
     try {
@@ -35,8 +71,7 @@ router.get('/:language/:question_id/:order', async (req, res) => {
         const foundQuestion = await Question.findOne({_id: req.params.question_id, order: req.params.order})
             .populate('exercise_id');
 
-        const foundAllExercises = await Exercise.find({})
-        // console.log(foundAllExercises);
+        const foundAllExercises = await Exercise.find({language: req.params.language})
 
         // Nested array.  Each element is an array of 3 question objects.
         const allQuestions = [];
@@ -52,7 +87,6 @@ router.get('/:language/:question_id/:order', async (req, res) => {
         
         context = {
             question: foundQuestion,
-            // allQuestions: foundAllQuestions,
             allQuestions: allQuestions,
             allExercises: foundAllExercises,
             url: currentURL,
@@ -143,15 +177,6 @@ module.exports = router;
 
 // * === TODO === */
 
-// == DAY 2 - Correct Answer
-// Current approach: Same as Update Product
-// New approach: Ask how to show answer without reload
-
-// router.get('/:language/:exercise_id/:question_id/answer', (req, res) => { res.render('/../answer')});
-
-// Show: DAY 2 - Correct Answer
-
-
 // == Show: DAY 3 - Reset Score
 // router.post('/:exercise_id/:question_id', (res, req) => {
     
@@ -162,25 +187,7 @@ module.exports = router;
 
 // });
 
-// Show : Get Answers - SPARE
-// Locale Compare: Try this when equality fails
-// if(user_answer_1.localeCompare(correct_answer_1) === 0 && user_answer_localeCompare(correct_answer_2) === 0) {
-
 // Stretch Goal
 // setTimeout(() => {
 //     console.log('redirect after 1 seconds')
 // }, 1000);
-
-
-// ANCHOR - SHOW: SYNC (old)
-// const question = Question.find({order: req.params.order})
-// .populate('exercise_id')
-// .exec( (err, foundQuestion) => {
-//     if (err) console.log(err);
-
-//     console.log(foundQuestion);
-//     const exercise_id = foundQuestion._id;
-
-//     context = { question: foundQuestion };
-//     return res.render('exercises/exercise', context);
-// });

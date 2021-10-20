@@ -12,10 +12,6 @@ const ExerciseSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        order: {
-            type: Number,
-            required: true,
-        }
     },
     {
         timestamp: true,
