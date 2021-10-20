@@ -51,7 +51,7 @@ router.get('/css', async (req, res) => {
 // Show: Unspecified
 router.get('/:language', async (req, res) => {
     try {
-        const foundExercise = await Exercise.findOne({order: 1})
+        const foundExercise = await Exercise.findOne({order: 1, language: req.params.language})
         const foundQuestion = await Question.findOne({exercise_id: foundExercise._id, order: 1})
             .populate('exercise_id')
 
@@ -91,13 +91,19 @@ router.get('/:language/:question_id/:order', async (req, res) => {
         
         context = {
             question: foundQuestion,
-            // allQuestions: foundAllQuestions,
             allQuestions: allQuestions,
             allExercises: foundAllExercises,
             url: currentURL,
         };
         
-        return res.render('exercises/exercise', context);
+        isExerciseCSS = req.params.language.localeCompare('css') === 0;
+        console.log(isExerciseCSS);
+
+        if (isExerciseCSS) {
+            return res.render('exercises/exerciseCss', context);
+        } else {
+            return res.render('exercises/exercise', context);
+        }
 
     } catch (error) {
         console.log(error);

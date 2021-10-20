@@ -25,7 +25,8 @@
       <h2 class='card-header'> HTML Example: </h2>
       <div class='card-ide'>
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod debitis quos culpa sit beatae vero accusamus autem? Accusantium, voluptas aspernatur ex ea illum neque ducimus velit optio ut dicta facere!
+        <%- include('./partials/_codebox_html.ejs') %>
+
       </div>
       <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
 
@@ -49,7 +50,8 @@
       <h2 class='card-header'> CSS Example: </h2>
       <div class='card-ide'>
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod debitis quos culpa sit beatae vero accusamus autem? Accusantium, voluptas aspernatur ex ea illum neque ducimus velit optio ut dicta facere!
+      <%- include('./partials/_codebox_css.ejs') %>
+        
       </div>
       <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
 
@@ -74,21 +76,8 @@
       <h2 class='card-header'> JavaScript Example: </h2>
       <div class='card-ide'>
 
-        &lt;button onclick="myFunction&lpar;
-        &rpar;"&gt;Click Me!&lt;/button&gt;
-          <br>
-          <br>
-        function myFunction&lpar;
-        &rpar; &lcub;
-          <br>
-          let x = document.getElementById&lpar;
-          "demo"&rpar;;
-          <br>
-          x.style.fontSize = "25px";
-          <br>
-          x.style.color = "red";
-          <br>
-          &rcub;
+        <%- include('./partials/_codebox_js.ejs') %>
+
         <br>
         &lt;/script&gt;            
       </div>
