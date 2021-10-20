@@ -10,45 +10,6 @@ const UserAnswer = require('../models/UserAnswer');
 /* === Routes | base url: /exercises === */
 
 // Show: Unspecified
-router.get('/css', async (req, res) => {
-    try {
-        // HARD CODE
-        const foundQuestion = await Question.findOne({exercise_id: "616fa04204fd64232482b162", order: 1})
-            .populate('exercise_id');
-
-        const foundAllExercises = await Exercise.find({language: 'css'})
-        // console.log(foundAllExercises);
-
-        // Nested array.  Each element is an array of 3 question objects.
-        const allQuestions = [];
-
-        for ( i in foundAllExercises ) {
-            const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
-            allQuestions.push(questions);
-        }
-        // console.log(allQuestions);
-
-        // const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
-        // console.log(currentURL);
-        
-        context = {
-            question: foundQuestion,
-            // allQuestions: foundAllQuestions,
-            allQuestions: allQuestions,
-            allExercises: foundAllExercises,
-            // url: currentURL,
-        };
-        
-        // return res.send('Hi');
-        return res.render('exercises/exerciseCss', context);
-
-    } catch (error) {
-        console.log(error)
-    }
-
-});
-
-// Show: Unspecified
 router.get('/:language', async (req, res) => {
     try {
         const foundExercise = await Exercise.findOne({order: 1, language: req.params.language})
@@ -56,6 +17,7 @@ router.get('/:language', async (req, res) => {
             .populate('exercise_id')
 
         const url = `/exercises/${req.params.language}/${foundQuestion._id}/${foundQuestion.order}`
+        console.log(url);
 
         return res.redirect(url);
 
