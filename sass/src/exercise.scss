@@ -1,27 +1,50 @@
 @use "../variables" as *;
 
+
 /* GLOBAL */
 
 * {
   box-sizing: border-box;
   border: 1px solid rebeccapurple;
 }
-  
-/* Containrs for the aside and section.card */
 
-main {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
-  //align-content: left;
-  
-  .fa-bars {
-    height: 90px;
-    font-size: 21px;
-    //margin-bottom: 60px;
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+/*   grid-template-rows: 9vh 1vh; */
+
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: auto;
   }
+
+  
 }
 
+
+
+
+/* NAVBAR */
+/* .navbar-start .exercise-navbar{
+    width: 127px;
+    padding: 24px 16px;
+    font-size: 22px;
+    font-weight: 700;
+} */
+/* Exercise navigation FIXME*/
+/*  i.exercise-navbar {
+  top: 0;
+  margin: 15px;
+  padding: 15px;
+  color: #000;
+  font-size: 22;
+  font-weight: 900;
+} */
+
+
+/* ASIDE */
 aside {
   border: 1px solid lightgray;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -66,22 +89,44 @@ aside {
   }
 }
 
-/* Exercise navigation FIXME*/
-i.exercise-navbar {
-  top: 0;
-  margin: 15px;
-  padding: 15px;
-  color: #000;
-  font-size: 22;
-  font-weight: 900;
+
+/* MAIN */
+
+
+
+/* FOOTER */
+footer {
+  align-self: flex-end;
 }
+
+
+
+ /* Containrs for the aside and section.card */
+
+/* main {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  //align-content: left; */
+  
+  .fa-bars {
+    height: 90px;
+    font-size: 21px;
+    //margin-bottom: 60px;
+  }
+//}
+
+
+
+
 
 /* section: defines placement of the card */ 
 /* card-content: defines flex for the entire card */
-section {
+/* section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  //height: 90vh;
   width: inherit;
   max-width: 1400;
 
@@ -124,7 +169,7 @@ section {
         line-height: 1.7em;
 
         .input {
-          width: 10vh;
+          width: 30px;
           margin: 10px;
         }
       } 
@@ -189,3 +234,4 @@ footer {
     font-weight: 700;
   }
 }
+ */

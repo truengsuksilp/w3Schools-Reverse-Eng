@@ -9,63 +9,60 @@
     jsFile: '/scripts/main.js'}) %>
 
 <body>
-
-  <main>
-    <!-- Aside Bar: To be replaced by Accordion later -->
+   <!-- Aside Bar: To be replaced by Accordion later -->
     
-    <aside class="menu">
+   <aside class="menu">
 
-      <!-- Header: Icons, Completion Tracker -->
-      <section class="aside-header">
-        <a href="/">
-          <i class="fas fa-home"></i>
-        </a>
-        <a href="/">
-          <i class="fas fa-redo-alt"></i>
-        </a>
-        <a>
-          <i class="fas fa-times"></i>
-        </a>
-      </section>
-      <section class="aside-tracker">
-        <h5>
-          Completed <%= question.order -1 %> of 10 Exercises
-        </h5>
-      </section>
+    <!-- Header: Icons, Completion Tracker -->
+    <section class="aside-header">
+      <a href="/">
+        <i class="fas fa-home"></i>
+      </a>
+      <a href="/">
+        <i class="fas fa-redo-alt"></i>
+      </a>
+      <a>
+        <i class="fas fa-times"></i>
+      </a>
+    </section>
+    <section class="aside-tracker">
+      <h5>
+        Completed <%= question.order -1 %> of 10 Exercises
+      </h5>
+    </section>
 
-      <!-- Loop through all Topics -->
-      <% for (i in allExercises) { %>
-        <p 
-          class="menu-label topic_<%= i %>" 
-          id="menuLabel"
-        >
-          <%= allExercises[i].topic %>
-        </p>
+    <!-- Loop through all Topics -->
+    <% for (i in allExercises) { %>
+      <p 
+        class="menu-label topic_<%= i %>" 
+        id="menuLabel"
+      >
+        <%= allExercises[i].topic %>
+      </p>
 
-        <!-- All questions: Cannot update the link to root -->
-        <ul class="menu-list ">
-          <% for (j in allQuestions) { %>
-            <li 
-              class="topic_<%= i %>""
+      <!-- All questions: Cannot update the link to root -->
+      <ul class="menu-list ">
+        <% for (j in allQuestions) { %>
+          <li 
+            class="topic_<%= i %>""
+          >
+            <a 
+              href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
             >
-              <a 
-                href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
-              >
-                Exercise <%= allQuestions[i][j].topic_order%>
-              </a>
-            </li>
-          <% } %>
-        </ul>
-      <% } %>
-    </aside>
+              Exercise <%= allQuestions[i][j].topic_order%>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    <% } %>
+  </aside>
+  <main>
+   
     <!-- Header -->
 
     <!-- Show Burger when sidebar is hidden FIXME -->
-    <nav class="navbar exercise-navbar">
+     <nav class="navbar exercise-navbar">
       <i class="fas fa-bars exercise-navbar"></i>
-      <a href="/">
-        <i class="fas fa-home exercise-navbar"></i>
-      </a>
     </nav>
     
 
@@ -118,7 +115,7 @@
             <!-- BUTTONS -->
             
           </form>   
-          <div class="card-buttons columns is-vcentered has-text-centered">
+          <div class="card-buttons <!-- columns --> is-vcentered has-text-centered">
             <div class="control card-lower column is-vcentered has-text-centered">
                 <button class="card-buttons button is-vcentered has-text-centered" id='submitButton'>Submit</button>
             </div>

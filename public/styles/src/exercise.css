@@ -4,17 +4,34 @@
   border: 1px solid rebeccapurple;
 }
 
-/* Containrs for the aside and section.card */
-main {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  /*   grid-template-rows: 9vh 1vh; */
 }
-main .fa-bars {
-  height: 90px;
-  font-size: 21px;
+body main {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-rows: auto;
 }
 
+/* NAVBAR */
+/* .navbar-start .exercise-navbar{
+    width: 127px;
+    padding: 24px 16px;
+    font-size: 22px;
+    font-weight: 700;
+} */
+/* Exercise navigation FIXME*/
+/*  i.exercise-navbar {
+  top: 0;
+  margin: 15px;
+  padding: 15px;
+  color: #000;
+  font-size: 22;
+  font-weight: 900;
+} */
+/* ASIDE */
 aside {
   border: 1px solid lightgray;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -58,113 +75,137 @@ aside .menu-list :hover li {
   background-color: #888888;
 }
 
-/* Exercise navigation FIXME*/
-i.exercise-navbar {
-  top: 0;
-  margin: 15px;
-  padding: 15px;
-  color: #000;
-  font-size: 22;
-  font-weight: 900;
+/* MAIN */
+/* FOOTER */
+footer {
+  align-self: flex-end;
+}
+
+/* Containrs for the aside and section.card */
+/* main {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  //align-content: left; */
+.fa-bars {
+  height: 90px;
+  font-size: 21px;
 }
 
 /* section: defines placement of the card */
 /* card-content: defines flex for the entire card */
-section {
+/* section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  //height: 90vh;
   width: inherit;
   max-width: 1400;
-}
-section .card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 400px;
-  min-width: 100vh;
-  padding: 20px;
-  font-family: "Source Sans Pro", sans-serif;
-}
-section .card-content .card-top h2.card-title {
-  margin: 10 0;
-  font-family: "Segoe UI", "Arial", sans-serif;
-  font-size: 42px;
-  font-weight: 400;
-}
-section .card-content .card-top p.card-desc {
-  display: block;
-  margin: 1.2 em 0;
-  font-family: "Verdana", sans-serif;
-  font-size: 15px;
-}
-section .card-content .card-body {
-  background-color: lightgray;
-  padding: 30px 30px 90px 30px;
-  min-height: 250px;
-  border-radius: 5px;
-}
-section .card-content .card-body .field .card-mid {
-  position: relative;
-  width: 100px;
-  padding: inherit;
-  min-height: 250px;
-  font-family: "Consolas", "Courier New", Courier, monospace;
-  font-size: 120%;
-  line-height: 1.7em;
-}
-section .card-content .card-body .field .card-mid .input {
-  width: 10vh;
-  margin: 10px;
-}
-section .card-content .card-body .columns {
-  margin-top: 70px;
-  align-content: center;
-}
-section .card-content .card-body .columns .control {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-section .card-content .card-body .columns .button {
-  width: 200px;
-  border-radius: 25px;
-  margin: 7px;
-  padding: 8px 16px;
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-}
-section #submitButton {
-  background-color: #04AA6D;
-}
-section #hideAnswerButton {
-  display: none;
-}
-section #showAnswerButton, section #hideAnswerButton {
-  background-color: rgba(59, 59, 59, 0.5);
-}
-section #showAnswerButton:hover, section #hideAnswerButton:hover {
-  color: white;
-  background-color: #3b3b3b;
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    min-width: 100vh;
+    padding: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    .card-top {
+      h2.card-title {
+        margin: 10 0;
+        font-family: 'Segoe UI', 'Arial', sans-serif;
+        font-size: 42px;
+        font-weight: 400;
+      }    
+      p.card-desc {
+        display: block;
+        margin: 1.2 em 0;
+        font-family: 'Verdana', sans-serif;
+        font-size: 15px;
+      }
+    }
+    .card-body {
+      background-color: lightgray;
+      padding: 30px 30px 90px 30px;
+      min-height: 250px;
+      border-radius: 5px;
+
+      .field .card-mid {
+        position: relative;
+        width: 100px;
+        padding: inherit;
+        min-height: 250px;
+        font-family: 'Consolas', 'Courier New', Courier, monospace;
+        font-size: 120%;
+        line-height: 1.7em;
+
+        .input {
+          width: 30px;
+          margin: 10px;
+        }
+      } 
+      .columns {
+        margin-top: 70px;
+        align-content: center;
+
+        .control {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          font-size: 20px;
+          font-weight: 600;
+        }
+        .button {
+          width: 200px;
+          border-radius: 25px;
+          margin: 7px;
+          padding: 8px 16px;
+          font-size: 18px;
+          font-weight: 700;
+          color: white;
+        }
+      }
+    } 
+  }
+
+
+
+  #submitButton {
+    background-color: $primary-color;
+  }
+  #hideAnswerButton {
+    display: none;
+  }
+  #showAnswerButton, #hideAnswerButton {
+    background-color: $secondary-button-color;
+
+    &:hover {
+      color: white;
+      background-color: $tertiary-button-color;
+    }
+  }
 }
 
+// HACK: Check Answer button to show it works
+
 footer {
+  // display: none; - will update once logic has been completed
   margin: 20px 0px 0px 5px;
   padding: 5px;
   color: gray;
   border: 1px solid lightgray;
   max-width: calc(30vh - 5px);
   text-align: center;
+
+  #checkAnswer {
+    width: 150px;
+  }
+  .card-buttons {
+    margin: 5px 0px;
+    font-weight: 700;
+  }
 }
-footer #checkAnswer {
-  width: 150px;
-}
-footer .card-buttons {
-  margin: 5px 0px;
-  font-weight: 700;
-}
+ */
 
 /*# sourceMappingURL=exercise.css.map */
