@@ -77,6 +77,19 @@ route.post('/login', async (req, res, next) => {
     }
 })
 
+// GET: Logout
+route.get('/logout', async (req, res, next) => {
+    try {
+        await req.session.destroy();
+        console.log("=== Session Destroyed ===")
+        return res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 
 /* === Exports: route === */
 module.exports = route;

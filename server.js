@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: false} ))
 app.use(express.static('public'));
+app.use(express.static('assets'));
 require('./config/db.connection.js');
 
 // Session Config
@@ -32,7 +33,19 @@ app.use(
 
 
 /* === Middleware === */
-// NavBar: app.use(require('/utils/navlinks'));
+// NavBar: 
+app.use(require('./utils/navlinks'));
+
+// NavBar MVP Middleware
+// app.use(function (req, res, next) {
+//     if (req.session.currentUser) {
+//       res.locals.user = req.session.currentUser;
+//       next();
+//     } else {
+//       next();
+//     }
+// });
+
 // Use Security packages: helmet, mongoSanitize, morgan, rate limit, hpp
 
 /* === Routes === */
