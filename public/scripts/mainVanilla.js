@@ -15,8 +15,7 @@ const checkAnswers = function (ans1, ans2) {
     const input2 = document.querySelector('#input2').value;
     const feedback = document.querySelector('.feedback');
 
-    // localeCompare:
-    // Because input1 is in a different mem location
+    // NOTE: Use localeCompare: Because input1 is in a different memory location
     if (input1.localeCompare(ans1) === 0 && input2.localeCompare(ans2) === 0) {
         feedback.innerText = 'Correct!'
     } else {
@@ -30,8 +29,6 @@ const showAnswers = function () {
 
     $('#showAnswerButton').hide();
     $('#hideAnswerButton').show();
-    // $('#hideAnswerButton').css('display', 'block');
-
 }
 
 const hideAnswers = function () {
@@ -46,7 +43,6 @@ const hideAnswers = function () {
 const showSideBar = function () {
     $('.menu').show();
     $('.fa-bars').hide();
-    console.log('showSideBar function');
 }
 
 const hideSideBar = function () {
@@ -55,18 +51,21 @@ const hideSideBar = function () {
 }
 
 const hideQuestions = function (topic_number) {
-
     if( $(`li.topic_${topic_number}`).css('display') === 'block' ) {
         $(`li.topic_${topic_number}`).css('display','none');
     } else {
         $(`li.topic_${topic_number}`).css('display','block');
     }
-    
 }
 
 /* === Event Listeners === */
 
 $(window).on("load", hide());
+
+// Accordion: Add eventListen to each topic tag independently
+for( let i = 0; i < $(`.menu-label`).length; i++ ){
+    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
+}
 
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#submitButton').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
@@ -75,7 +74,3 @@ $('#hideAnswerButton').click( (event) => hideAnswers());
 $('.fa-times').click( (event) => hideSideBar());
 $('.fa-bars').click( (event) => showSideBar());
 
-// Accordion: Listen to each topic tag independently
-for( let i = 0; i < $(`.menu-label`).length; i++ ){
-    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
-}

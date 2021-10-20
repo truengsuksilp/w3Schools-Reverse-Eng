@@ -18,14 +18,23 @@
     // server.js MIDDLEWARES: app.use()
 
 
-// TO DO - Add a congrats page!!!
+// TO DO 
 
+/* === TODO: Improve authController === */
 
+// == POST 
+// try signup renders new page for signup error  
+    // res.render('/auth/signupError)
+    // res.render('/auth/loginError)
+
+/* === TODO: Improve exerciseController === */
+    
 // Exercise Feedback: Delay
 // setTimeout(() => {
 //     console.log('redirect after 1 seconds')
 // }, 1000);
 
+// Add a congrats page!!!
 
 
 /* === NOTE: Base packages === */

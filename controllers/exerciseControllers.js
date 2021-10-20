@@ -1,9 +1,6 @@
 /* === External Modules: express === */
 const express = require('express');
 
-/* === Internal Modules: SESSIONS === */
-// req.session.currentUser
-
 /* === System Variables: route === */
 const router = express.Router();
 const Exercise = require('../models/Exercise');
@@ -12,83 +9,68 @@ const UserAnswer = require('../models/UserAnswer');
 
 /* === Routes | base url: /exercises === */
 
-// Show: Unspecified
-router.get('/:language', async (req, res) => {
+// Show: Unspecified order, then find the first question for the languague
+router.get('/:language', async (req, res, next) => {
     try {
-        const foundExercise = await Exercise.findOne({order: 1, language: req.params.language})
+        const foundExercise = await Exercise.findOne({
+            order: 1, 
+            language: req.params.language
+        })
         const foundQuestion = await Question.findOne({exercise_id: foundExercise._id, order: 1})
             .populate('exercise_id')
 
+        // NOTE: Pass into the next router: Show exercise page of a specified question
         const url = `/exercises/${req.params.language}/${foundQuestion._id}/${foundQuestion.order}`
-
         return res.redirect(url);
-
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        req.error = error;
+        next()
     }
 
 });
 
 // Show: Specified
-router.get('/:language/:question_id/:order', async (req, res) => {
-
-    // res.send({msg:'Specified', body: req.params});
-
-    try {
-
-        // ANCHOR Check if user is logged in
-
-        const userProgress = async () => {
-            if (req.session.currentUser) {
-                const userProgress = await UserAnswer.count({email: req.session.currentUser.email});
-                return userProgress
-            } else {
-                const userProgress = null;
-                return Promise.resolve(null)
-            }    
-        }
-        
-
+router.get('/:language/:question_id/:order', async (req, res, next) => {
+    try {    
         const foundQuestion = await Question.findOne({_id: req.params.question_id, order: req.params.order})
             .populate('exercise_id');
-
         const foundAllExercises = await Exercise.find({language: req.params.language});
 
-        // Nested array.  Each element is an array of 3 question objects.
+        // NOTE: Nested array of topics and questions to render on sidebar
         const allQuestions = [];
-
         for ( i in foundAllExercises ) {
             const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
             allQuestions.push(questions);
         }
 
+        // URL to pass into form for POST request
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
         
+        // NOTE Define context and enhance it
         const context = {
             question: foundQuestion,
             allQuestions: allQuestions,
             allExercises: foundAllExercises,
             url: currentURL,
         };
-
-        // Add Progress to context
         if (req.session.currentUser) {
             context.progress = await UserAnswer.count({user_id: req.session.currentUser.email});   
         } else {
             context.progress = null;
-        }  
+        };
         
         // Logic: Decide whether to route it to IDE
-        isExerciseCSS = req.params.language.localeCompare('css') === 0;
-
+        const isExerciseCSS = req.params.language.localeCompare('css') === 0;
         if (isExerciseCSS) {
             return res.render('exercises/exerciseCss', context);
         } else {
             return res.render('exercises/exercise', context);
         }
-
     } catch (error) {
         console.log(error);
+        req.error = error;
+        next()
     }
 
 });
@@ -96,60 +78,44 @@ router.get('/:language/:question_id/:order', async (req, res) => {
 // SHOW : Get Answers
 
 router.post('/:language/:question_id/:order', async (req, res, next) => {
-
-    // res.send({msg: 'POSTED ANSWERS', body: req.body, params: req.params});
-
-    const user_answer_1 = req.body.user_answer_1;
-    const user_answer_2 = req.body.user_answer_2;
-
     try {
-        const foundQuestion = await Question.findById(req.params.question_id);
-        const noOfQuestions = await Question.count({});
-
-        // ANCHOR LOG USER ANSWER
+        // Ger user's identity and answers
+        const user_answer_1 = req.body.user_answer_1;
+        const user_answer_2 = req.body.user_answer_2;
         const userAnswerLog = { 
             user_id: req.session.currentUser.email, 
             question_id: req.params.question_id, 
         };
 
-        // ANCHOR Checks answer and edge case
-        checkAns1 = user_answer_1 === foundQuestion.correct_answer_1;
-        checkAns2 = user_answer_2 === foundQuestion.correct_answer_2;
-        isLastQuestion = parseInt(req.params.order) === noOfQuestions;
+        // Get correct answers and check user's answers
+        const foundQuestion = await Question.findById(req.params.question_id);
+        const checkAns1 = user_answer_1 === foundQuestion.correct_answer_1;
+        const checkAns2 = user_answer_2 === foundQuestion.correct_answer_2;
 
+        // Check if user is on the last question
+        const noOfQuestions = await Question.count({});
+        const isLastQuestion = parseInt(req.params.order) === noOfQuestions;
+
+        // LOGIC: Decide whether to LOG and REDIRECT to the next question
         if ( checkAns1 && checkAns2 && !isLastQuestion) { 
             UserAnswer.create(userAnswerLog);
-            console.log(`Logged user progress`);
-
             const nextQuestion = parseInt(req.params.order) + 1
+            const foundQuestion = await Question.findOne({order: nextQuestion}); 
             
-            const foundQuestion = await Question.findOne({order: nextQuestion});    
-            const nextURL = `/exercises/${req.params.language}/${foundQuestion._id}/${nextQuestion}`;
-            
-            const context = {
-                question: foundQuestion, 
-                url: nextURL
-            };
-            
+            // Context: Pass URL to pass into form for next POST request   
+            const nextURL = `/exercises/${req.params.language}/${foundQuestion._id}/${nextQuestion}`;           
+            const context = {question: foundQuestion, url: nextURL};
             return res.redirect(nextURL);
-
         } else if (isLastQuestion) {
-
-            res.send({
-                msg: " You've done the last question!! ", 
-                params: req.params 
-            })
-            
+            res.send({ msg: " You've done the last question!! " });
         } else {
-            console.log('Incorrect ans, not logged');
-            console.log([user_answer_1, user_answer_2]);
+            console.log(`Incorrect.  Not logged.  Answers: ${user_answer_1}, ${user_answer_2}`);
         }
-
     } catch (error) {
         console.log(error);
+        req.error = error;
         next()
-    }
-    
+    }   
 });
 
 
