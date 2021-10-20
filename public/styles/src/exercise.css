@@ -70,7 +70,7 @@ section .card-content {
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
-  min-width: 70vh;
+  min-width: 100vh;
   padding: 20px;
   font-family: "Source Sans Pro", sans-serif;
 }
