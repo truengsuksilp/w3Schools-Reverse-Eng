@@ -33,16 +33,23 @@
 
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <p class="menu-label" id="menuLabel">
+        <p 
+          class="menu-label topic_<%= i %>" 
+          id="menuLabel"
+        >
           <%= allExercises[i].topic %>
         </p>
 
         <!-- All questions: Cannot update the link to root -->
-        <ul class="menu-list">
-          <% for (i in allQuestions) { %>
-            <li>
-              <a href=`/`>
-                Exercise <%= allQuestions[i].order%>
+        <ul class="menu-list ">
+          <% for (j in allQuestions) { %>
+            <li 
+              class="topic_<%= i %>""
+            >
+              <a 
+                href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
+              >
+                Exercise <%= allQuestions[i][j].topic_order%>
               </a>
             </li>
           <% } %>
@@ -74,20 +81,27 @@
             <!-- CODE INPUT -->
             <div class="field card-mid">
               <div class="control">
-                <p>var</p>
+                <p>
+                  <%= question.text_before_inputs %>
+                </p>
                 <input 
                   type="text" 
                   class="input"
                   name="user_answer_1"
                   id="input1"
                 >
-                <p>=</p>
+                <p>
+                  <%= question.text_between_inputs %>
+                </p>
                 <input 
                   type="text" 
                   class="input"
                   name="user_answer_2"
                   id='input2'
                 >
+                <p>
+                  <%= question.text_after_inputs %>
+                </p>
               </div>
               <p class='feedback'></p>
             </div>   
@@ -97,7 +111,7 @@
               <div class="control card-lower">
                   <button class="card-buttons button" id='submitButton'>Submit</button>
               </div>
-          </div>
+            </div>
           </form>   
 
           <!-- Show Answer buttons -->
@@ -116,7 +130,6 @@
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
   </footer>
-
     
 </body>
 </html>

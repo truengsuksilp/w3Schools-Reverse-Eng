@@ -13,6 +13,18 @@ const QuestionSchema = new mongoose.Schema(
             type: String,
             require: true,
         },
+        text_before_inputs: {
+            type: String,
+            require: true,
+        },
+        text_between_inputs: {
+            type: String,
+            require: true,
+        },
+        text_after_inputs: {
+            type: String,
+            require: true,
+        },
         correct_answer_1: {
             type: String,
             require: true,
@@ -21,9 +33,13 @@ const QuestionSchema = new mongoose.Schema(
             type: String,
             require: true,
         },
-        order: {
+        topic_order: {
             type: Number,
             require: true,
+        },
+        order: {
+            type: Number,
+            require: true,            
         }
     },
     {
