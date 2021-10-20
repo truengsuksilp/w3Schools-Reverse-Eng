@@ -65,6 +65,8 @@ app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
 // mongoose
 // method-override
 // nodemon
+// dotenv
+// @creativebulma/bulma-collapsible
 
 // == base implementation
 // methodOverride: CRUD - So we can use UPDATE as PUT

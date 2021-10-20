@@ -12,11 +12,10 @@ const ExerciseSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        exercise_id: {
-            type: mongoose.Types.ObjectId,
-            require: true,
-            ref: 'Question',
-        },
+        order: {
+            type: Number,
+            required: true,
+        }
     },
     {
         timestamp: true,

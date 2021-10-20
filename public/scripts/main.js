@@ -56,6 +56,16 @@ const hideSideBar = function () {
     $('.fa-bars').show();
 }
 
+const hideQuestions = function (topic_number) {
+
+    if( $(`li.topic_${topic_number}`).css('display') === 'block' ) {
+        $(`li.topic_${topic_number}`).css('display','none');
+    } else {
+        $(`li.topic_${topic_number}`).css('display','block');
+    }
+    
+}
+
 /* === Event Listeners === */
 
 $(window).on("load", hide());
@@ -65,3 +75,8 @@ $('#showAnswerButton').click( (event) => showAnswers());
 $('#hideAnswerButton').click( (event) => hideAnswers());
 $('.fa-times').click( (event) => hideSideBar());
 $('.fa-bars').click( (event) => showSideBar());
+
+// Accordion: Listen to each topic tag independently
+for( let i = 0; i < $(`.menu-label`).length; i++ ){
+    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
+}

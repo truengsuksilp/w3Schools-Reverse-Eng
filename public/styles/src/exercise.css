@@ -1,10 +1,9 @@
 /* GLOBAL */
 * {
   box-sizing: border-box;
-  border: 1px solid rebeccapurple;
 }
 
-/* Section and article - containers */
+/* Containrs for the aside and section.card */
 main {
   display: flex;
   width: 100%;
@@ -57,16 +56,14 @@ aside .menu-list :hover li {
   background-color: #888888;
 }
 
+/* section: defines placement of the card */
+/* card-content: defines flex for the entire card */
 section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   width: inherit;
   max-width: 1400;
-  font-family: "Source Sans Pro", sans-serif;
-}
-section .card {
-  padding-left: 20px;
 }
 section .card-content {
   display: flex;
@@ -74,26 +71,8 @@ section .card-content {
   justify-content: center;
   min-height: 400px;
   min-width: 100vh;
-}
-section .button {
-  width: 200px;
-  border-radius: 25px;
-  margin: 7px;
-  padding: 8px 16px;
-  vertical-align: middle;
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-}
-section #submitButton {
-  background-color: #04AA6D;
-}
-section #showAnswerButton, section #hideAnswerButton {
-  background-color: rgba(59, 59, 59, 0.5);
-}
-section #showAnswerButton:hover, section #hideAnswerButton:hover {
-  color: white;
-  background-color: #3b3b3b;
+  padding: 20px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /* card-content: areas */
@@ -112,14 +91,14 @@ section #showAnswerButton:hover, section #hideAnswerButton:hover {
 
 .card-body {
   background-color: lightgray;
-  padding: 0 30 90 30;
+  padding: 30px 30px 90px 30px;
   min-height: 250px;
   border-radius: 5px;
 }
 .card-body .field .card-mid {
   position: relative;
   width: 100px;
-  padding: 0 30 90 30;
+  padding: inherit;
   min-height: 250px;
   font-family: "Consolas", "Courier New", Courier, monospace;
   font-size: 120%;
@@ -136,21 +115,28 @@ section #showAnswerButton:hover, section #hideAnswerButton:hover {
   width: 10vh;
   margin: 10px;
 }
-
-.card-lower {
-  display: flex;
-  justify-content: space-between;
-}
-.card-lower .card-buttons {
-  margin: 5px 0px;
+.card-body .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
   font-weight: 700;
-}
-.card-lower #showAnswerButton {
-  background-color: black;
   color: white;
 }
-.card-lower #hideAnswerButton {
+.card-body #submitButton {
+  background-color: #04AA6D;
+}
+.card-body #hideAnswerButton {
   display: none;
+}
+.card-body #showAnswerButton, .card-body #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+.card-body #showAnswerButton:hover, .card-body #hideAnswerButton:hover {
+  color: white;
+  background-color: #3b3b3b;
 }
 
 footer {
@@ -163,6 +149,10 @@ footer {
 }
 footer #checkAnswer {
   width: 150px;
+}
+footer .card-buttons {
+  margin: 5px 0px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=exercise.css.map */
