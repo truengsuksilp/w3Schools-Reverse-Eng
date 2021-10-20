@@ -21,8 +21,6 @@ const checkAnswers = function (ans1, ans2) {
         feedback.innerText = 'Correct!'
     } else {
         feedback.innerText = 'Incorrect!'
-        console.log([input1, ans1]);
-        console.log([input1.length, ans1.length]);
     }
 }
 
@@ -71,6 +69,7 @@ const hideQuestions = function (topic_number) {
 $(window).on("load", hide());
 
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
+$('#submitButton').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#showAnswerButton').click( (event) => showAnswers());
 $('#hideAnswerButton').click( (event) => hideAnswers());
 $('.fa-times').click( (event) => hideSideBar());

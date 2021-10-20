@@ -36,6 +36,16 @@ app.use(
 // NavBar: 
 app.use(require('./utils/navlinks'));
 
+// Make this available to
+app.use(function (req, res, next) {
+    if (req.session.currentUser) {
+      res.locals.user = req.session.currentUser;
+      next();
+    } else {
+      next();
+    }
+});
+
 // Use Security packages: helmet, mongoSanitize, morgan, rate limit, hpp
 
 /* === Routes === */
@@ -59,41 +69,3 @@ app.get('/*', (req, res) => res.render('404'));
 
 /* === Server Listeners === */
 app.listen(PORT, () => console.log(`Listening on ${PORT} ❤️`));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* === NOTE: Base packages === */
-
-// == npm i
-// express
-// mongoose
-// method-override
-// nodemon
-// dotenv
-// @creativebulma/bulma-collapsible
-
-// == base implementation
-// methodOverride: CRUD - So we can use UPDATE as PUT
-// urlEncoded: CRUD - So we can use CREATE and UPDATE with req.body
-
-// NavBar MVP Middleware
-// app.use(function (req, res, next) {
-//     if (req.session.currentUser) {
-//       res.locals.user = req.session.currentUser;
-//       next();
-//     } else {
-//       next();
-//     }
-// });
