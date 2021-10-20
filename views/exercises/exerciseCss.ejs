@@ -3,10 +3,10 @@
     
   <%- include('../partials/_head.ejs', { 
     page: `ReVamp(ire)`, 
-    cssFile: '/styles/src/exercise.css'
+    cssFile: '/styles/src/exerciseCss.css'
   }) %>
   <%- include('../partials/_head_js.ejs', { 
-    jsFile: '/scripts/main.js'}) %>
+    jsFile: '/scripts/mainCss.js'}) %>
 
 <body>
 
@@ -28,9 +28,7 @@
         </a>
       </section>
       <section class="aside-tracker">
-        <h5>
-          Completed <%= question.order -1 %> of 10 Exercises
-        </h5>
+        <h5>Completed 0 of 10 Exercises</h5>
       </section>
 
       <!-- Loop through all Topics -->
@@ -73,42 +71,35 @@
           <p class='card-desc'><%= question.prompt %></p>
         </div>
 
+        <!-- CODE INPUT: CSS -->
+        <iframe 
+          frameborder="0" 
+          width="800px" 
+          height="500px" 
+          src="https://replit.com/@truengsuksilp/w3schoolscss11htmlonly?lite=true"
+        >
+        </iframe>  
+        
+        <!-- JS Example: https://replit.com/@truengsuksilp/LocaleCompare?lite=true -->
+
         <!-- FORM -->
-        <div class="card-body">
-
+        <!-- <div class="card-body">
+          
           <form 
-            action = <%= url %>
+            action = '/exercises/css'
             method='POST'>
-
-            <!-- CODE INPUT -->
             <div class="field card-mid">
               <div class="control">
-                <p>
-                  <%= question.text_before_inputs %>
-                </p>
-                <input 
-                  type="text" 
+                <textarea
                   class="input"
                   name="user_answer_1"
                   id="input1"
                 >
-                <p>
-                  <%= question.text_between_inputs %>
-                </p>
-                <input 
-                  type="text" 
-                  class="input"
-                  name="user_answer_2"
-                  id='input2'
-                >
-                <p>
-                  <%= question.text_after_inputs %>
-                </p>
+                </textarea> 
               </div>
               <p class='feedback'></p>
             </div>   
 
-            <!-- Submit BUTTONS -->
             <div class="field">
               <div class="control card-lower">
                   <button class="card-buttons button" id='submitButton'>Submit</button>
@@ -116,22 +107,11 @@
             </div>
           </form>   
 
-          <!-- Show Answer buttons -->
-          <div class="show-hide-answer">
-            <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
-            <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
-          </div>
-        </div>
+        </div> -->
 
       </article>
     </section>
   </main>
 
-  <footer>
-    <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
-    <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
-    <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
-  </footer>
-    
 </body>
 </html>
