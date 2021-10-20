@@ -1,15 +1,18 @@
 /* GLOBAL */
 * {
   box-sizing: border-box;
+  border: 1px solid rebeccapurple;
 }
 
 /* Section and article - containers */
 main {
   display: flex;
+  width: 100%;
+  max-width: 1400px;
 }
 main .fa-bars {
+  height: 90px;
   font-size: 21px;
-  margin-bottom: 60px;
 }
 
 aside {
@@ -58,8 +61,9 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: inherit;
+  max-width: 1400;
   font-family: "Source Sans Pro", sans-serif;
-  max-width: 60vh;
 }
 section .card-content {
   display: flex;
@@ -78,33 +82,45 @@ section .button {
   font-weight: 700;
   color: white;
 }
-section :hover .button {
-  color: white;
-}
 section #submitButton {
   background-color: #04AA6D;
 }
 section #showAnswerButton, section #hideAnswerButton {
   background-color: rgba(59, 59, 59, 0.5);
 }
-section :hover #showAnswerButton, section #hideAnswerButton {
+section #showAnswerButton:hover, section #hideAnswerButton:hover {
+  color: white;
   background-color: #3b3b3b;
 }
 
 /* card-content: areas */
-.card-top .card-title {
-  font-size: 40px;
-  font-weight: 600;
-}
-.card-top .card-desc {
-  font-size: 20px;
+.card-top h2.card-title {
+  margin: 10 0;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-size: 42px;
   font-weight: 400;
+}
+.card-top p.card-desc {
+  display: block;
+  margin: 1.2 em 0;
+  font-family: "Verdana", sans-serif;
+  font-size: 15px;
 }
 
 .card-body {
   background-color: lightgray;
-  padding: 10px;
-  min-height: 200px;
+  padding: 0 30 90 30;
+  min-height: 250px;
+  border-radius: 5px;
+}
+.card-body .field .card-mid {
+  position: relative;
+  width: 100px;
+  padding: 0 30 90 30;
+  min-height: 250px;
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 120%;
+  line-height: 1.7em;
 }
 .card-body .control {
   display: flex;
@@ -125,6 +141,10 @@ section :hover #showAnswerButton, section #hideAnswerButton {
 .card-lower .card-buttons {
   margin: 5px 0px;
   font-weight: 700;
+}
+.card-lower #showAnswerButton {
+  background-color: black;
+  color: white;
 }
 .card-lower #hideAnswerButton {
   display: none;
