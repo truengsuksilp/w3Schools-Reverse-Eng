@@ -17,10 +17,17 @@ nav {
     }
     .navbar-dropdown {
         position: absolute;
-        background-color: rgb(40,42,53);
-        color: white; /* FIXME */
+        padding: 10 30 10 10;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.5;
     }
-
+    .dropdown-content-background-color {
+        background-color: rgb(40,42,53);
+    } 
+    .dropdown-item-color {
+        color: white;
+    }
 }
 
 body {

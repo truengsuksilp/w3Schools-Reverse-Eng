@@ -12,9 +12,16 @@ nav .navbar-link {
 }
 nav .navbar-dropdown {
   position: absolute;
+  padding: 10 30 10 10;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+nav .dropdown-content-background-color {
   background-color: #282a35;
+}
+nav .dropdown-item-color {
   color: white;
-  /* FIXME */
 }
 
 body {
