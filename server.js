@@ -4,6 +4,13 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+// Security Basic pack
+const helmet = require('helmet');
+const rateLimit = require("express-rate-limit");
+const sanitize = require('express-mongo-sanitize');  // Uses secret key to sanitizes, prevent MongoDB Operator Injection.
+const morgan = require('morgan'); // HTTP request logger
+const hpp = require("hpp"); // Query pollution
+
 /* === Internal Modules === */
 const controllers = require('./controllers');
 require("dotenv").config();
@@ -46,7 +53,17 @@ app.use(function (req, res, next) {
     }
 });
 
-// Use Security packages: helmet, mongoSanitize, morgan, rate limit, hpp
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
+
+// Use security packages
+app.use(helmet({contentSecurityPolicy: false,}));
+app.use(sanitize());
+app.use(hpp());
+app.use(rateLimit(limiter));
+app.use(morgan('dev'));
 
 /* === Routes === */
 
