@@ -54,16 +54,16 @@ app.use(function (req, res, next) {
 });
 
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100
+  windowMs: 1000 * 60 * 60 * 24, 
+  max: 3000
 });
 
 // Use security packages
 app.use(helmet({contentSecurityPolicy: false,}));
 app.use(sanitize());
 app.use(hpp());
-app.use(rateLimit(limiter));
-app.use(morgan('dev'));
+// app.use(rateLimit(limiter));
+// app.use(morgan('dev'));
 
 /* === Routes === */
 

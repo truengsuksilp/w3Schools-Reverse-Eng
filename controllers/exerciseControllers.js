@@ -10,10 +10,10 @@ const UserAnswer = require('../models/UserAnswer');
 /* === Routes | base url: /exercises === */
 
 // Reset progress
-router.get('/:language/reset', async (req, res, next) => {
+router.get('/reset', async (req, res, next) => {
     try {
         const deletedAnswers = await UserAnswer.deleteMany({user_id: req.session.currentUser.email});
-        res.redirect(`/exercises/${req.params.language}`);
+        res.redirect(`/exercises/js`);
     } catch (error) {
         console.log(error);
         req.error = error;

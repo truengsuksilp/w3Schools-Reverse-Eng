@@ -4,10 +4,18 @@
 
 * {
     box-sizing: border-box;
-    
+    //border: rebeccapurple solid 1px;
 }
 
 nav { 
+    #is-96x96 {
+        height: 96px;
+        width: 96px;
+    }
+    img {
+        width: 100%;
+    }
+
     .navbar-link {
         width: 127px;
         padding: 24px 16px;

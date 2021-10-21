@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 
+nav .navbar-item image {
+  max-height: 96px;
+}
+nav img {
+  width: 100%;
+}
 nav .navbar-link {
   width: 127px;
   padding: 24px 16px;

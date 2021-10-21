@@ -3,6 +3,13 @@
   box-sizing: border-box;
 }
 
+nav #is-96x96 {
+  height: 96px;
+  width: 96px;
+}
+nav img {
+  width: 100%;
+}
 nav .navbar-link {
   width: 127px;
   padding: 24px 16px;
