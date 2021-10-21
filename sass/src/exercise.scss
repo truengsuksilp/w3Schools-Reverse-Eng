@@ -5,59 +5,103 @@
 
 * {
   box-sizing: border-box;
-  border: 1px solid rebeccapurple;
+  //border: 1px solid rebeccapurple;
 }
 
 body {
   display: grid;
   grid-template-columns: 1fr 5fr;
-/*   grid-template-rows: 9vh 1vh; */
+  grid-template-rows: 2fr 1fr;
+
+/* === Aside/Accordion Menu === */
+  container.aside {
+
+    aside.menu {
+      border: 1px solid lightgray;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      width: 40vh;
+      padding: 0px;
+
+      section.aside-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 10px 20px;
+        font-size: 22px;
+
+        a {
+          color: #000;
+        }
+      }
+
+      h5.aside-tracker {
+        padding: 10px 5px 5px 10px;
+        text-align: center;
+        font-size: 15px;
+        background-color: #E7E9EB;
+      }
+    }
+  }
 
   main {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto;
-  }
+
+/* === Show burger when sidebar is hidden === */
+    nav.exercise-navbar {
+
+      i.exercise-navbar {
+        cursor: pointer;
+        height: auto;
+        font-size: 21px;
+        font-weight: 900;
+      }
+    }
+
+/* === Exercise Card === */
     section.card {
       margin-top:10vh;
       display: grid;
       //grid-template-rows: auto;
-    }
 
-}
+      article.card-content {
 
-/* Card content & input */
-article.card-content {
-  //margin-top: 25vh;
+        div.card-top {
+      
+          h2.card-title {
+            margin: 10 0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+          }
+      
+          p.card-desc {
+            display: block;
+            margin: 1.2 em 0;
+            font-family: 'Verdana', sans-serif;
+            font-size: 15px;
+          }
+        }
 
-  div.card-top {
+/* === Code Input === */
+        div.card-mid {
 
-    h2.card-title {
-      margin: 10 0;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-      font-size: 42px;
-      font-weight: 400;
-    }
-    p.card-desc {
-      display: block;
-      margin: 1.2 em 0;
-      font-family: 'Verdana', sans-serif;
-      font-size: 15px;
+          #control-input {
+            display: inline-flex;
+            margin: 30px 0px;
+
+            input.input { //FIXME
+              max-width: 100px;
+            }
+          }
+        }
+      }
     }
 
   }
-  
-}
 
 
 
-#control-input {
-  display: inline-flex;
-  margin: 30px 0px;
-
-  input.input { //FIXME
-    max-width: 100px;
-  }
 }
 
 
@@ -91,27 +135,9 @@ article.card-content {
 
 
 /* ASIDE */
-aside {
-  border: 1px solid lightgray;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  width: 40vh;
-  padding: 0px;
 
-  .aside-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px 10px 20px;
-    font-size: 22px;
-    a {
-      color: #000;
-    }
-  }
-  .aside-tracker {
-    padding: 10px 5px 5px 10px;
-    text-align: center;
-    font-size: 15px;
-    background-color: #E7E9EB;
-  }
+
+
   .menu-label {
     cursor: pointer;
     background-color: gray;
@@ -133,7 +159,7 @@ aside {
       background-color: #888888;
     }
   }
-}
+
 
 
 /* MAIN */
@@ -160,20 +186,6 @@ footer {
 
 
  /* Containrs for the aside and section.card */
-
-/* main {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
-  //align-content: left; */
-  
-  .fa-bars {
-    height: 90px;
-    font-size: 21px;
-    //margin-bottom: 60px;
-  }
-//}
-
 
 
 
