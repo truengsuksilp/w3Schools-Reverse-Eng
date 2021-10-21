@@ -14,16 +14,23 @@ body main {
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: auto;
 }
+body section.card {
+  margin-top: 10vh;
+  display: grid;
+}
 
 /* Card content & input */
-article.card-content {
-  margin-top: 25vh;
-}
 article.card-content div.card-top h2.card-title {
   margin: 10 0;
   font-family: "Segoe UI", "Arial", sans-serif;
   font-size: 42px;
   font-weight: 400;
+}
+article.card-content div.card-top p.card-desc {
+  display: block;
+  margin: 1.2 em 0;
+  font-family: "Verdana", sans-serif;
+  font-size: 15px;
 }
 
 #control-input {
@@ -107,6 +114,20 @@ aside .menu-list :hover li {
 
 /* MAIN */
 /* FOOTER */
+footer {
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  text-align: center;
+}
+footer #checkAnswer {
+  width: 150px;
+}
+footer .card-buttons {
+  margin: 5px 0px;
+  font-weight: 700;
+}
+
 /* Containrs for the aside and section.card */
 /* main {
   display: flex;
@@ -136,39 +157,28 @@ aside .menu-list :hover li {
     min-width: 100vh;
     padding: 20px;
     font-family: 'Source Sans Pro', sans-serif;
+*/
+.card-body {
+  background-color: lightgray;
+  padding: 30px 30px 90px 30px;
+  min-height: 250px;
+  border-radius: 5px;
+}
+.card-body .field .card-mid {
+  position: relative;
+  width: 100px;
+  padding: inherit;
+  min-height: 250px;
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 120%;
+  line-height: 1.7em;
+}
+.card-body .field .card-mid .input {
+  width: 30px;
+  margin: 10px;
+}
 
-    .card-top {
-      h2.card-title {
-        DELETED
-      }    
-      p.card-desc {
-        display: block;
-        margin: 1.2 em 0;
-        font-family: 'Verdana', sans-serif;
-        font-size: 15px;
-      }
-    }
-    .card-body {
-      background-color: lightgray;
-      padding: 30px 30px 90px 30px;
-      min-height: 250px;
-      border-radius: 5px;
-
-      .field .card-mid {
-        position: relative;
-        width: 100px;
-        padding: inherit;
-        min-height: 250px;
-        font-family: 'Consolas', 'Courier New', Courier, monospace;
-        font-size: 120%;
-        line-height: 1.7em;
-
-        .input {
-          width: 30px;
-          margin: 10px;
-        }
-      } 
-      .columns {
+/*     .columns {
         margin-top: 70px;
         align-content: center;
 
@@ -209,25 +219,10 @@ aside .menu-list :hover li {
     }
   }
 }
-
-// HACK: Check Answer button to show it works
-
+ */
+/*
 footer {
-  // display: none; - will update once logic has been completed
-  margin: 20px 0px 0px 5px;
-  padding: 5px;
-  color: gray;
-  border: 1px solid lightgray;
-  max-width: calc(30vh - 5px);
-  text-align: center;
 
-  #checkAnswer {
-    width: 150px;
-  }
-  .card-buttons {
-    margin: 5px 0px;
-    font-weight: 700;
-  }
 }
  */
 

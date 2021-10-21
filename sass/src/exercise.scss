@@ -18,12 +18,17 @@ body {
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto;
   }
+    section.card {
+      margin-top:10vh;
+      display: grid;
+      //grid-template-rows: auto;
+    }
 
 }
 
 /* Card content & input */
 article.card-content {
-  margin-top: 25vh;
+  //margin-top: 25vh;
 
   div.card-top {
 
@@ -33,15 +38,24 @@ article.card-content {
       font-size: 42px;
       font-weight: 400;
     }
+    p.card-desc {
+      display: block;
+      margin: 1.2 em 0;
+      font-family: 'Verdana', sans-serif;
+      font-size: 15px;
+    }
+
   }
   
 }
+
+
 
 #control-input {
   display: inline-flex;
   margin: 30px 0px;
 
-  input.input {
+  input.input { //FIXME
     max-width: 100px;
   }
 }
@@ -128,7 +142,19 @@ aside {
 
 /* FOOTER */
 footer {
+  //display: none; - will update once logic has been completed
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  text-align: center;
 
+  #checkAnswer {
+    width: 150px;
+  }
+  .card-buttons {
+    margin: 5px 0px;
+    font-weight: 700;
+  }
 }
 
 
@@ -170,18 +196,8 @@ footer {
     min-width: 100vh;
     padding: 20px;
     font-family: 'Source Sans Pro', sans-serif;
+*/
 
-    .card-top {
-      h2.card-title {
-        DELETED
-      }    
-      p.card-desc {
-        display: block;
-        margin: 1.2 em 0;
-        font-family: 'Verdana', sans-serif;
-        font-size: 15px;
-      }
-    }
     .card-body {
       background-color: lightgray;
       padding: 30px 30px 90px 30px;
@@ -202,7 +218,8 @@ footer {
           margin: 10px;
         }
       } 
-      .columns {
+    }
+  /*     .columns {
         margin-top: 70px;
         align-content: center;
 
@@ -243,24 +260,10 @@ footer {
     }
   }
 }
-
+ */
 // HACK: Check Answer button to show it works
-
+/*
 footer {
-  // display: none; - will update once logic has been completed
-  margin: 20px 0px 0px 5px;
-  padding: 5px;
-  color: gray;
-  border: 1px solid lightgray;
-  max-width: calc(30vh - 5px);
-  text-align: center;
-
-  #checkAnswer {
-    width: 150px;
-  }
-  .card-buttons {
-    margin: 5px 0px;
-    font-weight: 700;
-  }
+  
 }
  */
