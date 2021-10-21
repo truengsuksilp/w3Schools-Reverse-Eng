@@ -6,7 +6,7 @@ const correctAnswer2 = $('#correctAnswer2').html();
 
 const hide = function (){
     $('#hideAnswerButton').hide();
-    $('.fa-bars').hide();
+    $('.exercise-navbar').hide();
     $('footer').hide();
 }
 
@@ -43,12 +43,12 @@ const hideAnswers = function () {
 
 const showSideBar = function () {
     $('.menu').show();
-    $('.fa-bars').hide();
+    $('.exercise-navbar').hide();
 }
 
 const hideSideBar = function () {
     $('.menu').hide();
-    $('.fa-bars').show();
+    $('.exercise-navbar').show();
 }
 
 const hideQuestions = function (topic_number) {

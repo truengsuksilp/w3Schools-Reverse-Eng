@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/src/main.css'}) %>
+<%- include('./partials/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/main.css'}) %>
 
 <body>
 
-  <%- include('./partials/_nav.ejs', { page: `ReVamp(ire)`}) %>
+  <%- include('./partials/nav/_nav.ejs') %>
 
   <section class='card html-card columns is-mobile'>
 
@@ -25,7 +25,7 @@
       <h2 class='card-header'> HTML Example: </h2>
       <div class='card-ide'>
 
-        <%- include('./partials/_codebox_html.ejs') %>
+        <%- include('./partials/codeColors/_codebox_html.ejs') %>
 
       </div>
       <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
@@ -50,7 +50,7 @@
       <h2 class='card-header'> CSS Example: </h2>
       <div class='card-ide'>
 
-      <%- include('./partials/_codebox_css.ejs') %>
+      <%- include('./partials/codeColors/_codebox_css.ejs') %>
         
       </div>
       <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
@@ -76,7 +76,7 @@
       <h2 class='card-header'> JavaScript Example: </h2>
       <div class='card-ide'>
 
-        <%- include('./partials/_codebox_js.ejs') %>
+        <%- include('./partials/codeColors/_codebox_js.ejs') %>
 
         <br>
         &lt;/script&gt;            
@@ -85,6 +85,8 @@
 
     </article>
   </section>
+
+  <%- include('./partials/footer/_footer.ejs') %>
 
 </body>
 </html>

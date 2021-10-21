@@ -1,13 +1,35 @@
 /* GLOBAL */
 * {
   box-sizing: border-box;
+  border: 1px solid rebeccapurple;
 }
 
 body {
   display: grid;
+  grid-template-areas: "nav nav" "container main" "footer footer";
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 80px 2fr 1fr;
   /* === Aside/Accordion Menu === */
+}
+body nav .navbar-link {
+  width: 127px;
+  padding: 24px 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+body nav .navbar-dropdown {
+  position: absolute;
+  padding: 10 30 10 10;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+body nav .dropdown-content-background-color {
+  background-color: #282a35;
+}
+body nav .dropdown-item-color {
+  color: white;
 }
 body container.aside aside.menu {
   border: 1px solid lightgray;

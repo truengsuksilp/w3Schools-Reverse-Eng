@@ -54,16 +54,16 @@ app.use(function (req, res, next) {
 });
 
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100
+  windowMs: 24 * 60 * 60 * 1000, // one day
+  max: 1000 // limit each IP to 100 req/windowMs
 });
 
 // Use security packages
 app.use(helmet({contentSecurityPolicy: false,}));
 app.use(sanitize());
 app.use(hpp());
-app.use(rateLimit(limiter));
-app.use(morgan('dev'));
+// app.use(rateLimit(limiter));
+// app.use(morgan('dev'));
 
 /* === Routes === */
 
