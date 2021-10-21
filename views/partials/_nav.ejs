@@ -2,8 +2,8 @@
   
   <!-- Navbar BRAND -->
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://www.w3schools.com/">
-      <img src="w3Schools-Reverse-Eng/assets/logo.jpeg"width="112" height="28">
+    <a class="navbar-item" href="/">
+      <img src="logo.jpeg"width="50" height="50">
     </a>
   </div>
 
@@ -31,10 +31,24 @@
 
       <!-- Navbar END -->
       <div class="navbar-end">
+        <% if(typeof user !== 'undefined'){ %>
+          <p class="navbar-item">
+            <strong>Account:&nbsp</strong>
+            <span> <%= user.email %></span>
+          </p>
+        <% } %>
+
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button"id='is-w3-green' href='/signup'>Sign up</a>
-            <a class="button is-light" href='/login'>Log in</a>
+            <% for ( i in routes ) { %>
+              <a 
+                class="button <%= routes[i].class %>" 
+                id="<%= routes[i].id %>"
+                href="<%= routes[i].href %>"
+              > 
+                <%= routes[i].buttonTitle %>
+              </a>
+            <% } %>
           </div>
         </div>
       </div>
@@ -42,3 +56,8 @@
   </div>
 
 </nav>
+
+
+
+<!-- <a class="button" id='is-w3-green' href='/signup'>Sign up</a>
+<a class="button is-light" href='/login'>Log in</a> -->

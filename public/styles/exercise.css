@@ -1,0 +1,158 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+/* Containrs for the aside and section.card */
+main {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+}
+main .fa-bars {
+  height: 90px;
+  font-size: 21px;
+}
+
+aside {
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 40vh;
+  padding: 0px;
+}
+aside .aside-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+  font-size: 22px;
+}
+aside .aside-header a {
+  color: #000;
+}
+aside .aside-tracker {
+  padding: 10px 5px 5px 10px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #E7E9EB;
+}
+aside .menu-label {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+}
+aside #menuLabel {
+  margin-top: 0px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+aside .menu-list {
+  padding-left: 5px;
+  font-size: 16px;
+  color: #E7E9EB;
+}
+aside .menu-list :hover li {
+  background-color: #888888;
+}
+
+/* section: defines placement of the card */
+/* card-content: defines flex for the entire card */
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: inherit;
+  max-width: 1400;
+}
+section .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  min-width: 100vh;
+  padding: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* card-content: areas */
+.card-top h2.card-title {
+  margin: 10 0;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+}
+.card-top p.card-desc {
+  display: block;
+  margin: 1.2 em 0;
+  font-family: "Verdana", sans-serif;
+  font-size: 15px;
+}
+
+.card-body {
+  background-color: lightgray;
+  padding: 30px 30px 90px 30px;
+  min-height: 250px;
+  border-radius: 5px;
+}
+.card-body .field .card-mid {
+  position: relative;
+  width: 100px;
+  padding: inherit;
+  min-height: 250px;
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 120%;
+  line-height: 1.7em;
+}
+.card-body .control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.card-body .input {
+  width: 10vh;
+  margin: 10px;
+}
+.card-body .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+.card-body #submitButton {
+  background-color: #04AA6D;
+}
+.card-body #hideAnswerButton {
+  display: none;
+}
+.card-body #showAnswerButton, .card-body #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+.card-body #showAnswerButton:hover, .card-body #hideAnswerButton:hover {
+  color: white;
+  background-color: #3b3b3b;
+}
+
+footer {
+  margin: 20px 0px 0px 5px;
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  max-width: calc(30vh - 5px);
+  text-align: center;
+}
+footer #checkAnswer {
+  width: 150px;
+}
+footer .card-buttons {
+  margin: 5px 0px;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=exercise.css.map */

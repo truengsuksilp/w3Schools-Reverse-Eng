@@ -9,16 +9,17 @@
     jsFile: '/scripts/main.js'}) %>
 
 <body>
-   <!-- Aside Bar: To be replaced by Accordion later -->
-   <container class="aside">
-    <aside class="menu">
+  <!-- Aside Bar: To be replaced by Accordion later -->
+  <container class="aside">
 
+  <main>
+    <aside class="menu">
       <!-- Header: Icons, Completion Tracker -->
       <section class="aside-header">
         <a href="/">
           <i class="fas fa-home"></i>
         </a>
-        <a href="/">
+        <a href="/exercises/<%= allExercises[0].language %>/reset">
           <i class="fas fa-redo-alt"></i>
         </a>
         <a>
@@ -27,7 +28,13 @@
       </section>
       <section class="aside-tracker">
         <h5>
-          Completed <%= question.order -1 %> of 10 Exercises
+          Completed 
+          <% if (!progress) { %>
+            <%= question.order -1 %> 
+          <% } else { %>
+            <%= progress %>
+          <% } %>
+          of 10 Exercises
         </h5>
       </section>
 
@@ -44,7 +51,7 @@
         <ul class="menu-list ">
           <% for (j in allQuestions) { %>
             <li 
-              class="topic_<%= i %>""
+              class="topic_<%= i %>"
             >
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
@@ -130,8 +137,12 @@
     </section>
   </main>
 
+<<<<<<< HEAD
   <footer class="footer is-invisible">
     <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+=======
+  <footer>
+>>>>>>> main
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
   </footer>

@@ -4,33 +4,36 @@ const Exercise = require('../models/Exercise');
 
 /* === Seed Data: [{}, ..., {}] === */
 const exercises = [
+    // {
+    //     language: 'js',
+    //     topic: 'JS Variables',
+    //     order: 1,
+    // },
+    // {
+    //     language: 'js',
+    //     topic: 'JS Functions',
+    //     order: 2,
+    // },
+    // {
+    //     language: 'js',
+    //     topic: 'JS Objects',
+    //     order: 3,
+    // },
     {
-        language: 'js',
-        topic: 'JS Variables',
+        language: 'css',
+        topic: 'CSS Selectors',
         order: 1,
     },
     {
-        language: 'js',
-        topic: 'JS Functions',
+        language: 'css',
+        topic: 'CSS Background',    /* SKIP SECOND EXERCISE */
         order: 2,
     },
     {
-        language: 'js',
-        topic: 'JS Objects',
+        language: 'css',
+        topic: 'CSS Border',
         order: 3,
     },
-    // {
-    //     language: 'css',
-    //     topic: 'CSS Selectors',
-    // },
-    // {
-    //     language: 'css',
-    //     topic: 'CSS Background',    /* SKIP SECOND EXERCISE */
-    // },
-    // {
-    //     language: 'css',
-    //     topic: 'CSS Border',
-    // },
     // {
     //     language: 'html',
     //     topic: 'HTML Attributes',
@@ -49,7 +52,7 @@ const exercises = [
 
 const seedData = async (collection, data) => {
     try {
-        await collection.deleteMany({});
+        await collection.deleteMany({ language: 'css' });
         await collection.insertMany(data);
         console.log(`=== Seeded Exercise or Question Data ===`);
         console.log(data);

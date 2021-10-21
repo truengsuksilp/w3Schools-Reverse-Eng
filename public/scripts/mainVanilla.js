@@ -1,20 +1,19 @@
 /* === Define variables === */
-const correctAnswer1 = $('#correctAnswer1').html();
-const correctAnswer2 = $('#correctAnswer2').html();
+const correctAnswer1 = document.querySelector('#correctAnswer1').innerText;
+const correctAnswer2 = document.querySelector('#correctAnswer2').innerText;
 
 /* === Logic === */
 
 const hide = function (){
     $('#hideAnswerButton').hide();
     $('.fa-bars').hide();
-    $('footer').hide();
 }
 
 const checkAnswers = function (ans1, ans2) {
 
-    const input1 = $('#input1').val();
-    const input2 = $('#input2').val();
-    const feedback = $('.feedback');
+    const input1 = document.querySelector('#input1').value;
+    const input2 = document.querySelector('#input2').value;
+    const feedback = document.querySelector('.feedback');
 
     // NOTE: Use localeCompare: Because input1 is in a different memory location
     if (input1.localeCompare(ans1) === 0 && input2.localeCompare(ans2) === 0) {
@@ -25,16 +24,16 @@ const checkAnswers = function (ans1, ans2) {
 }
 
 const showAnswers = function () {
-    $('#input1').val(correctAnswer1);
-    $('#input2').val(correctAnswer2);
+    document.querySelector('#input1').value = correctAnswer1;
+    document.querySelector('#input2').value = correctAnswer2;
 
     $('#showAnswerButton').hide();
     $('#hideAnswerButton').show();
 }
 
 const hideAnswers = function () {
-    $('#input1').val('');
-    $('#input2').val('');
+    document.querySelector('#input1').value = "";
+    document.querySelector('#input2').value = "";
 
     $('#showAnswerButton').show();
     $('#hideAnswerButton').hide();
