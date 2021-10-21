@@ -9,6 +9,18 @@ const UserAnswer = require('../models/UserAnswer');
 
 /* === Routes | base url: /exercises === */
 
+// Reset progress
+router.get('/:language/reset', async (req, res, next) => {
+    try {
+        const deletedAnswers = await UserAnswer.deleteMany({user_id: req.session.currentUser.email});
+        res.redirect(`/exercises/${req.params.language}`);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        next();
+    }
+})
+
 // Show: Unspecified order, then find the first question for the languague
 router.get('/:language', async (req, res, next) => {
     try {
@@ -25,7 +37,7 @@ router.get('/:language', async (req, res, next) => {
     } catch (error) {
         console.log(error);
         req.error = error;
-        next()
+        next();
     }
 
 });
@@ -70,7 +82,7 @@ router.get('/:language/:question_id/:order', async (req, res, next) => {
     } catch (error) {
         console.log(error);
         req.error = error;
-        next()
+        next();
     }
 
 });
@@ -114,7 +126,7 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
     } catch (error) {
         console.log(error);
         req.error = error;
-        next()
+        next();
     }   
 });
 

@@ -11,16 +11,13 @@
 <body>
 
   <main>
-    <!-- Aside Bar: To be replaced by Accordion later -->
-    
     <aside class="menu">
-
       <!-- Header: Icons, Completion Tracker -->
       <section class="aside-header">
         <a href="/">
           <i class="fas fa-home"></i>
         </a>
-        <a href="/">
+        <a href="/exercises/<%= allExercises[0].language %>/reset">
           <i class="fas fa-redo-alt"></i>
         </a>
         <a>
@@ -52,7 +49,7 @@
         <ul class="menu-list ">
           <% for (j in allQuestions) { %>
             <li 
-              class="topic_<%= i %>""
+              class="topic_<%= i %>"
             >
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"

@@ -53,16 +53,11 @@ app.use(function (req, res, next) {
 // == Home
 app.get('/', (req, res) => res.render('index'));
 
-// == Bulma
-app.get('/bulma', (req, res) => res.render('bulma'));
-
 // == Auth
 app.use('/', controllers.auth);
 
 // == Exercise & Question
 app.use('/exercises', controllers.exercise);
-
-// == User Answers
 
 // == 404
 app.get('/*', (req, res) => res.render('404'));
