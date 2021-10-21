@@ -12,8 +12,13 @@ const UserAnswer = require('../models/UserAnswer');
 // Reset progress
 router.get('/:language/reset', async (req, res, next) => {
     try {
-        const deletedAnswers = await UserAnswer.deleteMany({user_id: req.session.currentUser.email});
-        res.redirect(`/exercises/${req.params.language}`);
+        if (!req.session.currentUser) {
+            return res.redirect(`/exercises/${req.params.language}`);
+        };
+        const deletedAnswers = await UserAnswer.deleteMany({
+            user_id: req.session.currentUser.email
+        });
+        return res.redirect(`/exercises/${req.params.language}`);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -47,7 +52,17 @@ router.get('/:language/:question_id/:order', async (req, res, next) => {
     try {    
         const foundQuestion = await Question.findOne({_id: req.params.question_id, order: req.params.order})
             .populate('exercise_id');
-        const foundAllExercises = await Exercise.find({language: req.params.language});
+
+        // Create an array of exercises in order defined by DB
+        const foundAllExercises = await Exercise.find({language: req.params.language, order: 1});
+        const noOfTopics = await Exercise.count({language: req.params.language});
+        for ( i = 2; i <= noOfTopics; i++ ) {
+            const foundExercise = await Exercise.findOne({language: req.params.language, order: i});
+            foundAllExercises.push(foundExercise);
+        };
+        
+        // const foundAllExercises = await Exercise.find({language: req.params.language,});
+        console.log(foundAllExercises);
 
         // NOTE: Nested array of topics and questions to render on sidebar
         const allQuestions = [];
@@ -91,11 +106,20 @@ router.get('/:language/:question_id/:order', async (req, res, next) => {
 
 router.post('/:language/:question_id/:order', async (req, res, next) => {
     try {
+        // Get User Id function
+        const getId = () => {
+            if (req.session.currentUser) {
+                return req.session.currentUser.email;
+            } else {
+                return 'unregistered';
+            }
+        }
+        
         // Ger user's identity and answers
         const user_answer_1 = req.body.user_answer_1;
         const user_answer_2 = req.body.user_answer_2;
         const userAnswerLog = { 
-            user_id: req.session.currentUser.email, 
+            user_id: getId(), 
             question_id: req.params.question_id, 
         };
 
@@ -129,10 +153,6 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
         next();
     }   
 });
-
-
-
-// Show: DAY 3 - Reset score
 
 
 /* === Exports: route === */
