@@ -1,176 +1,196 @@
 @use "../variables" as *;
 
+
 /* GLOBAL */
 
 * {
   box-sizing: border-box;
-  // border: 1px solid rebeccapurple;
+  //border: 1px solid rebeccapurple;
 }
-  
-/* Containrs for the aside and section.card */
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 2fr 1fr;
 
-main {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
-  //align-content: left;
-  
-  .fa-bars {
-    height: 90px;
-    font-size: 21px;
-    //margin-bottom: 60px;
-  }
-}
+/* === Aside/Accordion Menu === */
+  container.aside {
 
-aside {
-  border: 1px solid lightgray;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  width: 40vh;
-  padding: 0px;
+    aside.menu {
+      border: 1px solid lightgray;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      width: 40vh;
+      padding: 0px;
 
-  .aside-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px 10px 20px;
-    font-size: 22px;
-    a {
-      color: #000;
+      section.aside-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 10px 20px;
+        font-size: 22px;
+
+        a {
+          color: #000;
+        }
+      }
+      h5.aside-tracker {
+        padding: 10px 5px 5px 10px;
+        text-align: center;
+        font-size: 15px;
+        background-color: #E7E9EB;
+      }
+      .menu-label {
+        cursor: pointer;
+        background-color: gray;
+        color: white;
+        padding: 5px;
+        font-size: 18px;
+      }
+      #menuLabel {
+        margin-top: 0px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .menu-list {
+        padding-left: 5px;
+        font-size: 16px;
+        color: #E7E9EB;
+        :hover li {
+          background-color: #888888;
+        }
+      }
     }
   }
-  .aside-tracker {
-    padding: 10px 5px 5px 10px;
-    text-align: center;
-    font-size: 15px;
-    background-color: #E7E9EB;
-  }
-  .menu-label {
-    background-color: gray;
-    color: white;
+  main {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: auto;
+
+/* === Show burger when sidebar is hidden === */
+    nav.exercise-navbar {
+      padding: 15px;
+
+      i.exercise-navbar {
+        cursor: pointer;
+        height: auto;
+        font-size: 21px;
+        font-weight: 900;
+      }
+    }
+
+/* === Exercise Card === */
+    section.card {
+      margin-top:10vh;
+      display: grid;
+      padding: 10px;
+      //grid-template-rows: auto;
+
+      article.card-content {
+
+        div.card-top {
+      
+          h2.card-title {
+            margin: 10 0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+          }
+          p.card-desc {
+            display: block;
+            margin: 1.2 em 0;
+            font-family: 'Verdana', sans-serif;
+            font-size: 15px;
+          }
+        }
+
+/* === Code Input === */
+      .card-body {
+        background-color: lightgray;
+        padding: 30px 30px 50px 30px;
+        min-height: 250px;
+        border-radius: 5px;
+
+          #control-input {
+            display: inline-flex;
+            margin: 30px 0px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 120%;
+            font-weight: 600;
+            line-height: 1.7em;
+
+            .input {
+              max-width: 125px;
+              margin: 0px 10px;
+            }
+          }
+        } 
+      }      
+    }
+
+/* === Buttons === */
+        div#card-buttons {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin: 40px 10px 0px;
+          align-content: center;
+
+          div.card-buttons {
+            margin: 0 auto;
+
+            .button {
+              width: 200px;
+              border-radius: 25px;
+              margin: 7px;
+              padding: 8px 16px;
+              font-size: 18px;
+              font-weight: 700;
+              color: white;
+              }
+            }
+          }
+
+/* === FOOTER === */
+// visibility set by footer.is-invisible Bulma
+  footer {
     padding: 5px;
-    font-size: 18px;
-  }
-  #menuLabel {
-    margin-top: 0px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .menu-list {
-    padding-left: 5px;
-    font-size: 16px;
-    color: #E7E9EB;
-    :hover li {
-      background-color: #888888;
+    color: gray;
+    border: 1px solid lightgray;
+    text-align: center;
+
+    #checkAnswer {
+      width: 150px;
     }
   }
+
+
+
+
+#submitButton {
+  background-color: $primary-color;
 }
-
-/* section: defines placement of the card */ 
-/* card-content: defines flex for the entire card */
-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: inherit;
-  max-width: 1400;
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 400px;
-    min-width: 100vh;
-    padding: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+#hideAnswerButton {
+  display: none;
 }
+#showAnswerButton, #hideAnswerButton {
+  background-color: $secondary-button-color;
 
-/* card-content: areas */
-
-.card-top {
-  h2.card-title {
-    margin: 10 0;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    font-size: 42px;
-    font-weight: 400;
-  }    
-  p.card-desc {
-    display: block;
-    margin: 1.2 em 0;
-    font-family: 'Verdana', sans-serif;
-    font-size: 15px;
-  }
-}
-
-.card-body {
-  background-color: lightgray;
-  padding: 30px 30px 90px 30px;
-  min-height: 250px;
-  border-radius: 5px;
-
-  .field .card-mid {
-    position: relative;
-    width: 100px;
-    padding: inherit;
-    min-height: 250px;
-    font-family: 'Consolas', 'Courier New', Courier, monospace;
-    font-size: 120%;
-    line-height: 1.7em;
+   &:hover {
+    color: white;
+    background-color: $tertiary-button-color;
   } 
+}
 
-  .control {
+
+
+   
+
+    .control {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     font-size: 20px;
     font-weight: 600;
-  }
-  .input {
-    width: 10vh;
-    margin: 10px;
-  }
-  .button {
-    width: 200px;
-    border-radius: 25px;
-    margin: 7px;
-    padding: 8px 16px;
-    vertical-align: middle;
-    font-size: 18px;
-    font-weight: 700;
-    color: white;
-  }
-  
-  #submitButton {
-    background-color: $primary-color;
-  }
-  #hideAnswerButton {
-    display: none;
-  }
-  #showAnswerButton, #hideAnswerButton {
-    background-color: $secondary-button-color;
+  } 
 
-    &:hover {
-      color: white;
-      background-color: $tertiary-button-color;
-    }
-  }
-}
+    
 
-// HACK: Check Answer button to show it works
-
-footer {
-  margin: 20px 0px 0px 5px;
-  padding: 5px;
-  color: gray;
-  border: 1px solid lightgray;
-  max-width: calc(30vh - 5px);
-  text-align: center;
-
-  #checkAnswer {
-    width: 150px;
-  }
-  .card-buttons {
-    margin: 5px 0px;
-    font-weight: 700;
-  }
-}
+/* HACK: Check Answer button to show it works */}}

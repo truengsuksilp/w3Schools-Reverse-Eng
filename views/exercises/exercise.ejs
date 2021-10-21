@@ -9,6 +9,8 @@
     jsFile: '/scripts/main.js'}) %>
 
 <body>
+  <!-- Aside Bar: To be replaced by Accordion later -->
+  <container class="aside">
 
   <main>
     <aside class="menu">
@@ -61,15 +63,22 @@
         </ul>
       <% } %>
     </aside>
+  </container> 
+  <main>
+   
+    <!-- Header -->
+
+    <!-- Show Burger when sidebar is hidden -->
+    <nav class="navbar exercise-navbar">
+      <i class="fas fa-bars exercise-navbar"></i>
+    </nav>
+    
 
     <!-- Exercise Card -->
 
     <section class='card'>
 
       <article class='card-content'>
-        
-        <!-- Show Burger when sidebar is hidden -->
-        <i class="fas fa-bars"></i>
 
         <div class="card-top">
           <h2 class='card-title'>Exercise</h2>
@@ -85,7 +94,7 @@
 
             <!-- CODE INPUT -->
             <div class="field card-mid">
-              <div class="control">
+              <div class="control"id="control-input">
                 <p>
                   <%= question.text_before_inputs %>
                 </p>
@@ -111,26 +120,29 @@
               <p class='feedback'></p>
             </div>   
 
-            <!-- Submit BUTTONS -->
-            <div class="field">
-              <div class="control card-lower">
-                  <button class="card-buttons button" id='submitButton'>Submit</button>
-              </div>
-            </div>
+            <!-- BUTTONS -->
+            
           </form>   
-
-          <!-- Show Answer buttons -->
-          <div class="show-hide-answer">
-            <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
-            <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+          <div class="control columns"id="card-buttons">
+            <div class="submit card-buttons column">
+                <button class="card-buttons button" id='submitButton'>Submit</button>
+            </div>
+            <div class="show-hide-answer card-buttons column">
+              <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
+              <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+            </div>
           </div>
-        </div>
 
       </article>
     </section>
   </main>
 
+<<<<<<< HEAD
+  <footer class="footer is-invisible">
+    <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+=======
   <footer>
+>>>>>>> main
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
   </footer>
