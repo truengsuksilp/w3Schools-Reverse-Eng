@@ -67,6 +67,7 @@ body {
 
 /* === Show burger when sidebar is hidden === */
     nav.exercise-navbar {
+      padding: 15px;
 
       i.exercise-navbar {
         cursor: pointer;
@@ -80,6 +81,7 @@ body {
     section.card {
       margin-top:10vh;
       display: grid;
+      padding: 10px;
       //grid-template-rows: auto;
 
       article.card-content {
@@ -101,22 +103,34 @@ body {
         }
 
 /* === Code Input === */
-        div.card-mid {
+      .card-body {
+        background-color: lightgray;
+        padding: 30px 30px 50px 30px;
+        min-height: 250px;
+        border-radius: 5px;
 
           #control-input {
             display: inline-flex;
             margin: 30px 0px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 120%;
+            font-weight: 600;
+            line-height: 1.7em;
 
-            input.input {//FIXME - width should fit all answers
-              max-width: 100px;
+            .input {
+              max-width: 125px;
+              margin: 0px 10px;
             }
           }
-        }
+        } 
+      }      
+    }
 
 /* === Buttons === */
         div#card-buttons {
           display: grid;
           grid-template-columns: 1fr 1fr;
+          margin: 40px 10px 0px;
           align-content: center;
 
           div.card-buttons {
@@ -130,15 +144,10 @@ body {
               font-size: 18px;
               font-weight: 700;
               color: white;
+              }
             }
           }
 
-         
-        }
-      }
-    }
-
-  }
 /* === FOOTER === */
 // visibility set by footer.is-invisible Bulma
   footer {
@@ -146,99 +155,42 @@ body {
     color: gray;
     border: 1px solid lightgray;
     text-align: center;
+
+    #checkAnswer {
+      width: 150px;
+    }
   }
+
+
+
+
+#submitButton {
+  background-color: $primary-color;
+}
+#hideAnswerButton {
+  display: none;
+}
+#showAnswerButton, #hideAnswerButton {
+  background-color: $secondary-button-color;
+
+   &:hover {
+    color: white;
+    background-color: $tertiary-button-color;
+  } 
 }
 
 
 
-  #checkAnswer {
-    width: 150px;
-  }
-
-
-
-
-
- /* Containrs for the aside and section.card */
-
-
-
-
-/* section: defines placement of the card */ 
-/* card-content: defines flex for the entire card */
-/* section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  //height: 90vh;
-  width: inherit;
-  max-width: 1400;
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 400px;
-    min-width: 100vh;
-    padding: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
-*/
-
-    .card-body {
-      background-color: lightgray;
-      padding: 30px 30px 90px 30px;
-      min-height: 250px;
-      border-radius: 5px;
-
-      .field .card-mid {
-        position: relative;
-        width: 100px;
-        padding: inherit;
-        min-height: 250px;
-        font-family: 'Consolas', 'Courier New', Courier, monospace;
-        font-size: 120%;
-        line-height: 1.7em;
-
-        .input {
-          width: 30px;
-          margin: 10px;
-        }
-      } 
-    }
    
 
-         .control {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          font-size: 20px;
-          font-weight: 600;
-        } 
+    .control {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+  } 
 
     
-     
 
-
-
-
-  #submitButton {
-    background-color: $primary-color;
-  }
-  #hideAnswerButton {
-    display: none;
-  }
-  #showAnswerButton, #hideAnswerButton {
-    background-color: $secondary-button-color;
-
-    &:hover {
-      color: white;
-      background-color: $tertiary-button-color;
-    }
-  }
-
-// HACK: Check Answer button to show it works
-/*
-footer {
-  
-}
- */
+/* HACK: Check Answer button to show it works */}}
