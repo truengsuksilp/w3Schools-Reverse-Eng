@@ -8,6 +8,7 @@ body {
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 2fr 1fr;
   /* === Aside/Accordion Menu === */
+  /* === FOOTER === */
 }
 body container.aside aside.menu {
   border: 1px solid lightgray;
@@ -30,6 +31,27 @@ body container.aside aside.menu h5.aside-tracker {
   font-size: 15px;
   background-color: #E7E9EB;
 }
+body container.aside aside.menu .menu-label {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+}
+body container.aside aside.menu #menuLabel {
+  margin-top: 0px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body container.aside aside.menu .menu-list {
+  padding-left: 5px;
+  font-size: 16px;
+  color: #E7E9EB;
+}
+body container.aside aside.menu .menu-list :hover li {
+  background-color: #888888;
+}
 body main {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
@@ -49,6 +71,7 @@ body main section.card {
 }
 body main section.card article.card-content {
   /* === Code Input === */
+  /* === Buttons === */
 }
 body main section.card article.card-content div.card-top h2.card-title {
   margin: 10 0;
@@ -69,73 +92,32 @@ body main section.card article.card-content div.card-mid #control-input {
 body main section.card article.card-content div.card-mid #control-input input.input {
   max-width: 100px;
 }
-
-/* buttons */
-#card-buttons {
+body main section.card article.card-content div#card-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
 }
-
-.card-buttons {
-  align-items: center;
+body main section.card article.card-content div#card-buttons div.card-buttons {
+  margin: 0 auto;
 }
-
-/* NAVBAR */
-/* .navbar-start .exercise-navbar{
-    width: 127px;
-    padding: 24px 16px;
-    font-size: 22px;
-    font-weight: 700;
-} */
-/* Exercise navigation FIXME*/
-/*  i.exercise-navbar {
-  top: 0;
-  margin: 15px;
-  padding: 15px;
-  color: #000;
-  font-size: 22;
-  font-weight: 900;
-} */
-/* ASIDE */
-.menu-label {
-  cursor: pointer;
-  background-color: gray;
-  color: white;
-  padding: 5px;
+body main section.card article.card-content div#card-buttons div.card-buttons .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
   font-size: 18px;
+  font-weight: 700;
+  color: white;
 }
-
-#menuLabel {
-  margin-top: 0px;
-  padding-left: 10px;
-  margin-bottom: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.menu-list {
-  padding-left: 5px;
-  font-size: 16px;
-  color: #E7E9EB;
-}
-.menu-list :hover li {
-  background-color: #888888;
-}
-
-/* MAIN */
-/* FOOTER */
-footer {
+body footer {
   padding: 5px;
   color: gray;
   border: 1px solid lightgray;
   text-align: center;
 }
-footer #checkAnswer {
+
+#checkAnswer {
   width: 150px;
-}
-footer .card-buttons {
-  margin: 5px 0px;
-  font-weight: 700;
 }
 
 /* Containrs for the aside and section.card */
@@ -178,48 +160,30 @@ footer .card-buttons {
   margin: 10px;
 }
 
-/*     .columns {
-        margin-top: 70px;
-        align-content: center;
-
-        .control {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          font-size: 20px;
-          font-weight: 600;
-        }
-        .button {
-          width: 200px;
-          border-radius: 25px;
-          margin: 7px;
-          padding: 8px 16px;
-          font-size: 18px;
-          font-weight: 700;
-          color: white;
-        }
-      }
-    } 
-  }
-
-
-
-  #submitButton {
-    background-color: $primary-color;
-  }
-  #hideAnswerButton {
-    display: none;
-  }
-  #showAnswerButton, #hideAnswerButton {
-    background-color: $secondary-button-color;
-
-    &:hover {
-      color: white;
-      background-color: $tertiary-button-color;
-    }
-  }
+.control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
 }
- */
+
+#submitButton {
+  background-color: #04AA6D;
+}
+
+#hideAnswerButton {
+  display: none;
+}
+
+#showAnswerButton, #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+#showAnswerButton:hover, #hideAnswerButton:hover {
+  color: white;
+  background-color: #3b3b3b;
+}
+
 /*
 footer {
 

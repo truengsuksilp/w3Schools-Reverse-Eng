@@ -7,7 +7,6 @@
   box-sizing: border-box;
   //border: 1px solid rebeccapurple;
 }
-
 body {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -32,16 +31,35 @@ body {
           color: #000;
         }
       }
-
       h5.aside-tracker {
         padding: 10px 5px 5px 10px;
         text-align: center;
         font-size: 15px;
         background-color: #E7E9EB;
       }
+      .menu-label {
+        cursor: pointer;
+        background-color: gray;
+        color: white;
+        padding: 5px;
+        font-size: 18px;
+      }
+      #menuLabel {
+        margin-top: 0px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .menu-list {
+        padding-left: 5px;
+        font-size: 16px;
+        color: #E7E9EB;
+        :hover li {
+          background-color: #888888;
+        }
+      }
     }
   }
-
   main {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
@@ -74,7 +92,6 @@ body {
             font-size: 42px;
             font-weight: 400;
           }
-      
           p.card-desc {
             display: block;
             margin: 1.2 em 0;
@@ -90,98 +107,55 @@ body {
             display: inline-flex;
             margin: 30px 0px;
 
-            input.input { //FIXME
+            input.input {//FIXME - width should fit all answers
               max-width: 100px;
             }
           }
+        }
+
+/* === Buttons === */
+        div#card-buttons {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-content: center;
+
+          div.card-buttons {
+            margin: 0 auto;
+
+            .button {
+              width: 200px;
+              border-radius: 25px;
+              margin: 7px;
+              padding: 8px 16px;
+              font-size: 18px;
+              font-weight: 700;
+              color: white;
+            }
+          }
+
+         
         }
       }
     }
 
   }
-
-
-
-}
-
-
-/* buttons */
-#card-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-}
-
-.card-buttons {
-  align-items: center; //FIXME
-}
-
-/* NAVBAR */
-/* .navbar-start .exercise-navbar{
-    width: 127px;
-    padding: 24px 16px;
-    font-size: 22px;
-    font-weight: 700;
-} */
-/* Exercise navigation FIXME*/
-/*  i.exercise-navbar {
-  top: 0;
-  margin: 15px;
-  padding: 15px;
-  color: #000;
-  font-size: 22;
-  font-weight: 900;
-} */
-
-
-/* ASIDE */
-
-
-
-  .menu-label {
-    cursor: pointer;
-    background-color: gray;
-    color: white;
+/* === FOOTER === */
+// visibility set by footer.is-invisible Bulma
+  footer {
     padding: 5px;
-    font-size: 18px;
+    color: gray;
+    border: 1px solid lightgray;
+    text-align: center;
   }
-  #menuLabel {
-    margin-top: 0px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .menu-list {
-    padding-left: 5px;
-    font-size: 16px;
-    color: #E7E9EB;
-    :hover li {
-      background-color: #888888;
-    }
-  }
+}
 
 
-
-/* MAIN */
-
-
-
-/* FOOTER */
-footer {
-  //display: none; - will update once logic has been completed
-  padding: 5px;
-  color: gray;
-  border: 1px solid lightgray;
-  text-align: center;
 
   #checkAnswer {
     width: 150px;
   }
-  .card-buttons {
-    margin: 5px 0px;
-    font-weight: 700;
-  }
-}
+
+
 
 
 
@@ -231,29 +205,19 @@ footer {
         }
       } 
     }
-  /*     .columns {
-        margin-top: 70px;
-        align-content: center;
+   
 
-        .control {
+         .control {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
           font-size: 20px;
           font-weight: 600;
-        }
-        .button {
-          width: 200px;
-          border-radius: 25px;
-          margin: 7px;
-          padding: 8px 16px;
-          font-size: 18px;
-          font-weight: 700;
-          color: white;
-        }
-      }
-    } 
-  }
+        } 
+
+    
+     
+
 
 
 
@@ -271,8 +235,7 @@ footer {
       background-color: $tertiary-button-color;
     }
   }
-}
- */
+
 // HACK: Check Answer button to show it works
 /*
 footer {

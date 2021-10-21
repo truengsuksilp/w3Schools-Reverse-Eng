@@ -10,7 +10,7 @@
 
 <body>
    <!-- Aside Bar: To be replaced by Accordion later -->
-   <container>
+   <container class="aside">
     <aside class="menu">
 
       <!-- Header: Icons, Completion Tracker -->
@@ -61,8 +61,8 @@
    
     <!-- Header -->
 
-    <!-- Show Burger when sidebar is hidden FIXME -->
-     <nav class="navbar exercise-navbar">
+    <!-- Show Burger when sidebar is hidden -->
+    <nav class="navbar exercise-navbar">
       <i class="fas fa-bars exercise-navbar"></i>
     </nav>
     
@@ -116,11 +116,11 @@
             <!-- BUTTONS -->
             
           </form>   
-          <div class="control"id="card-buttons">
-            <div class="submit card-buttons">
+          <div class="control columns is-centered"id="card-buttons">
+            <div class="submit card-buttons column is-centered">
                 <button class="card-buttons button" id='submitButton'>Submit</button>
             </div>
-            <div class="show-hide-answer card-buttons">
+            <div class="show-hide-answer card-buttons column is-centered">
               <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
               <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
             </div>
@@ -130,7 +130,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer is-invisible">
     <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
