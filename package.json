@@ -5,12 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch-sass": "sass -w sass/src:public/styles",
+    "watch-nodemon": "nodemon server.js",
+    "dev": "open http://localhost:5000 && concurrently --handle-input -n server,sass -c 'bgGreen.bold,bgMagenta.bold' 'npm:watch-nodemon' 'npm:watch-sass' rs "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/truengsuksilp/w3Schools-Reverse-Eng.git",
-    "dev": "open http://localhost:5000 && nodemon"
+    "url": "git+https://github.com/truengsuksilp/w3Schools-Reverse-Eng.git"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +22,22 @@
   "homepage": "https://github.com/truengsuksilp/w3Schools-Reverse-Eng#readme",
   "dependencies": {
     "bulma": "^0.9.3",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.5.0",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.11",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.13",
     "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
   }
 }

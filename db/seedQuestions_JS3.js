@@ -1,14 +1,6 @@
 /* === Internal Modules === */
 require('../config/db.connection');
-const Exercise = require('../models/Exercise');
 const Question = require('../models/Question');
-
-// FIXME: Get ID out of function scope
-// Exercise.findOne({})
-//     .exec( (err, foundExercise) => {
-//         if (err) console.log(err);
-//         console.log(foundExercise._id);
-// });
 
 /* === Seed Data: [{}, ..., {}] === */
 const questions = [

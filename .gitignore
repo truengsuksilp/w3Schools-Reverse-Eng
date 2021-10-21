@@ -3,4 +3,5 @@ package-lock.json
 .env
 z.html
 todo.js
-seedQ_FAIL.js
+mainVanilla.js
+bulma.ejs
