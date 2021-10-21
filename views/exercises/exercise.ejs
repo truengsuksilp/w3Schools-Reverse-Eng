@@ -3,19 +3,19 @@
     
   <%- include('../partials/_head.ejs', { 
     page: `ReVamp(ire)`, 
-    cssFile: '/styles/src/exercise.css'
+    cssFile: '/styles/exercise.css'
   }) %>
-  <%- include('../partials/_head_js.ejs', { 
-    jsFile: '/scripts/main.js'}) %>
+  <script src="/scripts/main.js" defer></script>
 
 <body>
+
   <!-- Aside Bar: To be replaced by Accordion later -->
   <container class="aside">
-
-  <main>
     <aside class="menu">
+
       <!-- Header: Icons, Completion Tracker -->
       <section class="aside-header">
+<<<<<<< HEAD
         <a href="/">
           <i class="fas fa-home"></i>
         </a>
@@ -25,34 +25,37 @@
         <a>
           <i class="fas fa-times"></i>
         </a>
+=======
+        <a href="/"><i class="fas fa-home"></i></a>
+        <a href="/exercises/<%= allExercises[0].language %>/reset"><i class="fas fa-redo-alt"></i></a>
+        <a><i class="fas fa-times"></i></a>
+>>>>>>> main
       </section>
+
+      <!-- Tracker -->
       <section class="aside-tracker">
         <h5>
           Completed 
-          <% if (!progress) { %>
-            <%= question.order -1 %> 
-          <% } else { %>
-            <%= progress %>
-          <% } %>
+          <span>
+            <% if (!progress) { %>
+              <%= question.order -1 %> 
+            <% } else { %>
+              <%= progress %>
+            <% } %>
+          </span>
           of 10 Exercises
         </h5>
       </section>
 
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <p 
-          class="menu-label topic_<%= i %>" 
-          id="menuLabel"
-        >
+        <p class="menu-label topic_<%= i %>" id="menuLabel">
           <%= allExercises[i].topic %>
         </p>
-
         <!-- All questions: Cannot update the link to root -->
         <ul class="menu-list ">
           <% for (j in allQuestions) { %>
-            <li 
-              class="topic_<%= i %>"
-            >
+            <li class="topic_<%= i %>">
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
               >
@@ -64,22 +67,21 @@
       <% } %>
     </aside>
   </container> 
+
+  <!-- CARD: Container -->
+  
   <main>
-   
-    <!-- Header -->
 
     <!-- Show Burger when sidebar is hidden -->
     <nav class="navbar exercise-navbar">
       <i class="fas fa-bars exercise-navbar"></i>
     </nav>
     
-
-    <!-- Exercise Card -->
-
+    <!-- CARD -->
     <section class='card'>
-
       <article class='card-content'>
 
+        <!-- CARD TOP -->
         <div class="card-top">
           <h2 class='card-title'>Exercise</h2>
           <p class='card-desc'><%= question.prompt %></p>
@@ -87,11 +89,7 @@
 
         <!-- FORM -->
         <div class="card-body">
-
-          <form 
-            action = <%= url %>
-            method='POST'>
-
+          <form action = <%= url %> method='POST'>
             <!-- CODE INPUT -->
             <div class="field card-mid">
               <div class="control"id="control-input">
@@ -121,24 +119,26 @@
             </div>   
 
             <!-- BUTTONS -->
-            
-          </form>   
-          <div class="control columns"id="card-buttons">
-            <div class="submit card-buttons column">
-                <button class="card-buttons button" id='submitButton'>Submit</button>
+            <div class="control columns"id="card-buttons">
+              <div class="submit card-buttons column">
+                  <button class="card-buttons button" id='submitButton'>Submit</button>
+              </div>
+              <div class="show-hide-answer card-buttons column">
+                <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
+                <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+              </div>
             </div>
-            <div class="show-hide-answer card-buttons column">
-              <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
-              <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
-            </div>
-          </div>
-
+          </form>
+        </div>   
       </article>
     </section>
   </main>
 
+<<<<<<< HEAD
   <footer class="footer is-invisible">
     <button class="button is-secondary" id='checkAnswer'>Check Answer</button>
+=======
+>>>>>>> main
   <footer>
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>

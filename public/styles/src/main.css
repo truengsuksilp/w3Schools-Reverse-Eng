@@ -154,8 +154,18 @@ article.card-right .card-ide {
   font-size: 15px;
 }
 
-/* TODO */
-/* -- Footer -- */
-/*# sourceMappingURL=main.css.map */
+/* === Footer Styling: O === */
+footer {
+  background-color: #282A35;
+  color: white;
+  padding: 15px 40px;
+}
+footer p {
+  padding: 15px;
+}
+footer a {
+  color: white;
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=main.css.map */

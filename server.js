@@ -54,8 +54,8 @@ app.use(function (req, res, next) {
 });
 
 const limiter = rateLimit({
-  windowMs: 1000 * 60 * 60 * 24, 
-  max: 3000
+  windowMs: 24 * 60 * 60 * 1000, // one day
+  max: 1000 // limit each IP to 100 req/windowMs
 });
 
 // Use security packages

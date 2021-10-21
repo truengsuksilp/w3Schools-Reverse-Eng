@@ -1,0 +1,27 @@
+nav {
+  grid-area: nav;
+  color: white;
+}
+nav .navbar-link {
+  width: 127px;
+  padding: 24px 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+nav .navbar-dropdown {
+  position: absolute;
+  padding: 10 30 10 10;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+nav .dropdown-content-background-color {
+  background-color: #282a35;
+}
+nav .dropdown-item-color {
+  color: white;
+}
+
+/*# sourceMappingURL=temp.css.map */

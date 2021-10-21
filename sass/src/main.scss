@@ -176,9 +176,17 @@ article.card-right {
     }
 }
 
+/* === Footer Styling: O === */
 
-/* TODO */
-
-/* -- Footer -- */
-
-/*# sourceMappingURL=main.css.map */
+footer {
+    background-color: #282A35;
+    color: white;
+    padding: 15px 40px;
+    p {
+        padding: 15px;
+    }
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}
