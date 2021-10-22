@@ -12,7 +12,7 @@ const questions = [
         //text_between_inputs: '',
         text_after_inputs: `="About W3Schools">W3Schools is a web developer's site.</p>`,
         correct_answer_1: 'title',
-        //correct_answer_2: '',
+        correct_answer_2: null,
         topic_order: 1,
         order: 1,
     },

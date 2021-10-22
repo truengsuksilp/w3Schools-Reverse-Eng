@@ -41,6 +41,12 @@ const hideAnswers = function () {
 
 }
 
+const hideInput = function () {
+    if ( $('#correctAnswer2').val() === null ) {
+        $('#hideInput').hide($('userAnswer2'));
+    }
+}
+
 const showSideBar = function () {
     $('.menu').show();
     $('.exercise-navbar').hide();
