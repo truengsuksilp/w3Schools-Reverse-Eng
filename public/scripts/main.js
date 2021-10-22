@@ -4,11 +4,54 @@ const correctAnswer2 = $('#correctAnswer2').html();
 
 /* === Logic === */
 
+// INITIATION SEQUENCE
+const init = {
+    runFunctions(event) {
+        console.log("=== INITIATION ===")
+        this.hide();
+        this.greenCard();
+        this.progressTicks();
+    },
+
+    hide() {
+        $('#hideAnswerButton').hide();
+        $('.exercise-navbar').hide();
+        $('footer').hide();
+    },
+
+    progressTicks() {
+        const progressCount = parseInt($('#userProgress').html().trim());
+        console.log(progressCount)
+        for ( i = 1; i <= progressCount; i++ ){
+            $(`#q-order-${i} a`).html(`✓ Exercise ${i}`);
+            $(`#q-order-${i} a`).css('padding-left', '12px');
+            console.log(`#q-order-${i} a`)
+        }
+    },
+
+    greenCard() {
+        const currentQuestionNumber = $('#questionOrder').html().trim();
+        const currentQuestion = $(`#q-order-${currentQuestionNumber}`);
+        const currentQuestionText = $(`#q-order-${currentQuestionNumber} a`);
+        currentQuestion.css('background-color', '#04AA6D');
+        currentQuestionText.css('color', '#fff');
+        currentQuestionText.css('font-weight', '700');
+        console.log([currentQuestionNumber, `#order-${currentQuestionNumber}`]);     
+    },
+}
+
 const hide = function (){
     $('#hideAnswerButton').hide();
     $('.exercise-navbar').hide();
     $('footer').hide();
 }
+
+// const greenCard = function (){
+//     const currentQuestionNumber = $('#questionOrder').html();
+//     const currentQuestion = $(`#order-${currentQuestionNumber}`)
+//     currentQuestion.css('background-color', '#04AA6D');
+//     currentQuestion.css('color', '#04AA6D');
+// }
 
 const checkAnswers = function (ans1, ans2) {
 
@@ -62,6 +105,7 @@ const hideQuestions = function (topic_number) {
 /* === Event Listeners === */
 
 $(window).on("load", hide());
+$(window).on("load", init.runFunctions.bind(init));
 
 // Accordion: Add eventListen to each topic tag independently
 for( let i = 0; i < $(`.menu-label`).length; i++ ){

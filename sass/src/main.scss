@@ -8,6 +8,14 @@
 }
 
 nav { 
+    #is-60x60 {
+        height: 45px;
+        width: 45px;
+        max-height: 45px;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+    }
     .navbar-link {
         width: 127px;
         padding: 24px 16px;

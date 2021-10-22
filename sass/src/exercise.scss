@@ -19,6 +19,12 @@ body {
 /* === Nav Bar === */
 nav { 
   grid-area: nav;
+  .navbar-brand:hover {
+    background-color: white;
+    i {
+      color: #485fc7;
+    }
+  }
   .navbar-link {
     min-width: 150px;
     padding: 24px 16px;
@@ -58,6 +64,9 @@ nav {
     color: white;
     border: none;
   }
+  #account, #account-text {
+    color: white;
+  }
 }
 #navbar {
   color: white;
@@ -85,37 +94,38 @@ nav {
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     width: 40vh;
     padding: 0px;
-    .aside-tracker {
-      display: flex;
-      justify-content: center;
-      padding: 10px 5px 5px 10px;
-      text-align: center;
-      font-size: 15px;
-      background-color: #E7E9EB;
-      a {
-        display: inline;
-        color: darkblue;
-        margin-left: 8px;
-      }
+  }
+  .aside-tracker {
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px 5px 10px;
+    text-align: center;
+    font-size: 15px;
+    background-color: #E7E9EB;
+    a {
+      display: inline;
+      color: darkblue;
+      margin-left: 8px;
     }
-    #menuLabel {
-      cursor: pointer;
-      background-color: gray;
-      color: white;
-      padding: 5px;
-      font-size: 18px;
-      margin-top: 0px;
-      padding-left: 10px;
-      margin-bottom: 5px;
-      background-color: rgba(0, 0, 0, 0.8);
+  }
+  #menuLabel {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    margin: 0px auto;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .menu-list {
+    font-size: 16px;
+    color: #E7E9EB;
+    li {
+      padding: 5px 0px;
     }
-    .menu-list {
-      padding-left: 5px;
-      font-size: 16px;
-      color: #E7E9EB;
-      :hover li {
-        background-color: #888888;
-      }
+    a {
+      padding-left: 30px;
     }
   }
   #collapseLines {

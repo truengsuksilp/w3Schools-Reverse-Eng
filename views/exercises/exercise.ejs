@@ -12,8 +12,6 @@
   <!-- Navbar -->
   <%- include('../partials/nav/_navExercise.ejs') %>
 
-
-
   <!-- Aside Bar: To be replaced by Accordion later -->
   <container class="aside">
     <aside class="menu">
@@ -42,7 +40,7 @@
         <!-- All questions: Cannot update the link to root -->
         <ul class="menu-list ">
           <% for (j in allQuestions[i]) { %>
-            <li class="topic_<%= i %>">
+            <li class="topic_<%= i %>" id="q-order-<%= allQuestions[i][j].order %>">
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
               >
@@ -126,6 +124,8 @@
   <footer>
     <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
     <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
+    <p id='questionOrder'> <%= question.order %> </p>
+    <p id='userProgress'> <%= progress %> </p>
   </footer>
     
 </body>

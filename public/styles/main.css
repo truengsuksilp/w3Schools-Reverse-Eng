@@ -3,6 +3,14 @@
   box-sizing: border-box;
 }
 
+nav #is-60x60 {
+  height: 45px;
+  width: 45px;
+  max-height: 45px;
+}
+nav .navbar-brand {
+  margin-left: 15px;
+}
 nav .navbar-link {
   width: 127px;
   padding: 24px 16px;

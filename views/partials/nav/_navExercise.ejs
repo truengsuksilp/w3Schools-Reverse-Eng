@@ -29,10 +29,10 @@
       </div>
 
       <!-- Navbar END -->
-      <div class="navbar-end">
+      <div class="navbar-end"">
         <% if(typeof user !== 'undefined'){ %>
-          <p class="navbar-item">
-            <strong>Account:&nbsp</strong>
+          <p class="navbar-item" id="account">
+            <strong id="account-text">Account:&nbsp</strong>
             <span> <%= user.email %></span>
           </p>
         <% } %>

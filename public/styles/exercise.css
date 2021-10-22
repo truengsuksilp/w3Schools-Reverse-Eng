@@ -14,6 +14,12 @@ body {
 nav {
   grid-area: nav;
 }
+nav .navbar-brand:hover {
+  background-color: white;
+}
+nav .navbar-brand:hover i {
+  color: #485fc7;
+}
 nav .navbar-link {
   min-width: 150px;
   padding: 24px 16px;
@@ -53,6 +59,9 @@ nav #is-w3-green {
   color: white;
   border: none;
 }
+nav #account, nav #account-text {
+  color: white;
+}
 
 #navbar {
   color: white;
@@ -80,7 +89,7 @@ nav #is-w3-green {
   width: 40vh;
   padding: 0px;
 }
-.aside .menu .aside-tracker {
+.aside .aside-tracker {
   display: flex;
   justify-content: center;
   padding: 10px 5px 5px 10px;
@@ -88,29 +97,30 @@ nav #is-w3-green {
   font-size: 15px;
   background-color: #E7E9EB;
 }
-.aside .menu .aside-tracker a {
+.aside .aside-tracker a {
   display: inline;
   color: darkblue;
   margin-left: 8px;
 }
-.aside .menu #menuLabel {
+.aside #menuLabel {
   cursor: pointer;
   background-color: gray;
   color: white;
-  padding: 5px;
+  padding: 10px;
   font-size: 18px;
-  margin-top: 0px;
+  margin: 0px auto;
   padding-left: 10px;
-  margin-bottom: 5px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.aside .menu .menu-list {
-  padding-left: 5px;
+.aside .menu-list {
   font-size: 16px;
   color: #E7E9EB;
 }
-.aside .menu .menu-list :hover li {
-  background-color: #888888;
+.aside .menu-list li {
+  padding: 5px 0px;
+}
+.aside .menu-list a {
+  padding-left: 30px;
 }
 .aside #collapseLines {
   border-left: 0px solid black;
