@@ -6,7 +6,7 @@ const Question = require('../models/Question');
 const questions = [
     {
         // FIXME THIS IS STILL HARD CODE
-        exercise_id: '616f3ab99d1e99ac72374145',
+        exercise_id: '61721972107375b10b1e79d8',
         prompt: 'Create a variable called carName, assign the value Volvo to it.',
         text_before_inputs: 'var ',
         text_between_inputs: ` = `,
@@ -17,7 +17,7 @@ const questions = [
         order: 1,
     },
     {
-        exercise_id: '616f3ab99d1e99ac72374145',
+        exercise_id: '61721972107375b10b1e79d8',
         prompt: 'Create a variable called x, assign the value 50 to it.',
         text_before_inputs: 'var ',
         text_between_inputs: ` = `,
@@ -28,7 +28,7 @@ const questions = [
         order: 2,
     },
     {
-        exercise_id: '616f3ab99d1e99ac72374145',
+        exercise_id: '61721972107375b10b1e79d8',
         prompt: 'Display the sum of 5 + 10, using two variables: x and y.  Assume: const y = 10;',
         text_before_inputs: 'var ',
         text_between_inputs: ` = `,
@@ -45,7 +45,7 @@ const questions = [
 const seedData = async (collection, data) => {
     try {
         // FIXME Hard code delete many to one exercise_id
-        await collection.deleteMany({ exercise_id: '616f3ab99d1e99ac72374145' });
+        await collection.deleteMany({ exercise_id: '61721972107375b10b1e79d8' });
         await collection.insertMany(data);
         console.log(`=== Seeded Questions Data ===`);
         console.log(data);

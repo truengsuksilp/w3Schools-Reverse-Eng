@@ -2,192 +2,247 @@
 
 
 /* GLOBAL */
-
 * {
   box-sizing: border-box;
   // border: 1px solid rebeccapurple;
 }
 body {
   display: grid;
+  grid-template-areas:
+    "nav nav"
+    "aside main"
+    "footer footer";
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 60px 3fr 1fr;
+}
+
+/* === Nav Bar === */
+nav { 
+  grid-area: nav;
+  .navbar-brand:hover {
+    background-color: white;
+    i {
+      color: #485fc7;
+    }
+  }
+  .navbar-link {
+    min-width: 150px;
+    padding: 24px 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+  .navbar-dropdown {
+    position: absolute;
+    padding: 10 30 10 10;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .dropdown-content-background-color {
+    background-color: rgb(40,42,53);
+  } 
+  .dropdown-item-color {
+    color: white;
+  }
+  .button {
+    width: 200px;
+    border-radius: 25px;
+    margin: 7px;
+    padding: 8px 16px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .fa-home {
+    font-size: 22px;
+    color: white;
+  }
+  #is-w3-green {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+  }
+  #account, #account-text {
+    color: white;
+  }
+  
+}
+
+#navbar {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 /* === Aside/Accordion Menu === */
-  container.aside {
+.aside {
+  grid-area: aside;
 
-    aside.menu {
-      border: 1px solid lightgray;
-      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-      width: 40vh;
-      padding: 0px;
-
-      section.aside-header {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 20px 10px 20px;
-        font-size: 22px;
-
-        a {
-          color: #000;
-        }
-      }
-      h5.aside-tracker {
-        padding: 10px 5px 5px 10px;
-        text-align: center;
-        font-size: 15px;
-        background-color: #E7E9EB;
-      }
-      .menu-label {
-        cursor: pointer;
-        background-color: gray;
-        color: white;
-        padding: 5px;
-        font-size: 18px;
-      }
-      #menuLabel {
-        margin-top: 0px;
-        padding-left: 10px;
-        margin-bottom: 5px;
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-      .menu-list {
-        padding-left: 5px;
-        font-size: 16px;
-        color: #E7E9EB;
-        :hover li {
-          background-color: #888888;
-        }
-      }
-    }
-  }
-  main {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: auto;
-
-/* === Show burger when sidebar is hidden === */
-    nav.exercise-navbar {
-      padding: 15px;
-
-      i.exercise-navbar {
-        cursor: pointer;
-        height: auto;
-        font-size: 21px;
-        font-weight: 900;
-      }
-    }
-
-/* === Exercise Card === */
-    section.card {
-      margin-top:10vh;
-      display: grid;
-      padding: 10px;
-      //grid-template-rows: auto;
-
-      article.card-content {
-
-        div.card-top {
-      
-          h2.card-title {
-            margin: 10 0;
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-            font-size: 42px;
-            font-weight: 400;
-          }
-          p.card-desc {
-            display: block;
-            margin: 1.2 em 0;
-            font-family: 'Verdana', sans-serif;
-            font-size: 15px;
-          }
-        }
-
-/* === Code Input === */
-      .card-body {
-        background-color: lightgray;
-        padding: 30px 30px 50px 30px;
-        min-height: 250px;
-        border-radius: 5px;
-
-          #control-input {
-            display: inline-flex;
-            margin: 30px 0px;
-            font-family: 'Consolas', 'Courier New', Courier, monospace;
-            font-size: 120%;
-            font-weight: 600;
-            line-height: 1.7em;
-
-            .input {
-              max-width: 125px;
-              margin: 0px 10px;
-            }
-          }
-        } 
-      }      
-    }
-
-/* === Buttons === */
-        div#card-buttons {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          margin: 40px 10px 0px;
-          align-content: center;
-
-          div.card-buttons {
-            margin: 0 auto;
-
-            .button {
-              width: 200px;
-              border-radius: 25px;
-              margin: 7px;
-              padding: 8px 16px;
-              font-size: 18px;
-              font-weight: 700;
-              color: white;
-              }
-            }
-          }
-
-/* === FOOTER === */
-// visibility set by footer.is-invisible Bulma
-  footer {
-    padding: 5px;
-    color: gray;
+  display: grid;
+  grid-template-columns: 1fr 5px;
+  .menu {
     border: 1px solid lightgray;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    width: 40vh;
+    padding: 0px;
+  }
+  .aside-tracker {
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px 5px 10px;
     text-align: center;
-
-    #checkAnswer {
-      width: 150px;
+    font-size: 15px;
+    background-color: #E7E9EB;
+    a {
+      display: inline;
+      color: darkblue;
+      margin-left: 8px;
     }
   }
-
-
-
-
-#submitButton {
-  background-color: $primary-color;
-}
-#hideAnswerButton {
-  display: none;
-}
-#showAnswerButton, #hideAnswerButton {
-  background-color: $secondary-button-color;
-
-   &:hover {
+  .menu-label {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    .fa-caret-down, .fa-caret-up {
+      font-size: 24px;
+    }
+  }
+  #menu-label-override {
+    cursor: pointer;
+    background-color: gray;
     color: white;
-    background-color: $tertiary-button-color;
-  } 
+    padding: 10px;
+    font-size: 18px;
+    margin: 0px auto;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .menu-list {
+    font-size: 16px;
+    color: #E7E9EB;
+    li {
+      padding: 5px 0px;
+    }
+    a {
+      padding-left: 30px;
+    }
+  }
+  #collapse-lines {
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+    padding-left: 2px;
+    margin: 5px 10px 5px 3px;
+  }
+  #collapse-lines:hover {
+    border-left: 2px solid rgba(128, 128, 128, 0.5);
+    border-right: 2px solid rgba(128, 128, 128, 0.5);
+  }
 }
 
-
-
-   
-
-    .control {
+/* === Card + Burger === */
+main {
+  grid-area: main;
+  
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-rows: auto;
+  margin-left: 10px;
+  .control {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     font-size: 20px;
     font-weight: 600;
-  } 
-}}
+  }
+}
+
+/* === BURGER === */
+.exercise-navbar {
+  padding: 15px;
+  i {
+    cursor: pointer;
+    height: auto;
+    font-size: 21px;
+    font-weight: 900;
+  }
+}
+
+/* === Card LOCAL === */
+.card {
+  margin-top: 10vh;
+  display: grid;
+  padding: 10px;
+}
+
+/* === Card Upper === */
+.card-top {
+  .card-title {
+    margin: 10 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+  }
+  .card-desc {
+    display: block;
+    margin: 1.2 em 0;
+    font-family: 'Verdana', sans-serif;
+    font-size: 15px;
+  }
+}
+
+/* === Card Mid: Inputs === */
+.card-body {
+  background-color: lightgray;
+  padding: 30px 30px 50px 30px;
+  min-height: 250px;
+  border-radius: 5px;
+  .input {
+    max-width: 125px;
+    margin: 0px 10px;
+  }
+  #control-input {
+    display: inline-flex;
+    margin: 30px 0px;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 120%;
+    font-weight: 600;
+    line-height: 1.7em;
+  }
+}
+
+/* === Card Lower: - Buttons === */
+#container-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 30px 10px 0px 0px;
+  align-content: center;
+  margin: 0 auto;
+  .button {
+    width: 200px;
+    border-radius: 25px;
+    margin: 40px 15px 0px 15px;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+  #submit-button {
+    background-color: $primary-color;
+  }
+  #show-answer-button, #hide-answer-button {
+    background-color: $secondary-button-color;
+    &:hover {
+      color: white;
+      background-color: $tertiary-button-color;
+    } 
+  }
+}
+
+/* === Footer (Hidden) === */
+footer {
+  grid-area: footer;
+  padding: 5px;
+  color: gray;
+  border: 1px solid lightgray;
+  text-align: center;
+}

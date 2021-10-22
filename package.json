@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/truengsuksilp/w3Schools-Reverse-Eng#readme",
   "dependencies": {
-    "bulma": "^0.9.3",
+    "codemirror": "^5.63.3",
     "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",

@@ -4,10 +4,18 @@
 
 * {
     box-sizing: border-box;
-    
+    // border: 1px solid rebeccapurple;
 }
 
 nav { 
+    #is-60x60 {
+        height: 45px;
+        width: 45px;
+        max-height: 45px;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+    }
     .navbar-link {
         width: 127px;
         padding: 24px 16px;
@@ -28,6 +36,10 @@ nav {
     .dropdown-item-color {
         color: white;
     }
+    .gsc-control-wrapper-cse {
+        min-width: 300px;
+        margin-top: 10px;
+    }
 }
 
 body {
@@ -36,7 +48,7 @@ body {
     line-height: 1.5;
 
     .card {
-        max-width: 1400px;
+        max-width: 1800px;
         margin: -12px auto;
         gap: 0px;
         display: grid;
@@ -114,7 +126,7 @@ article.card-content {
         margin-top: 15px;
     }
     #is-yellow {
-        background-color: #FFF4A3;
+        background-color: $js-card-color;
         color: black;
     }
 }

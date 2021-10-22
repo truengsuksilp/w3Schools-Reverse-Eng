@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+
 // Security Basic pack
 const helmet = require('helmet');
 const rateLimit = require("express-rate-limit");
@@ -46,10 +47,10 @@ app.use(require('./utils/navlinks'));
 // Make this available to
 app.use(function (req, res, next) {
     if (req.session.currentUser) {
-      res.locals.user = req.session.currentUser;
-      next();
+        res.locals.user = req.session.currentUser;
+        next();
     } else {
-      next();
+        next();
     }
 });
 

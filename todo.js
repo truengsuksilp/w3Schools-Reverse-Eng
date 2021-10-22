@@ -30,3 +30,7 @@
 // methodOverride: CRUD - So we can use UPDATE as PUT
 // urlEncoded: CRUD - So we can use CREATE and UPDATE with req.body
 
+
+/* === LEARNINGS === */
+// Stingrays don't support multiple referencing
+// DO NOT USE async await with nested for loops: Inconsistent behavior
