@@ -40,3 +40,21 @@ I want to see the main section where I can enter code, so I can get feedback on 
 - I want to see submit button, so I can get feedback on the exercise
 - I want to see the show answer button, so I can get answers when I'm stuck
 
+
+Notion project page: https://www.notion.so/Epic-Plan-95221d7637e54be0880a64560a42be18
+
+=== Sass ===
++ Organization of CSS is nice
+- Sometimes code gets too nested and makes bracket management difficult
+Summary:
+
+=== Bulma ===
++ It was nice to have certain elements readily available, and management by class made applying properties easy. 
+- Bulma default stylings were a challenge to override at times, and if I ever found myself stuck on an issue and couldn't find a reason for it, these default stylings were often the reason
+Summary: There is still a lot to learn in terms of what Bulma is capable of and how to really customize it to fit needs.
+
+=== Teamwork! ===
+* Communication is key!
+* Working on code that someone else created can be difficult
+* Another set of eyes to review and provide fresh perspective is very handy
+* Great to be able to divide and conquer and assign tasks based on our strengths
