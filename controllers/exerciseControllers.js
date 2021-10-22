@@ -31,10 +31,10 @@ router.get('/:language', async (req, res, next) => {
     try {
         const foundExercise = await Exercise.findOne({
             order: 1, 
-            language: req.params.language
-        })
+            language: req.params.language,
+        });
         const foundQuestion = await Question.findOne({exercise_id: foundExercise._id, order: 1})
-            .populate('exercise_id')
+            .populate('exercise_id');
 
         // NOTE: Pass into the next router: Show exercise page of a specified question
         const url = `/exercises/${req.params.language}/${foundQuestion._id}/${foundQuestion.order}`
@@ -44,7 +44,6 @@ router.get('/:language', async (req, res, next) => {
         req.error = error;
         next();
     }
-
 });
 
 // Show: Specified
@@ -65,22 +64,9 @@ router.get('/:language/:question_id/:order', async (req, res, next) => {
         // NOTE: Nested array of topics and questions to render on sidebar
         const allQuestions = [];
         for ( i in foundAllExercises ) {
-            const arr = [];
-            const questionsInTopic = await Question.count({
-                exercise_id: foundAllExercises[i]._id
-            });
-            console.log(questionsInTopic);
-
-            for ( j = 0; j < questionsInTopic; j++ ) {
-                const questions = await Question.findOne({
-                    exercise_id: foundAllExercises[j]._id,
-                    order: j+1,
-                });
-                arr.push(questions)
-            }
-            allQuestions.push(arr);
+            const questions = await Question.find({exercise_id: foundAllExercises[i]._id}).sort({topic_order: 1});
+            allQuestions.push(questions);
         }
-        console.log(allQuestions);
 
         // URL to pass into form for POST request
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
@@ -168,3 +154,33 @@ router.post('/:language/:question_id/:order', async (req, res, next) => {
 
 /* === Exports: route === */
 module.exports = router;
+
+
+
+
+
+/* Nested Array: DID NOT WORK CONSISTENTLY */
+        // // NOTE: Nested array of topics and questions to render on sidebar
+        // const allQuestions = [];
+        // for ( i in foundAllExercises ) {
+        //     const arr = [];
+        //     const questionsInTopic = await Question.count({
+        //         exercise_id: foundAllExercises[i]._id
+        //     });
+        //     console.log(questionsInTopic);
+        //     console.log(foundAllExercises[0]._id);
+        //     console.log(await Question.findOne({
+        //         exercise_id: foundAllExercises[i]._id,
+        //         order: i+1,
+        //     }));
+
+        //     for ( j = 0; j < questionsInTopic; j++ ) {
+        //         const questions = await Question.findOne({
+        //             exercise_id: foundAllExercises[j]._id,
+        //             order: j+1,
+        //         });
+        //         arr.push(questions)
+        //     }
+        //     allQuestions.push(arr);
+        // }
+        // console.log(allQuestions);

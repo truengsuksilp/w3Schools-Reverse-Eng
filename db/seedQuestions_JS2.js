@@ -6,7 +6,7 @@ const Question = require('../models/Question');
 const questions = [
     {
         // FIXME THIS IS STILL HARD CODE
-        exercise_id: '616f3ab99d1e99ac72374146',
+        exercise_id: '61721972107375b10b1e79d9',
         prompt: 'Define function called myFunction.  Use function followed by function name and ()',
         text_before_inputs: '',
         text_between_inputs: ` `,
@@ -18,7 +18,7 @@ const questions = [
 
     },
     {
-        exercise_id: '616f3ab99d1e99ac72374146',
+        exercise_id: '61721972107375b10b1e79d9',
         prompt: 'Assign a function called myFunction to a variable.  Then execute the function.',
         text_before_inputs: `const `,
         text_between_inputs: ` = `,
@@ -29,7 +29,7 @@ const questions = [
         order: 5,
     },
     {
-        exercise_id: '616f3ab99d1e99ac72374146',
+        exercise_id: '61721972107375b10b1e79d9',
         prompt: 'Define function to console log hello and execute the function.',
         text_before_inputs: `function myfunction() {`,
         text_between_inputs: `; }"`,
@@ -46,9 +46,14 @@ const questions = [
 const seedData = async (collection, data) => {
     try {
         // FIXME Hard code delete many to one exercise_id
-        await collection.deleteMany({ exercise_id: '616f3ab99d1e99ac72374146' });
+        // await collection.deleteMany({ exercise_id: '61721972107375b10b1e79d9' });
         await collection.insertMany(data);
+
+        // FIXME Hard code delete many to one exercise_id
+        const check = await collection.find({exercise_id: '61721972107375b10b1e79d9'});
+
         console.log(`=== Seeded Questions Data ===`);
+        console.log(check);
         console.log(data);
         process.exit();
     } catch (error) {

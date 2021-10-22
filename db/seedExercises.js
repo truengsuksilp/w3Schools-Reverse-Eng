@@ -4,21 +4,21 @@ const Exercise = require('../models/Exercise');
 
 /* === Seed Data: [{}, ..., {}] === */
 const exercises = [
-    // {
-    //     language: 'js',
-    //     topic: 'JS Variables',
-    //     order: 1,
-    // },
-    // {
-    //     language: 'js',
-    //     topic: 'JS Functions',
-    //     order: 2,
-    // },
-    // {
-    //     language: 'js',
-    //     topic: 'JS Objects',
-    //     order: 3,
-    // },
+    {
+        language: 'js',
+        topic: 'JS Variables',
+        order: 1,
+    },
+    {
+        language: 'js',
+        topic: 'JS Functions',
+        order: 2,
+    },
+    {
+        language: 'js',
+        topic: 'JS Objects',
+        order: 3,
+    },
     // {
     //     language: 'css',
     //     topic: 'CSS Selectors',
@@ -34,28 +34,28 @@ const exercises = [
     //     topic: 'CSS Border',
     //     order: 3,
     // },
-    {
-        language: 'html',
-        topic: 'HTML Attributes',
-        order: 1,
-    },
-    {
-        language: 'html',
-        topic: 'HTML Headings',
-        order: 2,
-    },
-    {
-        language: 'html',
-        topic: 'HTML Paragraph',
-        order: 3,
-    }
+    // {
+    //     language: 'html',
+    //     topic: 'HTML Attributes',
+    //     order: 1,
+    // },
+    // {
+    //     language: 'html',
+    //     topic: 'HTML Headings',
+    //     order: 2,
+    // },
+    // {
+    //     language: 'html',
+    //     topic: 'HTML Paragraph',
+    //     order: 3,
+    // }
 ];
 
 /* === Seed Function: async, try await, catch === */
 
 const seedData = async (collection, data) => {
     try {
-        // await collection.deleteMany({ language: 'html' });
+        await collection.deleteMany({ language: 'js' });
         await collection.insertMany(data);
         console.log(`=== Seeded Exercise or Question Data ===`);
         console.log(data);
