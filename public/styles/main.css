@@ -31,6 +31,10 @@ nav .dropdown-content-background-color {
 nav .dropdown-item-color {
   color: white;
 }
+nav .gsc-control-wrapper-cse {
+  min-width: 300px;
+  margin-top: 10px;
+}
 
 body {
   background-color: #282A35;

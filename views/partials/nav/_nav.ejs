@@ -28,13 +28,15 @@
 
   <div class="navbar-menu">
 
-      <!-- Navbar START: THIS WAS WHERE EXERCISES WERE -->
-      <!-- <div class="navbar-start">
-
-      </div> -->
-
       <!-- Navbar END -->
       <div class="navbar-end">
+        <!-- Add Google Search -->
+        <div class="navbar-item" id="container-google">
+          <script async src="https://cse.google.com/cse.js?cx=c9854ccec2deaea6a">
+          </script>
+          <div class="gcse-search" data-mobileLayout="forced"></div>
+        </div>
+        <!-- Account Name -->
         <% if(typeof user !== 'undefined'){ %>
           <p class="navbar-item">
             <strong>Account:&nbsp</strong>

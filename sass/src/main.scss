@@ -4,7 +4,7 @@
 
 * {
     box-sizing: border-box;
-    
+    // border: 1px solid rebeccapurple;
 }
 
 nav { 
@@ -35,6 +35,10 @@ nav {
     } 
     .dropdown-item-color {
         color: white;
+    }
+    .gsc-control-wrapper-cse {
+        min-width: 300px;
+        margin-top: 10px;
     }
 }
 

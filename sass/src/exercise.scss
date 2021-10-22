@@ -67,7 +67,9 @@ nav {
   #account, #account-text {
     color: white;
   }
+  
 }
+
 #navbar {
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
@@ -106,6 +108,13 @@ nav {
       display: inline;
       color: darkblue;
       margin-left: 8px;
+    }
+  }
+  .menu-label {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    .fa-caret-down, .fa-caret-up {
+      font-size: 24px;
     }
   }
   #menuLabel {

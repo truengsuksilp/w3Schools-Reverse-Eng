@@ -102,6 +102,13 @@ nav #account, nav #account-text {
   color: darkblue;
   margin-left: 8px;
 }
+.aside .menu-label {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+.aside .menu-label .fa-caret-down, .aside .menu-label .fa-caret-up {
+  font-size: 24px;
+}
 .aside #menuLabel {
   cursor: pointer;
   background-color: gray;

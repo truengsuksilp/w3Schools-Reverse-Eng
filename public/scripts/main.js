@@ -17,6 +17,7 @@ const init = {
         $('#hideAnswerButton').hide();
         $('.exercise-navbar').hide();
         $('footer').hide();
+        $('.fa-caret-up').hide();
     },
 
     progressTicks() {
@@ -45,13 +46,6 @@ const hide = function (){
     $('.exercise-navbar').hide();
     $('footer').hide();
 }
-
-// const greenCard = function (){
-//     const currentQuestionNumber = $('#questionOrder').html();
-//     const currentQuestion = $(`#order-${currentQuestionNumber}`)
-//     currentQuestion.css('background-color', '#04AA6D');
-//     currentQuestion.css('color', '#04AA6D');
-// }
 
 const checkAnswers = function (ans1, ans2) {
 
@@ -97,8 +91,12 @@ const hideSideBar = function () {
 const hideQuestions = function (topic_number) {
     if( $(`li.topic_${topic_number}`).css('display') === 'block' ) {
         $(`li.topic_${topic_number}`).css('display','none');
+        $(`.fa-caret-down.topic_${topic_number}`).css('display', 'none');
+        $(`.fa-caret-up.topic_${topic_number}`).css('display', 'block');
     } else {
         $(`li.topic_${topic_number}`).css('display','block');
+        $(`.fa-caret-down.topic_${topic_number}`).css('display', 'block');
+        $(`.fa-caret-up.topic_${topic_number}`).css('display', 'none');
     }
 }
 
@@ -109,7 +107,7 @@ $(window).on("load", init.runFunctions.bind(init));
 
 // Accordion: Add eventListen to each topic tag independently
 for( let i = 0; i < $(`.menu-label`).length; i++ ){
-    $(`p.topic_${i}`).click( (event) => hideQuestions(i));
+    $(`.menu-label`).click( (event) => hideQuestions(i));
 }
 
 $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );

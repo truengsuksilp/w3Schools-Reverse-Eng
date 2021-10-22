@@ -34,9 +34,11 @@
 
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <p class="menu-label topic_<%= i %>" id="menuLabel">
-          <%= allExercises[i].topic %>
-        </p>
+        <div class="menu-label topic_<%= i %>" id="menuLabel">
+          <p> <%= allExercises[i].topic %> </p>
+          <i class="fas fa-caret-down topic_<%= i %>"></i>
+          <i class="fas fa-caret-up topic_<%= i %>"></i>
+        </div>
         <!-- All questions: Cannot update the link to root -->
         <ul class="menu-list ">
           <% for (j in allQuestions[i]) { %>
