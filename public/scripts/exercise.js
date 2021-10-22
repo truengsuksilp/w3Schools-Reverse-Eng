@@ -16,7 +16,7 @@ const init = {
     hide() {
         $('#hide-answer-button').hide();
         $('.exercise-navbar').hide();
-        // $('footer').hide();
+        $('footer').hide();
         $('.fa-caret-up').hide();
         $('.gsc-input-box').hide();
     },
