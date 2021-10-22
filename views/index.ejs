@@ -1,69 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head/_head.ejs', { 
-  page: `ReVamp(ire)`, 
-  cssFile: '/styles/main.css' 
-}) %>
+<%- include('./partials/head/_head.ejs', { page: `ReVamp(ire)`, cssFile: '/styles/main.css' }) %>
 
 <body>
 
   <%- include('./partials/nav/_nav.ejs') %>
 
   <section class='card html-card columns is-mobile'>
-
     <!-- LEFT CARD -->
     <article class='card-content card-left column'>
       <h1 class='card-title'> HTML </h1>
       <h3 class='card-desc'> The language for building web pages </h3>
       <div class='card-left-buttons'>
-        <a href="/exercises/html/" class='button card-buttons'id="is-w3-green">Learn HTML</a>
-        <a href="https://www.w3schools.com/tags/default.asp" class='button card-buttons'id="is-yellow">HTML Reference</a>
-      
+        <a href="/exercises/html/" class='button card-buttons' id="is-w3-green">Learn HTML</a>
+        <a href="https://www.w3schools.com/tags/default.asp" class='button card-buttons' id="is-yellow">HTML Reference</a>
       </div>
     </article>
 
     <!-- RIGHT CARD -->
-    <article class='card-content card-right column'>
-      <h2 class='card-header'> HTML Example: </h2>
-      <div class='card-ide'>
-
-        <%- include('./partials/codeColors/_codebox_html.ejs') %>
-
-      </div>
-      <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
-
-    </article>
+    <%- include('./partials/rightCards/_rightCardHTML.ejs', { header: 'HTML Example', link: 'https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default' }) %>
+    
   </section>
 
   <section class='card css-card columns is-mobile'>
-
     <!-- LEFT CARD -->
     <article class='card-content card-left column'>
       <h1 class='card-title'> CSS </h1>
       <h3 class='card-desc'> The language for styling web pages </h3>
       <div class='card-left-buttons'>
-        <a href="/exercises/css" class="button card-buttons"id="is-w3-green">Learn CSS</a>
+        <a href="/exercises/css" class="button card-buttons" id="is-w3-green">Learn CSS</a>
         <a href="https://www.w3schools.com/cssref/default.asp" class="button is-dark card-buttons">CSS Reference</a>
       </div>
     </article>
 
     <!-- RIGHT CARD -->
-    <article class='card-content card-right column'>
-      <h2 class='card-header'> CSS Example: </h2>
-      <div class='card-ide'>
-
-      <%- include('./partials/codeColors/_codebox_css.ejs') %>
-        
-      </div>
-      <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" class="button card-buttons"id="is-w3-green">Try it Yourself</a>      
-
-    </article>
+    <%- include('./partials/rightCards/_rightCardCSS.ejs', { header: 'CSS Example', link: 'https://www.w3schools.com/css/tryit.asp?filename=trycss_default' }) %>
   </section>
 
 
   <section class='card js-card columns is-mobile'>
-
     <!-- LEFT CARD -->
     <article class='card-content card-left column'>
       <h1 class='card-title'> JavaScript </h1>
@@ -75,17 +51,17 @@
     </article>
 
     <!-- RIGHT CARD -->
+    <%- include('./partials/rightCards/_rightCardJS.ejs', { header: 'JavaScript Example', link: 'https://www.w3schools.com/js/tryit.asp?filename=tryjs_default' }) %>
+  </section>
+
+  <!-- IDE BOTTOM CARD -->
+  <section class='card ide-card columns is-mobile'>
     <article class='card-content card-right column'>
-      <h2 class='card-header'> JavaScript Example: </h2>
+      <h2 class='card-header'> Sandbox Code Editor: </h2>
       <div class='card-ide'>
-
-        <%- include('./partials/codeColors/_codebox_js.ejs') %>
-
-        <br>
-        &lt;/script&gt;            
+        <div id='my-js'> 
+        </div>
       </div>
-      <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_default" class="button card-buttons"id='is-w3-green'>Try it Yourself</a>      
-
     </article>
   </section>
 

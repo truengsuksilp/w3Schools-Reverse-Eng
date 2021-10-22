@@ -1,3 +1,12 @@
+/* === Variables === */
+
+CodeMirror(document.querySelector('#my-js'), {
+    lineNumbers: true,
+    tabSize: 1,
+    value: 'console.log("Hello, World");',
+    mode: 'javascript'
+  });
+
 /* === Logic === */
 
 // INITIATION SEQUENCE
@@ -18,36 +27,6 @@ const init = {
     },
 }
 
-const showHideInput = function () {
-    if ( $('.gsc-input-box').css('display') === 'none' ) {
-        $('.gsc-input-box').show()
-    } else {
-        $('.gsc-input-box').hide()
-    }
-}
-
 
 /* === Event Listeners === */
-
 $(window).on("load", init.runFunctions.bind(init));
-$('.gsc-search-button-v2').click(showHide.runFunctions.bind(init));
-
-
-
-
-
-// const showHide = {
-//     runFunctions(event) {
-//         console.log("=== Initation 2.0 ===");
-//         this.showHideInput();
-//     },
-
-//     showHideInput() {
-//         if ( $('.gsc-input-box').css('display') === 'none' ) {
-//             $('.gsc-input-box').show()
-//         } else {
-//             $('.gsc-input-box').hide()
-//         }
-//     },
-// }
-// $('.gsc-search-button-v2').click( (event) => showHideInput());

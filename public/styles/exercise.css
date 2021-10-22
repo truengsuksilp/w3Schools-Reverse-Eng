@@ -68,15 +68,6 @@ nav #account, nav #account-text {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-#collapseSideBar {
-  position: absolute;
-  font-size: 20px;
-  font-weight: 800;
-  margin: 67px 0px 0px 315px;
-  color: gray;
-  padding: 0px 5px;
-}
-
 /* === Aside/Accordion Menu === */
 .aside {
   grid-area: aside;
@@ -109,7 +100,7 @@ nav #account, nav #account-text {
 .aside .menu-label .fa-caret-down, .aside .menu-label .fa-caret-up {
   font-size: 24px;
 }
-.aside #menuLabel {
+.aside #menu-label-override {
   cursor: pointer;
   background-color: gray;
   color: white;
@@ -129,13 +120,13 @@ nav #account, nav #account-text {
 .aside .menu-list a {
   padding-left: 30px;
 }
-.aside #collapseLines {
+.aside #collapse-lines {
   border-left: 0px solid black;
   border-right: 0px solid black;
   padding-left: 2px;
   margin: 5px 10px 5px 3px;
 }
-.aside #collapseLines:hover {
+.aside #collapse-lines:hover {
   border-left: 2px solid rgba(128, 128, 128, 0.5);
   border-right: 2px solid rgba(128, 128, 128, 0.5);
 }
@@ -225,13 +216,13 @@ main .control {
   font-weight: 700;
   color: white;
 }
-#container-buttons #submitButton {
+#container-buttons #submit-button {
   background-color: #04AA6D;
 }
-#container-buttons #showAnswerButton, #container-buttons #hideAnswerButton {
+#container-buttons #show-answer-button, #container-buttons #hide-answer-button {
   background-color: rgba(59, 59, 59, 0.5);
 }
-#container-buttons #showAnswerButton:hover, #container-buttons #hideAnswerButton:hover {
+#container-buttons #show-answer-button:hover, #container-buttons #hide-answer-button:hover {
   color: white;
   background-color: #3b3b3b;
 }
@@ -243,9 +234,6 @@ footer {
   color: gray;
   border: 1px solid lightgray;
   text-align: center;
-}
-footer #checkAnswer {
-  width: 150px;
 }
 
 /*# sourceMappingURL=exercise.css.map */

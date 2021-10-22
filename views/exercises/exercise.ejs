@@ -33,13 +33,13 @@
 
       <!-- Loop through all Topics -->
       <% for (i in allExercises) { %>
-        <div class="menu-label topic_<%= i %>" id="menuLabel">
+        <div class="menu-label topic_<%= i %>" id="menu-label-override">
           <p> <%= allExercises[i].topic %> </p>
           <i class="fas fa-caret-down topic_<%= i %>"></i>
           <i class="fas fa-caret-up topic_<%= i %>"></i>
         </div>
         <!-- All questions: Cannot update the link to root -->
-        <ul class="menu-list ">
+        <ul class="menu-list">
           <% for (j in allQuestions[i]) { %>
             <li class="topic_<%= i %>" id="q-order-<%= allQuestions[i][j].order %>">
               <a 
@@ -53,7 +53,7 @@
       <% } %>
     </aside>
 
-    <div id='collapseLines'></div>
+    <div id='collapse-lines'></div>
   </container> 
 
   <!-- CARD: Container -->
@@ -88,7 +88,7 @@
                   type="text" 
                   class="input"
                   name="user_answer_1"
-                  id="input1"
+                  id="input-1"
                 >
                 <p>
                   <%= question.text_between_inputs %>
@@ -97,7 +97,7 @@
                   type="text" 
                   class="input"
                   name="user_answer_2"
-                  id='input2'
+                  id='input-2'
                 >
                 <p>
                   <%= question.text_after_inputs %>
@@ -109,11 +109,11 @@
             <!-- BUTTONS -->
             <div class="control columns"id="container-buttons">
               <div class="submit card-buttons column">
-                  <button class="card-buttons button" id='submitButton'>Submit</button>
+                  <button class="card-buttons button" id='submit-button'>Submit</button>
               </div>
               <div class="show-hide-answer card-buttons column">
-                <button class="card-buttons button" id='showAnswerButton'>Show Answer</button>
-                <button class="card-buttons button invisible" id='hideAnswerButton'>Hide Answer</button>
+                <button class="card-buttons button" id='show-answer-button'>Show Answer</button>
+                <button class="card-buttons button invisible" id='hide-answer-button'>Hide Answer</button>
               </div>
             </div>
           </form>
@@ -123,10 +123,10 @@
   </main>
 
   <footer>
-    <p id='correctAnswer1'> <%= question.correct_answer_1 %> </p>
-    <p id='correctAnswer2'> <%= question.correct_answer_2 %> </p>
-    <p id='questionOrder'> <%= question.order %> </p>
-    <p id='userProgress'> <%= progress %> </p>
+    <p id='correct-answer-1'> <%= question.correct_answer_1 %> </p>
+    <p id='correct-answer-2'> <%= question.correct_answer_2 %> </p>
+    <p id='question-order'> <%= question.order %> </p>
+    <p id='user-progress'> <%= progress %> </p>
   </footer>
     
 </body>
