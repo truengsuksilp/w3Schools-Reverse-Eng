@@ -5,97 +5,184 @@
 
 body {
   display: grid;
+  grid-template-areas: "nav nav" "aside main" "footer footer";
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 2fr 1fr;
-  /* === Aside/Accordion Menu === */
+  grid-template-rows: 60px 3fr 1fr;
 }
-body container.aside aside.menu {
+
+/* === Nav Bar === */
+nav {
+  grid-area: nav;
+}
+nav .navbar-link {
+  min-width: 150px;
+  padding: 24px 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+nav .navbar-dropdown {
+  position: absolute;
+  padding: 10 30 10 10;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+nav .dropdown-content-background-color {
+  background-color: #282a35;
+}
+nav .dropdown-item-color {
+  color: white;
+}
+nav .button {
+  width: 200px;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 700;
+}
+nav .fa-home {
+  font-size: 22px;
+  color: white;
+}
+nav #is-w3-green {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+}
+
+#navbar {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#collapseSideBar {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 67px 0px 0px 315px;
+  color: gray;
+  padding: 0px 5px;
+}
+
+/* === Aside/Accordion Menu === */
+.aside {
+  grid-area: aside;
+  display: grid;
+  grid-template-columns: 1fr 5px;
+}
+.aside .menu {
   border: 1px solid lightgray;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   width: 40vh;
   padding: 0px;
 }
-body container.aside aside.menu section.aside-header {
+.aside .menu .aside-tracker {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 20px 10px 20px;
-  font-size: 22px;
-}
-body container.aside aside.menu section.aside-header a {
-  color: #000;
-}
-body container.aside aside.menu h5.aside-tracker {
+  justify-content: center;
   padding: 10px 5px 5px 10px;
   text-align: center;
   font-size: 15px;
   background-color: #E7E9EB;
 }
-body container.aside aside.menu .menu-label {
+.aside .menu .aside-tracker a {
+  display: inline;
+  color: darkblue;
+  margin-left: 8px;
+}
+.aside .menu #menuLabel {
   cursor: pointer;
   background-color: gray;
   color: white;
   padding: 5px;
   font-size: 18px;
-}
-body container.aside aside.menu #menuLabel {
   margin-top: 0px;
   padding-left: 10px;
   margin-bottom: 5px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-body container.aside aside.menu .menu-list {
+.aside .menu .menu-list {
   padding-left: 5px;
   font-size: 16px;
   color: #E7E9EB;
 }
-body container.aside aside.menu .menu-list :hover li {
+.aside .menu .menu-list :hover li {
   background-color: #888888;
 }
-body main {
+.aside #collapseLines {
+  border-left: 0px solid black;
+  border-right: 0px solid black;
+  padding-left: 2px;
+  margin: 5px 10px 5px 3px;
+}
+.aside #collapseLines:hover {
+  border-left: 2px solid rgba(128, 128, 128, 0.5);
+  border-right: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+/* === Card + Burger === */
+main {
+  grid-area: main;
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: auto;
-  /* === Show burger when sidebar is hidden === */
-  /* === Exercise Card === */
-  /* === Buttons === */
-  /* === FOOTER === */
+  margin-left: 10px;
 }
-body main nav.exercise-navbar {
+main .control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* === BURGER === */
+.exercise-navbar {
   padding: 15px;
 }
-body main nav.exercise-navbar i.exercise-navbar {
+.exercise-navbar i {
   cursor: pointer;
   height: auto;
   font-size: 21px;
   font-weight: 900;
 }
-body main section.card {
+
+/* === Card LOCAL === */
+.card {
   margin-top: 10vh;
   display: grid;
   padding: 10px;
 }
-body main section.card article.card-content {
-  /* === Code Input === */
-}
-body main section.card article.card-content div.card-top h2.card-title {
+
+/* === Card Upper === */
+.card-top .card-title {
   margin: 10 0;
   font-family: "Segoe UI", "Arial", sans-serif;
   font-size: 42px;
   font-weight: 400;
 }
-body main section.card article.card-content div.card-top p.card-desc {
+.card-top .card-desc {
   display: block;
   margin: 1.2 em 0;
   font-family: "Verdana", sans-serif;
   font-size: 15px;
 }
-body main section.card article.card-content .card-body {
+
+/* === Card Mid: Inputs === */
+.card-body {
   background-color: lightgray;
   padding: 30px 30px 50px 30px;
   min-height: 250px;
   border-radius: 5px;
 }
-body main section.card article.card-content .card-body #control-input {
+.card-body .input {
+  max-width: 125px;
+  margin: 0px 10px;
+}
+.card-body #control-input {
   display: inline-flex;
   margin: 30px 0px;
   font-family: "Consolas", "Courier New", Courier, monospace;
@@ -103,56 +190,45 @@ body main section.card article.card-content .card-body #control-input {
   font-weight: 600;
   line-height: 1.7em;
 }
-body main section.card article.card-content .card-body #control-input .input {
-  max-width: 125px;
-  margin: 0px 10px;
-}
-body main div#card-buttons {
+
+/* === Card Lower: - Buttons === */
+#container-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 40px 10px 0px;
+  margin: 30px 10px 0px 0px;
   align-content: center;
-}
-body main div#card-buttons div.card-buttons {
   margin: 0 auto;
 }
-body main div#card-buttons div.card-buttons .button {
+#container-buttons .button {
   width: 200px;
   border-radius: 25px;
-  margin: 7px;
+  margin: 40px 15px 0px 15px;
   padding: 8px 16px;
   font-size: 18px;
   font-weight: 700;
   color: white;
 }
-body main footer {
+#container-buttons #submitButton {
+  background-color: #04AA6D;
+}
+#container-buttons #showAnswerButton, #container-buttons #hideAnswerButton {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+#container-buttons #showAnswerButton:hover, #container-buttons #hideAnswerButton:hover {
+  color: white;
+  background-color: #3b3b3b;
+}
+
+/* === Footer (Hidden) === */
+footer {
+  grid-area: footer;
   padding: 5px;
   color: gray;
   border: 1px solid lightgray;
   text-align: center;
 }
-body main footer #checkAnswer {
+footer #checkAnswer {
   width: 150px;
-}
-body main #submitButton {
-  background-color: #04AA6D;
-}
-body main #hideAnswerButton {
-  display: none;
-}
-body main #showAnswerButton, body main #hideAnswerButton {
-  background-color: rgba(59, 59, 59, 0.5);
-}
-body main #showAnswerButton:hover, body main #hideAnswerButton:hover {
-  color: white;
-  background-color: #3b3b3b;
-}
-body main .control {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 /*# sourceMappingURL=exercise.css.map */

@@ -9,16 +9,14 @@
 
 <body>
 
+  <!-- Navbar -->
+  <%- include('../partials/nav/_navExercise.ejs') %>
+
+
+
   <!-- Aside Bar: To be replaced by Accordion later -->
   <container class="aside">
     <aside class="menu">
-
-      <!-- Header: Icons, Completion Tracker -->
-      <section class="aside-header">
-        <a href="/"><i class="fas fa-home"></i></a>
-        <a href="/exercises/<%= allExercises[0].language %>/reset"><i class="fas fa-redo-alt"></i></a>
-        <a><i class="fas fa-times"></i></a>
-      </section>
 
       <!-- Tracker -->
       <section class="aside-tracker">
@@ -33,6 +31,7 @@
           </span>
           of 10 Exercises
         </h5>
+        <a href="/exercises/<%= allExercises[0].language %>/reset" id='reset'><i class="fas fa-redo-alt"></i></a>
       </section>
 
       <!-- Loop through all Topics -->
@@ -42,7 +41,7 @@
         </p>
         <!-- All questions: Cannot update the link to root -->
         <ul class="menu-list ">
-          <% for (j in allQuestions) { %>
+          <% for (j in allQuestions[i]) { %>
             <li class="topic_<%= i %>">
               <a 
                 href= "../<%= allQuestions[i][j]._id %>/<%= allQuestions[i][j].order %>"
@@ -54,6 +53,8 @@
         </ul>
       <% } %>
     </aside>
+
+    <div id='collapseLines'></div>
   </container> 
 
   <!-- CARD: Container -->
@@ -61,9 +62,9 @@
   <main>
 
     <!-- Show Burger when sidebar is hidden -->
-    <nav class="navbar exercise-navbar">
+    <div class="navbar exercise-navbar">
       <i class="fas fa-bars exercise-navbar"></i>
-    </nav>
+    </div>
     
     <!-- CARD -->
     <section class='card'>
@@ -107,7 +108,7 @@
             </div>   
 
             <!-- BUTTONS -->
-            <div class="control columns"id="card-buttons">
+            <div class="control columns"id="container-buttons">
               <div class="submit card-buttons column">
                   <button class="card-buttons button" id='submitButton'>Submit</button>
               </div>

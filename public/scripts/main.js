@@ -72,6 +72,6 @@ $('#checkAnswer').click( (event) => checkAnswers(correctAnswer1, correctAnswer2)
 $('#submitButton').click( (event) => checkAnswers(correctAnswer1, correctAnswer2) );
 $('#showAnswerButton').click( (event) => showAnswers());
 $('#hideAnswerButton').click( (event) => hideAnswers());
-$('.fa-times').click( (event) => hideSideBar());
+$('#collapseLines').click( (event) => hideSideBar());
 $('.fa-bars').click( (event) => showSideBar());
 

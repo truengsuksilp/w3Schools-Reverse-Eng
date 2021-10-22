@@ -60,16 +60,27 @@ router.get('/:language/:question_id/:order', async (req, res, next) => {
             const foundExercise = await Exercise.findOne({language: req.params.language, order: i});
             foundAllExercises.push(foundExercise);
         };
-        
-        // const foundAllExercises = await Exercise.find({language: req.params.language,});
         console.log(foundAllExercises);
 
         // NOTE: Nested array of topics and questions to render on sidebar
         const allQuestions = [];
         for ( i in foundAllExercises ) {
-            const questions = await Question.find({exercise_id: foundAllExercises[i]._id});
-            allQuestions.push(questions);
+            const arr = [];
+            const questionsInTopic = await Question.count({
+                exercise_id: foundAllExercises[i]._id
+            });
+            console.log(questionsInTopic);
+
+            for ( j = 0; j < questionsInTopic; j++ ) {
+                const questions = await Question.findOne({
+                    exercise_id: foundAllExercises[j]._id,
+                    order: j+1,
+                });
+                arr.push(questions)
+            }
+            allQuestions.push(arr);
         }
+        console.log(allQuestions);
 
         // URL to pass into form for POST request
         const currentURL = `/exercises/${req.params.language}/${req.params.question_id}/${req.params.order}`
