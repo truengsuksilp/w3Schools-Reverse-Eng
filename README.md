@@ -1,6 +1,5 @@
 # w3Schools-Reverse-Eng
 
-````
 # MVP Scope
 
 A site where users can practice coding in 3 languages.  Users provide inputs with input boxes.  Users get feedback for each question and can track their practice progress.
